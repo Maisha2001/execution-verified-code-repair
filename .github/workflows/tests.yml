@@ -1,0 +1,27 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements/dev.txt -e .
+      - run: python -m pip check
+      - run: repair-bench data
+      - run: mkdir -p runs && docker build -f docker/Dockerfile --iidfile runs/image.id .
+      - run: python -m pytest -q --junitxml=runs/tests.xml
+        env:
+          REPAIR_IMAGE_FILE: runs/image.id
+      - run: repair-bench evaluate --tasks gcd find_in_sorted --budget 12 --output runs/smoke
+      - run: python -c "import json; r=json.load(open('runs/smoke/summary.json')); assert r['eligible_tasks']==2 and r['resolved_visible_tests']==1"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evaluation-evidence
+          path: runs/

@@ -1,0 +1,72 @@
+{
+  "task": "flatten",
+  "source_sha256": "5023275fe603f1ebade0027073c3d116274d405069ea350076f220f10ff451e2",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.777652,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.198767,
+      "max_rss_kib": 30828,
+      "output_limit": false,
+      "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+    },
+    "output_bytes": 275,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.789612,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 6,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.212522,
+      "max_rss_kib": 30940,
+      "output_limit": false,
+      "output": "F.FFFFF\n=================================== FAILURES ===================================\n_____________________ test_flatten[input_data0-expected0] ______________________\n\ninput_data = [[[1, [], [2, 3]], [[4]], 5]], expected = [1, 2, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       assert [<generator o...739ae34348b0>] == [1, 2, 3, 4, 5]\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae34349a0> != 1\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n_____________________ test_flatten[input_data2-expected2] ______________________\n\ninput_data = [[[], [], 1, [], 1, [], ...]], expected = [1, 1]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       assert [<generator o...739ae34354e0>] == [1, 1]\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae34353f0> != 1\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n_____________________ test_flatten[input_data3-expected3] ______________________\n\ninput_data = [[1, 2, 3, [[4]]]], expected = [1, 2, 3, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       assert [<generator o...739ae3434400>] == [1, 2, 3, 4]\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae34349a0> != 1\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n_____________________ test_flatten[input_data4-expected4] ______________________\n\ninput_data = [[1, 4, 6]], expected = [1, 4, 6]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       assert [<generator o...739ae3435c60>] == [1, 4, 6]\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae3435a80> != 1\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n_____________________ test_flatten[input_data5-expected5] ______________________\n\ninput_data = [['moe', 'curly', 'larry']], expected = ['moe', 'curly', 'larry']\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       AssertionError: assert [<generator o...739ae3436890>] == ['moe', 'curly', 'larry']\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae34366b0> != 'moe'\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n_____________________ test_flatten[input_data6-expected6] ______________________\n\ninput_data = [['a', 'b', ['c'], ['d'], [['e']]]]\nexpected = ['a', 'b', 'c', 'd', 'e']\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\nE       AssertionError: assert [<generator o...739ae3437a60>] == ['a', 'b', 'c', 'd', 'e']\nE         \nE         At index 0 diff: <generator object flatten at 0x739ae34374c0> != 'a'\nE         Use -v to get more diff\n\npython_testcases/test_flatten.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_flatten.py::test_flatten[input_data0-expected0]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data2-expected2]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data3-expected3]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data4-expected4]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data5-expected5]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data6-expected6]\n6 failed, 1 passed in 0.03s\n"
+    },
+    "output_bytes": 4348,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "swap_arguments",
+      "line": 3,
+      "candidate_sha256": "cef5e0e3c3254fbacc964946df50f97074542255273e9c8e9c6d4493b9f5b3e5",
+      "run": {
+        "status": "failed",
+        "seconds": 1.840009,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 0,
+          "failed": 7,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.225628,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": "FFFFFFF\n=================================== FAILURES ===================================\n_____________________ test_flatten[input_data0-expected0] ______________________\n\ninput_data = [[[1, [], [2, 3]], [[4]], 5]], expected = [1, 2, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [[1, [], [2, 3]], [[4]], 5]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data1-expected1] ______________________\n\ninput_data = [[[], [], [], [], []]], expected = []\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [[], [], [], [], []]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data2-expected2] ______________________\n\ninput_data = [[[], [], 1, [], 1, [], ...]], expected = [1, 1]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [[], [], 1, [], 1, [], ...]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data3-expected3] ______________________\n\ninput_data = [[1, 2, 3, [[4]]]], expected = [1, 2, 3, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [1, 2, 3, [[4]]]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data4-expected4] ______________________\n\ninput_data = [[1, 4, 6]], expected = [1, 4, 6]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [1, 4, 6]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data5-expected5] ______________________\n\ninput_data = [['moe', 'curly', 'larry']], expected = ['moe', 'curly', 'larry']\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = ['moe', 'curly', 'larry']\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n_____________________ test_flatten[input_data6-expected6] ______________________\n\ninput_data = [['a', 'b', ['c'], ['d'], [['e']]]]\nexpected = ['a', 'b', 'c', 'd', 'e']\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_flatten(input_data, expected):\n>       assert list(flatten(*input_data)) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_flatten.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = ['a', 'b', ['c'], ['d'], [['e']]]\n\n    def flatten(arr):\n        for x in arr:\n>           if isinstance(list, x):\n               ^^^^^^^^^^^^^^^^^^^\nE           TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union\n\npython_programs/flatten.py:3: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_flatten.py::test_flatten[input_data0-expected0]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data1-expected1]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data2-expected2]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data3-expected3]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data4-expected4]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data5-expected5]\nFAILED python_testcases/test_flatten.py::test_flatten[input_data6-expected6]\n7 failed in 0.03s\n"
+        },
+        "output_bytes": 6356,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

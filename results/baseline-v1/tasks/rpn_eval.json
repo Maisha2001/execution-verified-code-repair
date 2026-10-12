@@ -1,0 +1,77 @@
+{
+  "task": "rpn_eval",
+  "source_sha256": "4a473b1beaa9eb8155fcb079917e390d0584d8ebdfc6d6d8c88069609854194a",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.83881,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.197987,
+      "max_rss_kib": 30976,
+      "output_limit": false,
+      "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+    },
+    "output_bytes": 274,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.784046,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 3,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.207513,
+      "max_rss_kib": 30940,
+      "output_limit": false,
+      "output": "F.F..F\n=================================== FAILURES ===================================\n________________________ test_rpn_eval[input_data0-4.0] ________________________\n\ninput_data = [[3.0, 5.0, '+', 2.0, '/']], expected = 4.0\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_rpn_eval(input_data, expected):\n>       assert rpn_eval(*input_data) == expected\nE       AssertionError: assert 0.25 == 4.0\nE        +  where 0.25 = rpn_eval(*[[3.0, 5.0, '+', 2.0, '/']])\n\npython_testcases/test_rpn_eval.py:15: AssertionError\n________________________ test_rpn_eval[input_data2-8.0] ________________________\n\ninput_data = [[7.0, 4.0, '+', 3.0, '-']], expected = 8.0\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_rpn_eval(input_data, expected):\n>       assert rpn_eval(*input_data) == expected\nE       AssertionError: assert -8.0 == 8.0\nE        +  where -8.0 = rpn_eval(*[[7.0, 4.0, '+', 3.0, '-']])\n\npython_testcases/test_rpn_eval.py:15: AssertionError\n_______________________ test_rpn_eval[input_data5-14.0] ________________________\n\ninput_data = [[5.0, 1.0, 2.0, '+', 4.0, '*', ...]], expected = 14.0\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_rpn_eval(input_data, expected):\n>       assert rpn_eval(*input_data) == expected\nE       AssertionError: assert -14.0 == 14.0\nE        +  where -14.0 = rpn_eval(*[[5.0, 1.0, 2.0, '+', 4.0, '*', ...]])\n\npython_testcases/test_rpn_eval.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_rpn_eval.py::test_rpn_eval[input_data0-4.0] - As...\nFAILED python_testcases/test_rpn_eval.py::test_rpn_eval[input_data2-8.0] - As...\nFAILED python_testcases/test_rpn_eval.py::test_rpn_eval[input_data5-14.0] - A...\n3 failed, 3 passed in 0.02s\n"
+    },
+    "output_bytes": 2128,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "swap_arguments",
+      "line": 4,
+      "candidate_sha256": "6430316fbb56b54305c189db073bfee1829da5ee598b18a036e0401215bde289",
+      "run": {
+        "status": "passed",
+        "seconds": 1.745056,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.201294,
+          "max_rss_kib": 31068,
+          "output_limit": false,
+          "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "accepted": true
+    }
+  ],
+  "accepted_candidate": {
+    "number": 1,
+    "source": "\ndef rpn_eval(tokens):\n    def op(symbol, a, b):\n        return {'+': lambda a, b: a + b, '-': lambda a, b: a - b, '*': lambda a, b: a * b, '/': lambda a, b: a / b}[symbol](b, a)\n\n    stack = []\n\n    for token in tokens:\n        if isinstance(token, float):\n            stack.append(token)\n        else:\n            a = stack.pop()\n            b = stack.pop()\n            stack.append(\n                op(token, a, b)\n            )\n\n    return stack.pop()\n\n\n\n\"\"\"\nReverse Polish Notation\n\nFour-function calculator with input given in Reverse Polish Notation (RPN).\n\nInput:\n    A list of values and operators encoded as floats and strings\n\nPrecondition:\n    all(\n        isinstance(token, float) or token in ('+', '-', '*', '/') for token in tokens\n    )\n\nExample:\n    >>> rpn_eval([3.0, 5.0, '+', 2.0, '/'])\n    4.0\n\"\"\"\n",
+    "sha256": "6430316fbb56b54305c189db073bfee1829da5ee598b18a036e0401215bde289",
+    "patch": "--- a/python_programs/rpn_eval.py\n+++ b/python_programs/rpn_eval.py\n@@ -1,12 +1,7 @@\n \n def rpn_eval(tokens):\n     def op(symbol, a, b):\n-        return {\n-            '+': lambda a, b: a + b,\n-            '-': lambda a, b: a - b,\n-            '*': lambda a, b: a * b,\n-            '/': lambda a, b: a / b\n-        }[symbol](a, b)\n+        return {'+': lambda a, b: a + b, '-': lambda a, b: a - b, '*': lambda a, b: a * b, '/': lambda a, b: a / b}[symbol](b, a)\n \n     stack = []\n \n"
+  },
+  "eligibility": "eligible"
+}

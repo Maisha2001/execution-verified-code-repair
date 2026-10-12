@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "execution-verified-code-repair"
+version = "0.1.0"
+description = "Fixed-budget Python repair with isolated test evidence"
+requires-python = ">=3.11,<3.12"
+dependencies = []
+
+[project.scripts]
+repair-bench = "repairbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+repairbench = ["quixbugs.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["docker: requires the local pinned runner image and a Linux Docker engine"]

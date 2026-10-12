@@ -1,0 +1,45 @@
+{
+  "task": "breadth_first_search",
+  "source_sha256": "24e7a1ad2916acaa1759c388cccce1b9ce812cb27997e36fe8287082b29d0873",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.720529,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.175524,
+      "max_rss_kib": 30916,
+      "output_limit": false,
+      "output": ".....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n5 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.761917,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 4,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.201355,
+      "max_rss_kib": 30920,
+      "output_limit": false,
+      "output": "..F..\n=================================== FAILURES ===================================\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Two unconnected nodes in graph\n        Output: Path not found\n        \"\"\"\n    \n        nodef = Node(\"F\")\n        nodee = Node(\"E\")\n    \n>       path_found = breadth_first_search(nodef, nodee)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_breadth_first_search.py:52: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nstartnode = <node.Node object at 0x7a78fd5852d0>\ngoalnode = <node.Node object at 0x7a78fd584f90>\n\n    def breadth_first_search(startnode, goalnode):\n        queue = Queue()\n        queue.append(startnode)\n    \n        nodesseen = set()\n        nodesseen.add(startnode)\n    \n        while True:\n>           node = queue.popleft()\n                   ^^^^^^^^^^^^^^^\nE           IndexError: pop from an empty deque\n\npython_programs/breadth_first_search.py:12: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_breadth_first_search.py::test3 - IndexError: pop...\n1 failed, 4 passed in 0.02s\n"
+    },
+    "output_bytes": 1539,
+    "container_removed": true
+  },
+  "attempts": [],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

@@ -1,0 +1,27 @@
+{
+  "tasks": 40,
+  "eligible_tasks": 39,
+  "excluded": {
+    "levenshtein": "reference_not_passing"
+  },
+  "resolved_visible_tests": 4,
+  "resolved_fraction": 0.10256410256410256,
+  "no_change_resolved": 0,
+  "candidate_budget": 12,
+  "candidates_tested": 228,
+  "resolved_by_attempt": {
+    "1": 1,
+    "4": 4,
+    "12": 4
+  },
+  "median_candidate_seconds": 1.769036,
+  "accepted_patch_changed_lines": [
+    2,
+    2,
+    2,
+    7
+  ],
+  "total_seconds": 769.81041,
+  "scope": "Deterministic visible-test benchmark; not unbiased pass@k, unseen-code generalization or proof of correctness.",
+  "completed_at_utc": "2026-10-12T02:09:38.043982+00:00"
+}

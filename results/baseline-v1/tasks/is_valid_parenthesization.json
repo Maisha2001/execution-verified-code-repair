@@ -1,0 +1,202 @@
+{
+  "task": "is_valid_parenthesization",
+  "source_sha256": "2340cddfce49b055a5a7a70c3341351bf130702512278bafaed5d5b345d0ba60",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.776679,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.197075,
+      "max_rss_kib": 31056,
+      "output_limit": false,
+      "output": "...\n--------------------- generated xml file: /tmp/results.xml ---------------------\n3 passed in 0.01s\n"
+    },
+    "output_bytes": 271,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.732896,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 2,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.193589,
+      "max_rss_kib": 31088,
+      "output_limit": false,
+      "output": "..F\n=================================== FAILURES ===================================\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n1 failed, 2 passed in 0.02s\n"
+    },
+    "output_bytes": 1055,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "boundary_constant",
+      "line": 3,
+      "candidate_sha256": "18dc8566191245bce2ecb31db7b743bcf302a347f1d357f4e3d77903b25647fd",
+      "run": {
+        "status": "failed",
+        "seconds": 1.756917,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.182979,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": ".FF\n=================================== FAILURES ===================================\n______________ test_is_valid_parenthesization[input_data1-False] _______________\n\ninput_data = [')()('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*[')()('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data1-False]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1669,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 2,
+      "operation": "comparison",
+      "line": 5,
+      "candidate_sha256": "d377b2683460919bb916ca66168c9724c2986f4a8f3a31240b80099abb2989c7",
+      "run": {
+        "status": "failed",
+        "seconds": 1.787573,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.193229,
+          "max_rss_kib": 30876,
+          "output_limit": false,
+          "output": "FF.\n=================================== FAILURES ===================================\n_______________ test_is_valid_parenthesization[input_data0-True] _______________\n\ninput_data = ['((()()))()'], expected = True\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert False == True\nE        +  where False = is_valid_parenthesization(*['((()()))()'])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data1-False] _______________\n\ninput_data = [')()('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*[')()('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data0-True]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data1-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1684,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 3,
+      "operation": "boundary_constant",
+      "line": 6,
+      "candidate_sha256": "a8e2297931aacd281aafec3e9aea31e62609e17c505a49a5e4509dd744253b01",
+      "run": {
+        "status": "failed",
+        "seconds": 1.73192,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.185557,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": "F.F\n=================================== FAILURES ===================================\n_______________ test_is_valid_parenthesization[input_data0-True] _______________\n\ninput_data = ['((()()))()'], expected = True\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert False == True\nE        +  where False = is_valid_parenthesization(*['((()()))()'])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data0-True]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1680,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 4,
+      "operation": "boundary_constant",
+      "line": 8,
+      "candidate_sha256": "9f6d274572b48011c7ce1c5215537f386db518ae3dec39a593d23c7e3d115452",
+      "run": {
+        "status": "failed",
+        "seconds": 1.719677,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.187975,
+          "max_rss_kib": 30944,
+          "output_limit": false,
+          "output": ".FF\n=================================== FAILURES ===================================\n______________ test_is_valid_parenthesization[input_data1-False] _______________\n\ninput_data = [')()('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*[')()('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data1-False]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1669,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 5,
+      "operation": "comparison",
+      "line": 9,
+      "candidate_sha256": "116e7b2f982c3cafcc1a52cdcbe45ae51f686d0d25884043b80f8fd9e7c10dc3",
+      "run": {
+        "status": "failed",
+        "seconds": 1.733573,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.18831,
+          "max_rss_kib": 30944,
+          "output_limit": false,
+          "output": "F.F\n=================================== FAILURES ===================================\n_______________ test_is_valid_parenthesization[input_data0-True] _______________\n\ninput_data = ['((()()))()'], expected = True\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert False == True\nE        +  where False = is_valid_parenthesization(*['((()()))()'])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data0-True]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1679,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 6,
+      "operation": "boundary_constant",
+      "line": 9,
+      "candidate_sha256": "c45e8b2a98329ac04e390e752f9b9bec3004904289da872069f1a91f0c78ad33",
+      "run": {
+        "status": "failed",
+        "seconds": 1.751945,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 2,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.18861,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": "F.F\n=================================== FAILURES ===================================\n_______________ test_is_valid_parenthesization[input_data0-True] _______________\n\ninput_data = ['((()()))()'], expected = True\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert False == True\nE        +  where False = is_valid_parenthesization(*['((()()))()'])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n______________ test_is_valid_parenthesization[input_data2-False] _______________\n\ninput_data = ['(('], expected = False\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_is_valid_parenthesization(input_data, expected):\n>       assert is_valid_parenthesization(*input_data) == expected\nE       AssertionError: assert True == False\nE        +  where True = is_valid_parenthesization(*['(('])\n\npython_testcases/test_is_valid_parenthesization.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data0-True]\nFAILED python_testcases/test_is_valid_parenthesization.py::test_is_valid_parenthesization[input_data2-False]\n2 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 1679,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

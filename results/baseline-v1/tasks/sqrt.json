@@ -1,0 +1,150 @@
+{
+  "task": "sqrt",
+  "source_sha256": "e3623a160e6ada452b36ce0bd2370fc031943e2c1ae93aae5f0c82865e083ebf",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.719741,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.188184,
+      "max_rss_kib": 30844,
+      "output_limit": false,
+      "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+    },
+    "output_bytes": 275,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 6.366672,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": -9,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.000971,
+      "max_rss_kib": 31044,
+      "output_limit": false,
+      "output": "F.FFF"
+    },
+    "output_bytes": 171,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "comparison",
+      "line": 4,
+      "candidate_sha256": "fe0a465004b81a8105e8d9fe1ad5ff67c6016ecd51d64f80c9ba95ffbf74a1d9",
+      "run": {
+        "status": "failed",
+        "seconds": 6.406458,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": -9,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 5.000753,
+          "max_rss_kib": 30928,
+          "output_limit": false,
+          "output": "FFFF"
+        },
+        "output_bytes": 170,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 2,
+      "operation": "arithmetic",
+      "line": 4,
+      "candidate_sha256": "579b1297e6b22829ac3798c14e0759a580edcc03315ab6e02e2ef2e16e1ba2bf",
+      "run": {
+        "status": "failed",
+        "seconds": 6.381598,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": -9,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 5.003476,
+          "max_rss_kib": 30936,
+          "output_limit": false,
+          "output": "FFFF"
+        },
+        "output_bytes": 170,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 3,
+      "operation": "arithmetic",
+      "line": 5,
+      "candidate_sha256": "6825198a1c1553579f4c24a660cb01f04040494074ad56c955735c452199a17f",
+      "run": {
+        "status": "failed",
+        "seconds": 6.404678,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": -9,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 5.00167,
+          "max_rss_kib": 30904,
+          "output_limit": false,
+          "output": "FFFF"
+        },
+        "output_bytes": 169,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 4,
+      "operation": "arithmetic",
+      "line": 5,
+      "candidate_sha256": "1710e8fc476b52d9eb583e1cf3ceadde7af53bbc58d0ac6676fc62801f526639",
+      "run": {
+        "status": "failed",
+        "seconds": 1.749794,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 2,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.207919,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": "F..FFFF\n=================================== FAILURES ===================================\n__________________ test_sqrt[input_data0-1.4166666666666665] ___________________\n\ninput_data = [2, 0.01], expected = 1.4166666666666665\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sqrt(input_data, expected):\n>       assert sqrt(*input_data) == pytest.approx(expected, abs=input_data[-1])\nE       assert 2.003282361880453 == 1.4166666666666665 \u00b1 0.01\nE         \nE         comparison failed\nE         Obtained: 2.003282361880453\nE         Expected: 1.4166666666666665 \u00b1 0.01\n\npython_testcases/test_sqrt.py:15: AssertionError\n___________________________ test_sqrt[input_data3-2] ___________________________\n\ninput_data = [4, 0.2], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sqrt(input_data, expected):\n>       assert sqrt(*input_data) == pytest.approx(expected, abs=input_data[-1])\n               ^^^^^^^^^^^^^^^^^\n\npython_testcases/test_sqrt.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = 4, epsilon = 0.2\n\n    def sqrt(x, epsilon):\n        approx = x / 2\n        while abs(x - approx) > epsilon:\n>           approx = 0.5 * ((approx - x / approx))\n                                      ^^^^^^^^^^\nE           ZeroDivisionError: float division by zero\n\npython_programs/sqrt.py:5: ZeroDivisionError\n___________________ test_sqrt[input_data4-5.196164639727311] ___________________\n\ninput_data = [27, 0.01], expected = 5.196164639727311\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sqrt(input_data, expected):\n>       assert sqrt(*input_data) == pytest.approx(expected, abs=input_data[-1])\nE       assert 26.998981747112367 == 5.196164639727311 \u00b1 0.01\nE         \nE         comparison failed\nE         Obtained: 26.998981747112367\nE         Expected: 5.196164639727311 \u00b1 0.01\n\npython_testcases/test_sqrt.py:15: AssertionError\n___________________ test_sqrt[input_data5-5.744627526262464] ___________________\n\ninput_data = [33, 0.05], expected = 5.744627526262464\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sqrt(input_data, expected):\n>       assert sqrt(*input_data) == pytest.approx(expected, abs=input_data[-1])\nE       assert 32.991696595161805 == 5.744627526262464 \u00b1 0.05\nE         \nE         comparison failed\nE         Obtained: 32.991696595161805\nE         Expected: 5.744627526262464 \u00b1 0.05\n\npython_testcases/test_sqrt.py:15: AssertionError\n__________________ test_sqrt[input_data6-13.038404876679632] ___________________\n\ninput_data = [170, 0.03], expected = 13.038404876679632\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sqrt(input_data, expected):\n>       assert sqrt(*input_data) == pytest.approx(expected, abs=input_data[-1])\nE       assert 169.97687664735236 == 13.038404876679632 \u00b1 0.03\nE         \nE         comparison failed\nE         Obtained: 169.97687664735236\nE         Expected: 13.038404876679632 \u00b1 0.03\n\npython_testcases/test_sqrt.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sqrt.py::test_sqrt[input_data0-1.4166666666666665]\nFAILED python_testcases/test_sqrt.py::test_sqrt[input_data3-2] - ZeroDivision...\nFAILED python_testcases/test_sqrt.py::test_sqrt[input_data4-5.196164639727311]\nFAILED python_testcases/test_sqrt.py::test_sqrt[input_data5-5.744627526262464]\nFAILED python_testcases/test_sqrt.py::test_sqrt[input_data6-13.038404876679632]\n5 failed, 2 passed in 0.03s\n"
+        },
+        "output_bytes": 3970,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

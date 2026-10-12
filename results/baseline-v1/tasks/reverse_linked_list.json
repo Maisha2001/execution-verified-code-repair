@@ -1,0 +1,45 @@
+{
+  "task": "reverse_linked_list",
+  "source_sha256": "472b29daff20c0a6ec316b841a7aeca577eef6aad81c65bb44d63ef121cfbab0",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.72536,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.19676,
+      "max_rss_kib": 31200,
+      "output_limit": false,
+      "output": "...\n--------------------- generated xml file: /tmp/results.xml ---------------------\n3 passed in 0.01s\n"
+    },
+    "output_bytes": 270,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.849311,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 2,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.212,
+      "max_rss_kib": 31028,
+      "output_limit": false,
+      "output": "FF.\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: 5-node list input\n        Expected Output: 1 2 3 4 5\n        \"\"\"\n    \n        node1 = Node(1)\n        node2 = Node(2, node1)\n        node3 = Node(3, node2)\n        node4 = Node(4, node3)\n        node5 = Node(5, node4)\n    \n        result = reverse_linked_list(node5)\n>       assert result == node1\nE       assert None == <node.Node object at 0x79ddbe989b50>\n\npython_testcases/test_reverse_linked_list.py:22: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: 1-node list input\n        Expected Output: 0\n        \"\"\"\n    \n        node = Node(0)\n    \n        result = reverse_linked_list(node)\n>       assert result == node\nE       assert None == <node.Node object at 0x79ddbe9c82d0>\n\npython_testcases/test_reverse_linked_list.py:39: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_reverse_linked_list.py::test1 - assert None == <...\nFAILED python_testcases/test_reverse_linked_list.py::test2 - assert None == <...\n2 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 1597,
+    "container_removed": true
+  },
+  "attempts": [],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

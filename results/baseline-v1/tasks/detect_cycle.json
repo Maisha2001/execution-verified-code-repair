@@ -1,0 +1,45 @@
+{
+  "task": "detect_cycle",
+  "source_sha256": "0f3f0f1a5160f1fca66f164de1a73d884bb83d45fea702c46512bcac520bc1ba",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.761234,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.177526,
+      "max_rss_kib": 30908,
+      "output_limit": false,
+      "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+    },
+    "output_bytes": 274,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.748024,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 5,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.199344,
+      "max_rss_kib": 30892,
+      "output_limit": false,
+      "output": "...F..\n=================================== FAILURES ===================================\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: 2-node list with no cycle\n        Expected Output: Cycle not detected!\n        \"\"\"\n    \n        node6 = Node(6)\n        node7 = Node(7, node6)\n    \n>       detected = detect_cycle(node7)\n                   ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_detect_cycle.py:59: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nnode = <node.Node object at 0x711f6da1b650>\n\n    def detect_cycle(node):\n        hare = tortoise = node\n    \n        while True:\n>           if hare.successor is None:\n               ^^^^^^^^^^^^^^\nE           AttributeError: 'NoneType' object has no attribute 'successor'\n\npython_programs/detect_cycle.py:5: AttributeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_detect_cycle.py::test4 - AttributeError: 'NoneTy...\n1 failed, 5 passed in 0.02s\n"
+    },
+    "output_bytes": 1357,
+    "container_removed": true
+  },
+  "attempts": [],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

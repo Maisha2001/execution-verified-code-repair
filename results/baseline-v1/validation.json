@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-10-12T02:09:42.585963+00:00",
+  "tests": 30,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 35.946,
+  "scope": "Unit and evaluation-policy tests, plus real Docker success/failure/no-tests, network/filesystem/privilege/seccomp, memory/output/PID/file quotas, collection/test timeouts and descendant/container/volume cleanup.",
+  "package_check": "pip check passed; wheel contains the pinned benchmark manifest, not benchmark program files."
+}

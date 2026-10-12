@@ -1,0 +1,150 @@
+{
+  "task": "bucketsort",
+  "source_sha256": "1cc4197c2ee524ec8dd3a45c0e943acf31fa429cb8b179195334f51ff939b9fd",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.730988,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.181919,
+      "max_rss_kib": 30936,
+      "output_limit": false,
+      "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+    },
+    "output_bytes": 275,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.783817,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 6,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.194819,
+      "max_rss_kib": 31060,
+      "output_limit": false,
+      "output": ".FFFFFF\n=================================== FAILURES ===================================\n____________________ test_bucketsort[input_data1-expected1] ____________________\n\ninput_data = [[3, 11, 2, 9, 1, 5], 12], expected = [1, 2, 3, 5, 9, 11]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 1, ...] == [1, 2, 3, 5, 9, 11]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 25 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data2-expected2] ____________________\n\ninput_data = [[3, 2, 4, 2, 3, 5], 6], expected = [2, 2, 3, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 2, ...] == [2, 2, 3, 3, 4, 5]\nE         \nE         At index 0 diff: 0 != 2\nE         Left contains 13 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data3-expected3] ____________________\n\ninput_data = [[1, 3, 4, 6, 4, 2, ...], 10], expected = [1, 1, 2, 2, 3, 4, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 1, 1, 1, 2, 2, ...] == [1, 1, 2, 2, 3, 4, ...]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 31 more items, first extra item: 3\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data4-expected4] ____________________\n\ninput_data = [[20, 19, 18, 17, 16, 15, ...], 21]\nexpected = [11, 12, 13, 14, 15, 16, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [11, 12, 13, 14, 15, 16, ...]\nE         \nE         At index 0 diff: 0 != 11\nE         Left contains 145 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data5-expected5] ____________________\n\ninput_data = [[20, 21, 22, 23, 24, 25, ...], 30]\nexpected = [20, 21, 22, 23, 24, 25, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [20, 21, 22, 23, 24, 25, ...]\nE         \nE         At index 0 diff: 0 != 20\nE         Left contains 235 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data6-expected6] ____________________\n\ninput_data = [[8, 5, 3, 1, 9, 6, ...], 10], expected = [0, 1, 2, 3, 4, 5, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [0, 1, 2, 3, 4, 5, ...]\nE         \nE         At index 1 diff: 0 != 1\nE         Left contains 39 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data1-expected1]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data2-expected2]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data3-expected3]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data4-expected4]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data5-expected5]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data6-expected6]\n6 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 4553,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "arithmetic",
+      "line": 2,
+      "candidate_sha256": "5f903abd77c8451a3c56adfd8bb7dc465566e028812b04182962d11abf855524",
+      "run": {
+        "status": "failed",
+        "seconds": 1.745186,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 0,
+          "failed": 7,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.198153,
+          "max_rss_kib": 31040,
+          "output_limit": false,
+          "output": "FFFFFFF\n=================================== FAILURES ===================================\n____________________ test_bucketsort[input_data0-expected0] ____________________\n\ninput_data = [[], 14], expected = []\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [], k = 14\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data1-expected1] ____________________\n\ninput_data = [[3, 11, 2, 9, 1, 5], 12], expected = [1, 2, 3, 5, 9, 11]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 11, 2, 9, 1, 5], k = 12\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data2-expected2] ____________________\n\ninput_data = [[3, 2, 4, 2, 3, 5], 6], expected = [2, 2, 3, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 2, 4, 2, 3, 5], k = 6\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data3-expected3] ____________________\n\ninput_data = [[1, 3, 4, 6, 4, 2, ...], 10], expected = [1, 1, 2, 2, 3, 4, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [1, 3, 4, 6, 4, 2, ...], k = 10\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data4-expected4] ____________________\n\ninput_data = [[20, 19, 18, 17, 16, 15, ...], 21]\nexpected = [11, 12, 13, 14, 15, 16, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [20, 19, 18, 17, 16, 15, ...], k = 21\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data5-expected5] ____________________\n\ninput_data = [[20, 21, 22, 23, 24, 25, ...], 30]\nexpected = [20, 21, 22, 23, 24, 25, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [20, 21, 22, 23, 24, 25, ...], k = 30\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n____________________ test_bucketsort[input_data6-expected6] ____________________\n\ninput_data = [[8, 5, 3, 1, 9, 6, ...], 10], expected = [0, 1, 2, 3, 4, 5, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [8, 5, 3, 1, 9, 6, ...], k = 10\n\n    def bucketsort(arr, k):\n>       counts = ([0] + k)\n                  ^^^^^^^\nE       TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:2: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data0-expected0]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data1-expected1]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data2-expected2]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data3-expected3]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data4-expected4]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data5-expected5]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data6-expected6]\n7 failed in 0.03s\n"
+        },
+        "output_bytes": 6137,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 2,
+      "operation": "boundary_constant",
+      "line": 2,
+      "candidate_sha256": "6773a95ed491eb976b8a18053a5de4368df961c52040b5c6816c8c29a5de7641",
+      "run": {
+        "status": "failed",
+        "seconds": 1.770477,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 6,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.207391,
+          "max_rss_kib": 30964,
+          "output_limit": false,
+          "output": ".FFFFFF\n=================================== FAILURES ===================================\n____________________ test_bucketsort[input_data1-expected1] ____________________\n\ninput_data = [[3, 11, 2, 9, 1, 5], 12], expected = [1, 2, 3, 5, 9, 11]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 1, ...] == [1, 2, 3, 5, 9, 11]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 25 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data2-expected2] ____________________\n\ninput_data = [[3, 2, 4, 2, 3, 5], 6], expected = [2, 2, 3, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 2, ...] == [2, 2, 3, 3, 4, 5]\nE         \nE         At index 0 diff: 0 != 2\nE         Left contains 13 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data3-expected3] ____________________\n\ninput_data = [[1, 3, 4, 6, 4, 2, ...], 10], expected = [1, 1, 2, 2, 3, 4, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 1, 1, 1, 2, 2, ...] == [1, 1, 2, 2, 3, 4, ...]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 31 more items, first extra item: 3\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data4-expected4] ____________________\n\ninput_data = [[20, 19, 18, 17, 16, 15, ...], 21]\nexpected = [11, 12, 13, 14, 15, 16, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [11, 12, 13, 14, 15, 16, ...]\nE         \nE         At index 0 diff: 0 != 11\nE         Left contains 145 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data5-expected5] ____________________\n\ninput_data = [[20, 21, 22, 23, 24, 25, ...], 30]\nexpected = [20, 21, 22, 23, 24, 25, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [20, 21, 22, 23, 24, 25, ...]\nE         \nE         At index 0 diff: 0 != 20\nE         Left contains 235 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data6-expected6] ____________________\n\ninput_data = [[8, 5, 3, 1, 9, 6, ...], 10], expected = [0, 1, 2, 3, 4, 5, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [0, 1, 2, 3, 4, 5, ...]\nE         \nE         At index 1 diff: 0 != 1\nE         Left contains 39 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data1-expected1]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data2-expected2]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data3-expected3]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data4-expected4]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data5-expected5]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data6-expected6]\n6 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 4553,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 3,
+      "operation": "boundary_constant",
+      "line": 4,
+      "candidate_sha256": "27e048a4d403a6da58cc37903cc41e45a5b097df862e4fdc05bd1bccc30048ec",
+      "run": {
+        "status": "failed",
+        "seconds": 1.729619,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 6,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.199688,
+          "max_rss_kib": 31064,
+          "output_limit": false,
+          "output": ".FFFFFF\n=================================== FAILURES ===================================\n____________________ test_bucketsort[input_data1-expected1] ____________________\n\ninput_data = [[3, 11, 2, 9, 1, 5], 12], expected = [1, 2, 3, 5, 9, 11]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 1, ...] == [1, 2, 3, 5, 9, 11]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 25 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data2-expected2] ____________________\n\ninput_data = [[3, 2, 4, 2, 3, 5], 6], expected = [2, 2, 3, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 1, 1, 2, ...] == [2, 2, 3, 3, 4, 5]\nE         \nE         At index 0 diff: 0 != 2\nE         Left contains 13 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data3-expected3] ____________________\n\ninput_data = [[1, 3, 4, 6, 4, 2, ...], 10], expected = [1, 1, 2, 2, 3, 4, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 1, 1, 1, 2, 2, ...] == [1, 1, 2, 2, 3, 4, ...]\nE         \nE         At index 0 diff: 0 != 1\nE         Left contains 31 more items, first extra item: 3\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data4-expected4] ____________________\n\ninput_data = [[20, 19, 18, 17, 16, 15, ...], 21]\nexpected = [11, 12, 13, 14, 15, 16, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [11, 12, 13, 14, 15, 16, ...]\nE         \nE         At index 0 diff: 0 != 11\nE         Left contains 145 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data5-expected5] ____________________\n\ninput_data = [[20, 21, 22, 23, 24, 25, ...], 30]\nexpected = [20, 21, 22, 23, 24, 25, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [20, 21, 22, 23, 24, 25, ...]\nE         \nE         At index 0 diff: 0 != 20\nE         Left contains 235 more items, first extra item: 0\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n____________________ test_bucketsort[input_data6-expected6] ____________________\n\ninput_data = [[8, 5, 3, 1, 9, 6, ...], 10], expected = [0, 1, 2, 3, 4, 5, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\nE       assert [0, 0, 0, 0, 0, 0, ...] == [0, 1, 2, 3, 4, 5, ...]\nE         \nE         At index 1 diff: 0 != 1\nE         Left contains 39 more items, first extra item: 1\nE         Use -v to get more diff\n\npython_testcases/test_bucketsort.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data1-expected1]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data2-expected2]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data3-expected3]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data4-expected4]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data5-expected5]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data6-expected6]\n6 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 4553,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 4,
+      "operation": "arithmetic",
+      "line": 8,
+      "candidate_sha256": "db45f3657c37b46e8025491aaca80c94616fe9c290eb9e3cba922f97437df0a7",
+      "run": {
+        "status": "failed",
+        "seconds": 1.753906,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 6,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.2008,
+          "max_rss_kib": 31040,
+          "output_limit": false,
+          "output": ".FFFFFF\n=================================== FAILURES ===================================\n____________________ test_bucketsort[input_data1-expected1] ____________________\n\ninput_data = [[3, 11, 2, 9, 1, 5], 12], expected = [1, 2, 3, 5, 9, 11]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 11, 2, 9, 1, 5], k = 12\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n____________________ test_bucketsort[input_data2-expected2] ____________________\n\ninput_data = [[3, 2, 4, 2, 3, 5], 6], expected = [2, 2, 3, 3, 4, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 2, 4, 2, 3, 5], k = 6\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n____________________ test_bucketsort[input_data3-expected3] ____________________\n\ninput_data = [[1, 3, 4, 6, 4, 2, ...], 10], expected = [1, 1, 2, 2, 3, 4, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [1, 3, 4, 6, 4, 2, ...], k = 10\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n____________________ test_bucketsort[input_data4-expected4] ____________________\n\ninput_data = [[20, 19, 18, 17, 16, 15, ...], 21]\nexpected = [11, 12, 13, 14, 15, 16, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [20, 19, 18, 17, 16, 15, ...], k = 21\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n____________________ test_bucketsort[input_data5-expected5] ____________________\n\ninput_data = [[20, 21, 22, 23, 24, 25, ...], 30]\nexpected = [20, 21, 22, 23, 24, 25, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [20, 21, 22, 23, 24, 25, ...], k = 30\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n____________________ test_bucketsort[input_data6-expected6] ____________________\n\ninput_data = [[8, 5, 3, 1, 9, 6, ...], 10], expected = [0, 1, 2, 3, 4, 5, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_bucketsort(input_data, expected):\n>       assert bucketsort(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_bucketsort.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [8, 5, 3, 1, 9, 6, ...], k = 10\n\n    def bucketsort(arr, k):\n        counts = [0] * k\n        for x in arr:\n            counts[x] += 1\n    \n        sorted_arr = []\n        for i, count in enumerate(arr):\n>           sorted_arr.extend(([i] + count))\n                               ^^^^^^^^^^^\nE           TypeError: can only concatenate list (not \"int\") to list\n\npython_programs/bucketsort.py:8: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data1-expected1]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data2-expected2]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data3-expected3]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data4-expected4]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data5-expected5]\nFAILED python_testcases/test_bucketsort.py::test_bucketsort[input_data6-expected6]\n6 failed, 1 passed in 0.03s\n"
+        },
+        "output_bytes": 6514,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

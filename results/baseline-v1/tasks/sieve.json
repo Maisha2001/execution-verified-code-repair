@@ -1,0 +1,202 @@
+{
+  "task": "sieve",
+  "source_sha256": "577f762267c71617107ca3ec8d509012a7d6b692fb94432f943cd5b694ad5ffc",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.751251,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.19712,
+      "max_rss_kib": 30944,
+      "output_limit": false,
+      "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.803651,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 5,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.204007,
+      "max_rss_kib": 30940,
+      "output_limit": false,
+      "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 3261,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "swap_arguments",
+      "line": 3,
+      "candidate_sha256": "2fb5769aa0b06c5c94b76b5ce6e534988f73c8cfb743b036f6da53697046d456",
+      "run": {
+        "status": "failed",
+        "seconds": 1.776984,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.201625,
+          "max_rss_kib": 30936,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 2,
+      "operation": "arithmetic",
+      "line": 3,
+      "candidate_sha256": "ecddb29787028ef57d52bf1d52a63e9e67889d7e738dbe8c3feb6433ee6f0d7a",
+      "run": {
+        "status": "failed",
+        "seconds": 1.760981,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.212869,
+          "max_rss_kib": 30800,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 3,
+      "operation": "boundary_constant",
+      "line": 3,
+      "candidate_sha256": "3418e5b3bb6c548908bb4e29fb230abad355688254d09f7de809087b995011b7",
+      "run": {
+        "status": "failed",
+        "seconds": 1.76579,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.206393,
+          "max_rss_kib": 31196,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 4,
+      "operation": "arithmetic",
+      "line": 4,
+      "candidate_sha256": "606170543df4aa6317dace76ef5e75663c5651d49e978697b51c0c5fc718cbcd",
+      "run": {
+        "status": "failed",
+        "seconds": 1.746264,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.202346,
+          "max_rss_kib": 31068,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 5,
+      "operation": "comparison",
+      "line": 4,
+      "candidate_sha256": "731c41d4eda1a31828a86799922705d9336ebf6348be6c5e3de9ef83ccfc8c9d",
+      "run": {
+        "status": "failed",
+        "seconds": 1.770958,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.198781,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    },
+    {
+      "number": 6,
+      "operation": "boundary_constant",
+      "line": 4,
+      "candidate_sha256": "6b130870d5cbeddd2a0ec6f8d617aa5b2712e076c9e5cd143db397c697f3d5d4",
+      "run": {
+        "status": "failed",
+        "seconds": 1.765222,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 5,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.209237,
+          "max_rss_kib": 30816,
+          "output_limit": false,
+          "output": ".FFFFF\n=================================== FAILURES ===================================\n______________________ test_sieve[input_data1-expected1] _______________________\n\ninput_data = [2], expected = [2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2]\nE         \nE         Right contains one more item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data2-expected2] _______________________\n\ninput_data = [4], expected = [2, 3]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3]\nE         \nE         Right contains 2 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data3-expected3] _______________________\n\ninput_data = [7], expected = [2, 3, 5, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7]\nE         \nE         Right contains 4 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data4-expected4] _______________________\n\ninput_data = [20], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 8 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n______________________ test_sieve[input_data5-expected5] _______________________\n\ninput_data = [50], expected = [2, 3, 5, 7, 11, 13, ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_sieve(input_data, expected):\n>       assert sieve(*input_data) == expected\nE       assert [] == [2, 3, 5, 7, 11, 13, ...]\nE         \nE         Right contains 15 more items, first extra item: 2\nE         Use -v to get more diff\n\npython_testcases/test_sieve.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_sieve.py::test_sieve[input_data1-expected1] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data2-expected2] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data3-expected3] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data4-expected4] - as...\nFAILED python_testcases/test_sieve.py::test_sieve[input_data5-expected5] - as...\n5 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 3261,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

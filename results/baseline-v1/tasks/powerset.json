@@ -1,0 +1,72 @@
+{
+  "task": "powerset",
+  "source_sha256": "3e3deb045ed61fbe82725cd7e7b0fb4d00f411f87f0f91358109ec0204c61ae9",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.74612,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.191546,
+      "max_rss_kib": 30960,
+      "output_limit": false,
+      "output": ".....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n5 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.756941,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 4,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.209566,
+      "max_rss_kib": 30944,
+      "output_limit": false,
+      "output": "FFF.F\n=================================== FAILURES ===================================\n_____________________ test_powerset[input_data0-expected0] _____________________\n\ninput_data = [['a', 'b', 'c']]\nexpected = [[], ['c'], ['b'], ['b', 'c'], ['a'], ['a', 'c'], ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\nE       AssertionError: assert [['a', 'b', 'c']] == [[], ['c'], [...a', 'c'], ...]\nE         \nE         At index 0 diff: ['a', 'b', 'c'] != []\nE         Right contains 7 more items, first extra item: ['c']\nE         Use -v to get more diff\n\npython_testcases/test_powerset.py:15: AssertionError\n_____________________ test_powerset[input_data1-expected1] _____________________\n\ninput_data = [['a', 'b']], expected = [[], ['b'], ['a'], ['a', 'b']]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\nE       AssertionError: assert [['a', 'b']] == [[], ['b'], ['a'], ['a', 'b']]\nE         \nE         At index 0 diff: ['a', 'b'] != []\nE         Right contains 3 more items, first extra item: ['b']\nE         Use -v to get more diff\n\npython_testcases/test_powerset.py:15: AssertionError\n_____________________ test_powerset[input_data2-expected2] _____________________\n\ninput_data = [['a']], expected = [[], ['a']]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\nE       AssertionError: assert [['a']] == [[], ['a']]\nE         \nE         At index 0 diff: ['a'] != []\nE         Right contains one more item: ['a']\nE         Use -v to get more diff\n\npython_testcases/test_powerset.py:15: AssertionError\n_____________________ test_powerset[input_data4-expected4] _____________________\n\ninput_data = [['x', 'df', 'z', 'm']]\nexpected = [[], ['m'], ['z'], ['z', 'm'], ['df'], ['df', 'm'], ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\nE       AssertionError: assert [['x', 'df', 'z', 'm']] == [[], ['m'], [...f', 'm'], ...]\nE         \nE         At index 0 diff: ['x', 'df', 'z', 'm'] != []\nE         Right contains 15 more items, first extra item: ['m']\nE         Use -v to get more diff\n\npython_testcases/test_powerset.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_powerset.py::test_powerset[input_data0-expected0]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data1-expected1]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data2-expected2]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data4-expected4]\n4 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 3228,
+    "container_removed": true
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "operation": "arithmetic",
+      "line": 6,
+      "candidate_sha256": "acc21bfbf69ef2503350f41427a5ebdbf4e89e3ea2003fab248e80a73160a07b",
+      "run": {
+        "status": "failed",
+        "seconds": 1.776592,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 1,
+          "passed": 1,
+          "failed": 4,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.212419,
+          "max_rss_kib": 30816,
+          "output_limit": false,
+          "output": "FFF.F\n=================================== FAILURES ===================================\n_____________________ test_powerset[input_data0-expected0] _____________________\n\ninput_data = [['a', 'b', 'c']]\nexpected = [[], ['c'], ['b'], ['b', 'c'], ['a'], ['a', 'c'], ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_powerset.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:6: in powerset\n    return [([first] - subset) for subset in rest_subsets]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n.0 = <list_iterator object at 0x79712cc549d0>\n\n>   return [([first] - subset) for subset in rest_subsets]\n             ^^^^^^^^^^^^^^^^\nE   TypeError: unsupported operand type(s) for -: 'list' and 'list'\n\npython_programs/powerset.py:6: TypeError\n_____________________ test_powerset[input_data1-expected1] _____________________\n\ninput_data = [['a', 'b']], expected = [[], ['b'], ['a'], ['a', 'b']]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_powerset.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:6: in powerset\n    return [([first] - subset) for subset in rest_subsets]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n.0 = <list_iterator object at 0x79712cc55720>\n\n>   return [([first] - subset) for subset in rest_subsets]\n             ^^^^^^^^^^^^^^^^\nE   TypeError: unsupported operand type(s) for -: 'list' and 'list'\n\npython_programs/powerset.py:6: TypeError\n_____________________ test_powerset[input_data2-expected2] _____________________\n\ninput_data = [['a']], expected = [[], ['a']]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_powerset.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/powerset.py:6: in powerset\n    return [([first] - subset) for subset in rest_subsets]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n.0 = <list_iterator object at 0x79712cc56200>\n\n>   return [([first] - subset) for subset in rest_subsets]\n             ^^^^^^^^^^^^^^^^\nE   TypeError: unsupported operand type(s) for -: 'list' and 'list'\n\npython_programs/powerset.py:6: TypeError\n_____________________ test_powerset[input_data4-expected4] _____________________\n\ninput_data = [['x', 'df', 'z', 'm']]\nexpected = [[], ['m'], ['z'], ['z', 'm'], ['df'], ['df', 'm'], ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_powerset(input_data, expected):\n>       assert powerset(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_powerset.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:5: in powerset\n    rest_subsets = powerset(rest)\n                   ^^^^^^^^^^^^^^\npython_programs/powerset.py:6: in powerset\n    return [([first] - subset) for subset in rest_subsets]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n.0 = <list_iterator object at 0x79712c9c2260>\n\n>   return [([first] - subset) for subset in rest_subsets]\n             ^^^^^^^^^^^^^^^^\nE   TypeError: unsupported operand type(s) for -: 'list' and 'list'\n\npython_programs/powerset.py:6: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_powerset.py::test_powerset[input_data0-expected0]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data1-expected1]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data2-expected2]\nFAILED python_testcases/test_powerset.py::test_powerset[input_data4-expected4]\n4 failed, 1 passed in 0.02s\n"
+        },
+        "output_bytes": 5413,
+        "container_removed": true
+      },
+      "accepted": false
+    }
+  ],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}

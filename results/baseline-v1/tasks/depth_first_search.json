@@ -1,0 +1,45 @@
+{
+  "task": "depth_first_search",
+  "source_sha256": "9d603dfef6b5b2697c6017428aea5c56b5728edfe4aabf4028927b75224b2c0e",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.726915,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.180943,
+      "max_rss_kib": 31048,
+      "output_limit": false,
+      "output": ".....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n5 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.751706,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 4,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.202696,
+      "max_rss_kib": 31160,
+      "output_limit": false,
+      "output": "....F\n=================================== FAILURES ===================================\n____________________________________ test5 _____________________________________\n\n    def test5():\n        \"\"\"Case 5: Graph with cycles\n        Output: Path found!\n        \"\"\"\n    \n        nodef = Node(\"F\")\n        nodee = Node(\"E\")\n        noded = Node(\"D\")\n        nodec = Node(\"C\", None, [nodef])\n        nodeb = Node(\"B\", None, [nodee])\n        nodea = Node(\"A\", None, [nodeb, nodec, noded])\n    \n        nodee.successors = [nodea]\n    \n>       path_found = depth_first_search(nodea, nodef)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_depth_first_search.py:83: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/depth_first_search.py:14: in depth_first_search\n    return search_from(startnode)\n           ^^^^^^^^^^^^^^^^^^^^^^\npython_programs/depth_first_search.py:10: in search_from\n    return any(\npython_programs/depth_first_search.py:11: in <genexpr>\n    search_from(nextnode) for nextnode in node.successors\n    ^^^^^^^^^^^^^^^^^^^^^\npython_programs/depth_first_search.py:10: in search_from\n    return any(\npython_programs/depth_first_search.py:11: in <genexpr>\n    search_from(nextnode) for nextnode in node.successors\n    ^^^^^^^^^^^^^^^^^^^^^\npython_programs/depth_first_search.py:10: in search_from\n    return any(\npython_programs/depth_first_search.py:11: in <genexpr>\n    search_from(nextnode) for nextnode in node.successors\n    ^^^^^^^^^^^^^^^^^^^^^\npython_programs/depth_first_search.py:10: in search_from\n    return any(\nE   RecursionError: maximum recursion depth exceeded\n!!! Recursion detected (same locals & position)\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_depth_first_search.py::test5 - RecursionError: m...\n1 failed, 4 passed in 0.03s\n"
+    },
+    "output_bytes": 2212,
+    "container_removed": true
+  },
+  "attempts": [],
+  "accepted_candidate": null,
+  "eligibility": "eligible"
+}
