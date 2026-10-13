@@ -27,9 +27,10 @@ and a numeric candidate budget, with no access to test output or reference code.
 The baseline uses the original default test selection, including upstream skips
 for slow examples. Skipped counts are preserved. A passing candidate must match
 the passing reference's passed/skipped counts. This is a public diagnostic suite,
-not an independent held-out set. There is no train/validation split or model
-training in this version. Future learned-model claims require independent tasks
-and explicit contamination controls; no such claim is made here.
+not an independent held-out set. QuixBugs is not used for adapter training.
+The separate [MBPP training pipeline](TRAINING.md) preserves the original task
+partitions and screens for overlap. Both public datasets may have appeared in
+model pretraining; neither establishes unseen-code generalization.
 
 An existing dataset directory is verified rather than overwritten. If preparation
 is interrupted, use a fresh destination with `repair-bench data --output PATH`.

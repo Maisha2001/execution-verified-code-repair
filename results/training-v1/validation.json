@@ -1,0 +1,25 @@
+{
+  "actual_final_reload": {
+    "absolute_loss_difference": 0.0,
+    "adapter_sha256": "be346513058c363658dcaf324b2955ad843f98f53aa7f5ce6a4e7c4a265e44c2",
+    "checkpoint": "checkpoint-000117",
+    "examples": 58,
+    "expected_loss": 0.0476084477241473,
+    "loss": 0.0476084477241473,
+    "seconds": 3.041508899999826,
+    "target_tokens": 3708
+  },
+  "actual_recovery": "Full CUDA training continued from optimizer step2 in a separate process; checkpoint controls reproduce an uninterrupted tiny Qwen/LoRA CPU update exactly.",
+  "errors": 0,
+  "failures": 0,
+  "pip_check": "passed",
+  "seconds": 50.068,
+  "skipped": 0,
+  "test_data_predictions_or_execution": false,
+  "tests": 52,
+  "wheel": {
+    "bytes": 38149,
+    "name": "execution_verified_code_repair-0.1.0-py3-none-any.whl",
+    "sha256": "16bc2270a3125c26a417cb4303e8adb9ee7facab59526ead78fa86c3ade75c15"
+  }
+}

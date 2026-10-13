@@ -1,0 +1,56 @@
+{
+  "excluded_reference_ids": [],
+  "mutation_status": {
+    "failed": 213,
+    "passed": 52
+  },
+  "reference_status": {
+    "passed": 152
+  },
+  "scope": "Completion-only language-model validation on public MBPP synthetic repair pairs, not repair success or an unseen-pretraining benchmark. Official test tasks are unused.",
+  "tasks_without_examples": [
+    557,
+    565,
+    568,
+    578,
+    579,
+    582,
+    585,
+    587,
+    593,
+    596,
+    604,
+    611,
+    612,
+    615,
+    618,
+    619,
+    624,
+    640,
+    720,
+    723,
+    730,
+    732,
+    733,
+    748,
+    749,
+    750,
+    754,
+    759,
+    778,
+    799
+  ],
+  "trainable_fraction": 0.0007052908413277896,
+  "training_operations": {
+    "arithmetic": 53,
+    "boundary_constant": 44,
+    "comparison": 22,
+    "swap_arguments": 36
+  },
+  "validation_operations": {
+    "arithmetic": 19,
+    "boundary_constant": 17,
+    "comparison": 8,
+    "swap_arguments": 14
+  }
+}
