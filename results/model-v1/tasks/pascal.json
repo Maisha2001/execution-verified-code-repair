@@ -1,0 +1,331 @@
+{
+  "task": "pascal",
+  "source_sha256": "4445ef075a5f987d005bba5587c58f4697a90675be09171af2ca4009f64824a1",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.703763,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.179851,
+      "max_rss_kib": 30948,
+      "output_limit": false,
+      "output": ".....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n5 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.679363,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 4,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.182812,
+      "max_rss_kib": 30696,
+      "output_limit": false,
+      "output": ".FFFF\n=================================== FAILURES ===================================\n______________________ test_pascal[input_data1-expected1] ______________________\n\ninput_data = [2], expected = [[1], [1, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], [1]] == [[1], [1, 1]]\nE         \nE         At index 1 diff: [1] != [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data2-expected2] ______________________\n\ninput_data = [3], expected = [[1], [1, 1], [1, 2, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 3\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data3-expected3] ______________________\n\ninput_data = [4], expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 4\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data4-expected4] ______________________\n\ninput_data = [5]\nexpected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 5\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_pascal.py::test_pascal[input_data1-expected1] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data2-expected2] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data3-expected3] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data4-expected4] - ...\n4 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 3856,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "d12ba8add0cfcb0d0892397d9a657768f3c700caa96b1a3e2f85f76c804833a0",
+          "run": {
+            "status": "failed",
+            "seconds": 1.67895,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.187072,
+              "max_rss_kib": 30944,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n______________________ test_pascal[input_data0-expected0] ______________________\n\ninput_data = [1], expected = [[1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[0]] == [[1]]\nE         \nE         At index 0 diff: [0] != [1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data1-expected1] ______________________\n\ninput_data = [2], expected = [[1], [1, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[0], [0]] == [[1], [1, 1]]\nE         \nE         At index 0 diff: [0] != [1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data2-expected2] ______________________\n\ninput_data = [3], expected = [[1], [1, 1], [1, 2, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 3\n\n    def pascal(n):\n        rows = [[0]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data3-expected3] ______________________\n\ninput_data = [4], expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 4\n\n    def pascal(n):\n        rows = [[0]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data4-expected4] ______________________\n\ninput_data = [5]\nexpected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 5\n\n    def pascal(n):\n        rows = [[0]]\n        for r in range(1, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_pascal.py::test_pascal[input_data0-expected0] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data1-expected1] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data2-expected2] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data3-expected3] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data4-expected4] - ...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 4375,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "5f9230b2ba8d4ccfb00903f5d9abb92f5ba3ac3f64ff390bd082a7e931675cc3",
+          "run": {
+            "status": "failed",
+            "seconds": 1.685791,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.185728,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": ".FFFF\n=================================== FAILURES ===================================\n______________________ test_pascal[input_data1-expected1] ______________________\n\ninput_data = [2], expected = [[1], [1, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1]] == [[1], [1, 1]]\nE         \nE         Right contains one more item: [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data2-expected2] ______________________\n\ninput_data = [3], expected = [[1], [1, 1], [1, 2, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1]] == [[1], [1, 1], [1, 2, 1]]\nE         \nE         Right contains 2 more items, first extra item: [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data3-expected3] ______________________\n\ninput_data = [4], expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1]] == [[1], [1, 1],... [1, 3, 3, 1]]\nE         \nE         Right contains 3 more items, first extra item: [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data4-expected4] ______________________\n\ninput_data = [5]\nexpected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1]] == [[1], [1, 1],..., 4, 6, 4, 1]]\nE         \nE         Right contains 4 more items, first extra item: [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_pascal.py::test_pascal[input_data1-expected1] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data2-expected2] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data3-expected3] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data4-expected4] - ...\n4 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 2849,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "4e97973b101db2452e908f53de11036a4331ab21eda19a98040dba854bad9596",
+          "run": {
+            "status": "failed",
+            "seconds": 1.67426,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.172314,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n______________________ test_pascal[input_data0-expected0] ______________________\n\ninput_data = [1], expected = [[1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], []] == [[1]]\nE         \nE         Left contains one more item: []\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data1-expected1] ______________________\n\ninput_data = [2], expected = [[1], [1, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], [], [1]] == [[1], [1, 1]]\nE         \nE         At index 1 diff: [] != [1, 1]\nE         Left contains one more item: [1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data2-expected2] ______________________\n\ninput_data = [3], expected = [[1], [1, 1], [1, 2, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 3\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(0, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data3-expected3] ______________________\n\ninput_data = [4], expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 4\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(0, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n______________________ test_pascal[input_data4-expected4] ______________________\n\ninput_data = [5]\nexpected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_pascal.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nn = 5\n\n    def pascal(n):\n        rows = [[1]]\n        for r in range(0, n):\n            row = []\n            for c in range(0, r):\n                upleft = rows[r - 1][c - 1] if c > 0 else 0\n>               upright = rows[r - 1][c] if c < r else 0\n                          ^^^^^^^^^^^^^^\nE               IndexError: list index out of range\n\npython_programs/pascal.py:8: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_pascal.py::test_pascal[input_data0-expected0] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data1-expected1] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data2-expected2] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data3-expected3] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data4-expected4] - ...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 4433,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "dd1a003da57364533c7d749e6dcffe31842a5b345313f0e17dc991ac9c088fa8",
+          "run": {
+            "status": "failed",
+            "seconds": 1.697425,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.192756,
+              "max_rss_kib": 30808,
+              "output_limit": false,
+              "output": ".FFFF\n=================================== FAILURES ===================================\n______________________ test_pascal[input_data1-expected1] ______________________\n\ninput_data = [2], expected = [[1], [1, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], []] == [[1], [1, 1]]\nE         \nE         At index 1 diff: [] != [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data2-expected2] ______________________\n\ninput_data = [3], expected = [[1], [1, 1], [1, 2, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], [], []] == [[1], [1, 1], [1, 2, 1]]\nE         \nE         At index 1 diff: [] != [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data3-expected3] ______________________\n\ninput_data = [4], expected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], [], [], []] == [[1], [1, 1],... [1, 3, 3, 1]]\nE         \nE         At index 1 diff: [] != [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n______________________ test_pascal[input_data4-expected4] ______________________\n\ninput_data = [5]\nexpected = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_pascal(input_data, expected):\n>       assert pascal(*input_data) == expected\nE       assert [[1], [], [], [], []] == [[1], [1, 1],..., 4, 6, 4, 1]]\nE         \nE         At index 1 diff: [] != [1, 1]\nE         Use -v to get more diff\n\npython_testcases/test_pascal.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_pascal.py::test_pascal[input_data1-expected1] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data2-expected2] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data3-expected3] - ...\nFAILED python_testcases/test_pascal.py::test_pascal[input_data4-expected4] - ...\n4 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 2810,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef pascal(n: int) -> List[List[int]]:\n    rows = [[1]]\n    for r in range(1, n):\n        row = []\n        for c in range(0, r):\n            upleft = rows[r - 1][c - 1] if c > 0 else 0\n            upright = rows[r - 1][c] if c < r else 0\n            row.append(upleft + upright)\n        rows.append(row)\n\n    return rows\n\n\n\"\"\"\nPascal's Triangle\npascal\n\n\n\nInput:\n    n: The number of rows to return\n\nPrecondition:\n    n >= 1\n\nOutput:\n    The first n rows of Pascal's triangle as a list of n lists\n\nExample:\n    >>> pascal(5)\n    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.387382,
+            "input_tokens": 291,
+            "output_tokens": 216,
+            "seed": 40815316,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3127423488,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nimport numpy as np\n\ndef pascal(n):\n    # Initialize the Pascal triangle with the first row\n    triangle = np.array([[1]])\n    \n    # Calculate each row of Pascal's triangle\n    for _ in range(1, n):\n        current_row = np.roll(triangle[-1], -1)\n        next_row = np.concatenate((np.zeros(len(current_row)-1), current_row, np.zeros(len(current_row)-1)))\n        triangle = np.vstack((triangle, next_row))\n        \n    return triangle.tolist()\n```",
+          "generation": {
+            "seconds": 3.750991,
+            "input_tokens": 291,
+            "output_tokens": 112,
+            "seed": 40815317,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3127423488,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "ee7514c4156ab8bb09853c196d3de66a09e48aeaa31ccb0a9dfb4825b0eaaa78",
+          "run": {
+            "status": "failed",
+            "seconds": 1.734362,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 2,
+              "passed": 0,
+              "failed": 0,
+              "errors": 1,
+              "skipped": 0,
+              "seconds": 0.232794,
+              "max_rss_kib": 37720,
+              "output_limit": false,
+              "output": "\n==================================== ERRORS ====================================\n_______________ ERROR collecting python_testcases/test_pascal.py _______________\nImportError while importing test module '/workspace/python_testcases/test_pascal.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.11/importlib/__init__.py:126: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\npython_testcases/test_pascal.py:7: in <module>\n    from python_programs.pascal import pascal\npython_programs/pascal.py:1: in <module>\n    import numpy as np\nE   ModuleNotFoundError: No module named 'numpy'\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nERROR python_testcases/test_pascal.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.06s\n"
+            },
+            "output_bytes": 1214,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n\nfrom typing import List\n\n\ndef pascal(n: int) -> List[List[int]]:\n    \"\"\"Generate Pascal's Triangle with `n` rows.\n\n    Args:\n        n (int): Number of rows to generate.\n\n    Returns:\n        List[List[int]]: Pascal's Triangle with `n` rows.\n    \"\"\"\n    if n <= 0:\n        raise ValueError(\"n must be greater than 0\")\n\n    rows = [[1]]\n    for _ in range(1, n):\n        new_row = [1]\n        for i in range(1, len(rows[-1])):\n            new_row.append(rows[-1][i-1] + rows[-1][i])\n        new_row.append(1)\n        rows.append(new_row)\n\n    return rows\n\n\n\"\"\"\nPascal's Triangle\npascal\n\n\n\nInput:\n    n: The number of rows to return\n\nPrecondition:\n    n >= 1\n\nOutput:\n    The first n rows of Pascal's triangle as a list of n lists\n\nExample:\n    >>> pascal(5)\n    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\"\"\"\n\n\n```",
+          "generation": {
+            "seconds": 8.763281,
+            "input_tokens": 291,
+            "output_tokens": 263,
+            "seed": 40815318,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3127423488,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef pascal(n: int) -> List[List[int]]:\n    rows = [[1]]\n    for r in range(1, n):\n        row = []\n        for c in range(0, r):\n            upleft = rows[r - 1][c - 1] if c > 0 else 0\n            upright = rows[r - 1][c] if c < r else 0\n            row.append(upleft + upright)\n        rows.append(row)\n\n    return rows\n\n\n\"\"\"\nPascal's Triangle\npascal\n\n\n\nInput:\n    n: The number of rows to return\n\nPrecondition:\n    n >= 1\n\nOutput:\n    The first n rows of Pascal's triangle as a list of n lists\n\nExample:\n    >>> pascal(5)\n    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.043722,
+            "input_tokens": 291,
+            "output_tokens": 216,
+            "seed": 40815319,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3127423488,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef pascal(n: int) -> List[List[int]]:\n    rows = [[1]]\n    for r in range(1, n):\n        row = []\n        for c in range(0, r):\n            upleft = rows[r - 1][c - 1] if c > 0 else 0\n            upright = rows[r - 1][c] if c < r else 0\n            row.append(upleft + upright)\n        rows.append(row)\n\n    return rows\n```",
+          "generation": {
+            "seconds": 3.60419,
+            "input_tokens": 639,
+            "output_tokens": 112,
+            "seed": 40815316,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3188610048,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nimport pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.pascal import pascal\nelse:\n    from python_programs.pascal import pascal\n\n\ntestdata = load_json_testcases(pascal.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_pascal(input_data, expected):\n    assert pascal(*input_data) == expected\n```",
+          "generation": {
+            "seconds": 2.760027,
+            "input_tokens": 639,
+            "output_tokens": 91,
+            "seed": 40815317,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3188610048,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "Here is the fixed version of your Python script:\n\n```python\ndef pascal(n):\n    rows = [[1]]\n    for r in range(1, n):\n        row = []\n        for c in range(0, r):\n            upleft = rows[r - 1][c - 1] if c > 0 else 0\n            upright = rows[r - 1][c] if c < r else 0\n            row.append(upleft + upright)\n        rows.append(row)\n\n    return rows\n\n\n\"\"\"\nPascal's Triangle\npascal\n\n\n\nInput:\n    n: The number of rows to return\n\nPrecondition:\n    n >= 1\n\nOutput:\n    The first n rows of Pascal's triangle as a list of n lists\n\nExample:\n    >>> pascal(5)\n    [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]\n\"\"\"\n\n```\nThis script is correctly implemented as it calculates Pascal's triangle using dynamic programming. It initializes the base case where the first row is `[1]`. Then, for each subsequent row, it computes each element by adding the values above it (considering boundary conditions). Finally, it appends each computed row to the `rows` list and returns it.",
+          "generation": {
+            "seconds": 9.680841,
+            "input_tokens": 639,
+            "output_tokens": 285,
+            "seed": 40815318,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3188610048,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import List, Tuple\n\ndef pascal(n: int) -> List[List[int]]:\n    if n < 1:\n        raise ValueError(\"n must be at least 1\")\n    \n    rows = [[1]]\n    for r in range(1, n):\n        row = []\n        for c in range(r):\n            up_left = rows[r - 1][c - 1] if c > 0 else 0\n            upright = rows[r - 1][c] if c < r else 0\n            row.append(up_left + upright)\n        rows.append(row)\n\n    return rows\n```",
+          "generation": {
+            "seconds": 4.411601,
+            "input_tokens": 639,
+            "output_tokens": 131,
+            "seed": 40815319,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3188610048,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.092211,
+  "context": [
+    {
+      "path": "json_testcases/pascal.json",
+      "start_line": 1,
+      "text": "[[1], [[1]]]\n[[2], [[1], [1, 1]]]\n[[3], [[1], [1, 1], [1, 2, 1]]]\n[[4], [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]]\n[[5], [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]]",
+      "sha256": "571e0da9c8cd224adad588a78b1f9d98441b9fa01abd4647812ee9318c13bb45",
+      "score": 0.5300885438919067
+    },
+    {
+      "path": "python_testcases/test_pascal.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.pascal import pascal\nelse:\n    from python_programs.pascal import pascal\n\n\ntestdata = load_json_testcases(pascal.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_pascal(input_data, expected):\n    assert pascal(*input_data) == expected",
+      "sha256": "986840c29c49673ac3c8ab5a1bf495035142701ded33bf8d39a369cddd4257e9",
+      "score": 0.3778814673423767
+    },
+    {
+      "path": "python_programs/node.py",
+      "start_line": 1,
+      "text": "class Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def successor(self):\n        return self.successor\n\n    def successors(self):\n        return self.successors\n\n    def predecessors(self):\n        return self.predecessors\n",
+      "sha256": "853a9638b93eebb1ae61e6ed2ccd5587efc04b9b7c833b35e8a1b74c0bb5ed7a",
+      "score": 0.20138421654701233
+    }
+  ]
+}

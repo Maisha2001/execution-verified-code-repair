@@ -1,0 +1,350 @@
+{
+  "task": "lcs_length",
+  "source_sha256": "ab35b03aa24601348e41e39b70514c9837d5d029009862c0b1d9c90e09b9f532",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.670714,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.163644,
+      "max_rss_kib": 30784,
+      "output_limit": false,
+      "output": ".........\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed in 0.01s\n"
+    },
+    "output_bytes": 277,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.649938,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 1,
+      "failed": 8,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.178132,
+      "max_rss_kib": 30916,
+      "output_limit": false,
+      "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 2\nE        +  where 1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 4\nE        +  where 1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 7\nE        +  where 1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 6\nE        +  where 1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 2 == 3\nE        +  where 2 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+    },
+    "output_bytes": 4765,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "comparison",
+          "candidate_sha256": "b1d2423b298c8859e7153847afa2d87d5c66ee22692e339904da3328f58465d5",
+          "run": {
+            "status": "failed",
+            "seconds": 1.698249,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 3,
+              "failed": 6,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.188741,
+              "max_rss_kib": 30916,
+              "output_limit": false,
+              "output": "F...FFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 5 == 2\nE        +  where 5 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 6 == 3\nE        +  where 6 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 6 == 7\nE        +  where 6 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 7 == 6\nE        +  where 7 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 6 == 3\nE        +  where 6 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 11 == 3\nE        +  where 11 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n6 failed, 3 passed in 0.03s\n"
+            },
+            "output_bytes": 3695,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "f2de15314c490c0d83f5b1ba2423ab073a92afaa8feb4e3a5b9db84a949b966b",
+          "run": {
+            "status": "failed",
+            "seconds": 1.76768,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.189119,
+              "max_rss_kib": 30856,
+              "output_limit": false,
+              "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 2\nE        +  where -1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 4\nE        +  where -1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 3\nE        +  where -1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 3\nE        +  where -1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 7\nE        +  where -1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 6\nE        +  where -1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 3\nE        +  where -1 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert -1 == 3\nE        +  where -1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 4781,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "8d04bf63827c90a122aae25e59ebfc07b50478922378ebcf17a9702e34b63450",
+          "run": {
+            "status": "failed",
+            "seconds": 1.74627,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.197625,
+              "max_rss_kib": 30960,
+              "output_limit": false,
+              "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 2\nE        +  where 1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 4\nE        +  where 1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 7\nE        +  where 1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 6\nE        +  where 1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 4765,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "0244c0fe33b8f4f9740d6959ad4a07ff73e6ab58a718b8ee395729f841bee43e",
+          "run": {
+            "status": "failed",
+            "seconds": 1.693336,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.190876,
+              "max_rss_kib": 31092,
+              "output_limit": false,
+              "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 2\nE        +  where 1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 4\nE        +  where 1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 7\nE        +  where 1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 6\nE        +  where 1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 4765,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import Counter\n\ndef lcs_length(s, t):\n    dp = Counter()\n\n    for i in range(len(s)):\n        for j in range(len(t)):\n            if s[i] == t[j]:\n                dp[i, j] = dp[i - 1, j] + 1\n\n    return max(dp.values()) if dp else 0\n\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.424392,
+            "input_tokens": 245,
+            "output_tokens": 156,
+            "seed": 557500433,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123474432,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "42682c510bef1a07227bf7cbcc3a71d13967bace0498a518e78991bdca15828d",
+          "run": {
+            "status": "failed",
+            "seconds": 1.678383,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.190085,
+              "max_rss_kib": 30888,
+              "output_limit": false,
+              "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 2\nE        +  where 1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 4\nE        +  where 1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 7\nE        +  where 1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 6\nE        +  where 1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 2 == 3\nE        +  where 2 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 4765,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom collections import Counter\n\n\ndef lcs_length(s, t):\n    dp = Counter()\n\n    for i in range(len(s)):\n        for j in range(len(t)):\n            if s[i] == t[j]:\n                dp[i, j] = dp[i - 1, j] + 1\n\n    return max(dp.values()) if dp else 0\n\n\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.274439,
+            "input_tokens": 245,
+            "output_tokens": 156,
+            "seed": 557500434,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123474432,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "f482bb0d63a6a92dd7652212c410a3276337345e8c2e3dd4543979bfcad82f18",
+          "run": {
+            "status": "failed",
+            "seconds": 1.707485,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.178716,
+              "max_rss_kib": 31068,
+              "output_limit": false,
+              "output": "FF.FFFFFF\n=================================== FAILURES ===================================\n________________________ test_lcs_length[input_data0-2] ________________________\n\ninput_data = ['witch', 'sandwich'], expected = 2\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 2\nE        +  where 1 = lcs_length(*['witch', 'sandwich'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data1-4] ________________________\n\ninput_data = ['meow', 'homeowner'], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 4\nE        +  where 1 = lcs_length(*['meow', 'homeowner'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data3-3] ________________________\n\ninput_data = ['fun', 'function'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['fun', 'function'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data4-3] ________________________\n\ninput_data = ['cyborg', 'cyber'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['cyborg', 'cyber'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data5-7] ________________________\n\ninput_data = ['physics', 'physics'], expected = 7\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 7\nE        +  where 1 = lcs_length(*['physics', 'physics'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data6-6] ________________________\n\ninput_data = ['space age', 'pace a'], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 6\nE        +  where 1 = lcs_length(*['space age', 'pace a'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data7-3] ________________________\n\ninput_data = ['flippy', 'floppy'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 2 == 3\nE        +  where 2 = lcs_length(*['flippy', 'floppy'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n________________________ test_lcs_length[input_data8-3] ________________________\n\ninput_data = ['acbdegcedbg', 'begcfeubk'], expected = 3\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_lcs_length(input_data, expected):\n>       assert lcs_length(*input_data) == expected\nE       AssertionError: assert 1 == 3\nE        +  where 1 = lcs_length(*['acbdegcedbg', 'begcfeubk'])\n\npython_testcases/test_lcs_length.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data0-2] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data1-4] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data3-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data4-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data5-7] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data6-6] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data7-3] - ...\nFAILED python_testcases/test_lcs_length.py::test_lcs_length[input_data8-3] - ...\n8 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 4765,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": true,
+          "response": "```python\nfrom collections import Counter\n\ndef lcs_length(s, t):\n    dp = Counter()\n\n    for i in range(len(s)):\n        for j in range(len(t)):\n            if s[i] == t[j]:\n                dp[(i, j)] = dp[(i-1, j-1)] + 1\n\n    return max(dp.values()) if dp else 0\n\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.15302,
+            "input_tokens": 245,
+            "output_tokens": 159,
+            "seed": 557500435,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123474432,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "3f68e6ec66bc39dda869963a35db03d3e88430523dfce71f71f85e604520bddb",
+          "run": {
+            "status": "passed",
+            "seconds": 1.677449,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 9,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.182284,
+              "max_rss_kib": 30820,
+              "output_limit": false,
+              "output": ".........\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed in 0.01s\n"
+            },
+            "output_bytes": 277,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 3,
+        "sha256": "3f68e6ec66bc39dda869963a35db03d3e88430523dfce71f71f85e604520bddb",
+        "source": "from collections import Counter\n\ndef lcs_length(s, t):\n    dp = Counter()\n\n    for i in range(len(s)):\n        for j in range(len(t)):\n            if s[i] == t[j]:\n                dp[(i, j)] = dp[(i-1, j-1)] + 1\n\n    return max(dp.values()) if dp else 0\n\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n",
+        "patch": "--- a/python_programs/lcs_length.py\n+++ b/python_programs/lcs_length.py\n@@ -1,15 +1,14 @@\n+from collections import Counter\n+\n def lcs_length(s, t):\n-    from collections import Counter\n-\n     dp = Counter()\n \n     for i in range(len(s)):\n         for j in range(len(t)):\n             if s[i] == t[j]:\n-                dp[i, j] = dp[i - 1, j] + 1\n+                dp[(i, j)] = dp[(i-1, j-1)] + 1\n \n     return max(dp.values()) if dp else 0\n-\n \n \n \"\"\"\n"
+      }
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import Counter\n\ndef lcs_length(s, t):\n    dp = Counter()\n\n    for i in range(len(s)):\n        for j in range(len(t)):\n            if s[i] == t[j]:\n                dp[i, j] = dp[i - 1, j] + 1\n\n    return max(dp.values()) if dp else 0\n\n\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n\ntestdata = load_json_testcases(lcs_length.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_lcs_length(input_data, expected):\n    assert lcs_length(*input_data) == expected\n\njson_testcases/lcs_length.json (line 1):\n[[\"witch\", \"sandwich\"], 2]\n[[\"meow\", \"homeowner\"], 4]\n[[\"fun\", \"\"], 0]\n[[\"fun\", \"function\"], 3]\n[[\"cyborg\", \"cyber\"], 3]\n[[\"physics\", \"physics\"], 7]\n[[\"space age\", \"pace a\"], 6]\n[[\"flippy\", \"floppy\"], 3]\n[[\"acbdegcedbg\", \"begcfeubk\"], 3]\n\npython_testcases/load_testdata.py (line 1):\nimport json\nfrom pathlib import Path\n\n\ndef load_json_testcases(algorithm):\n\n    quixbugs_root = Path(__file__).parent / \"..\"\n    testdata_path = quixbugs_root / f\"json_testcases/{algorithm}.json\"\n    with open(testdata_path) as data_file:\n        testdata = [json.loads(line) for line in data_file]\n\n    return testdata\n```",
+          "generation": {
+            "seconds": 13.508903,
+            "input_tokens": 557,
+            "output_tokens": 412,
+            "seed": 557500433,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3171715584,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch is not a parseable Python module"
+        },
+        {
+          "number": 2,
+          "accepted": true,
+          "response": "```python\n# The provided code has a logical error that leads to incorrect results when there are no common characters between the two strings. Specifically, it does not initialize the `dp` dictionary correctly.\n\n# Here is the corrected version of the function:\n\ndef lcs_length(s, t):\n    from collections import Counter\n\n    # Initialize the dp dictionary to store lengths of longest common suffixes of substrings ending at each position.\n    dp = {(i, j): 0 for i in range(len(s)) for j in range(len(t))}\n    \n    # Fill the dp table.\n    for i in range(1, len(s) + 1):\n        for j in range(1, len(t) + 1):\n            if s[i-1] == t[j-1]:\n                dp[(i, j)] = dp[(i-1, j-1)] + 1\n\n    # The length of the longest common substring is the maximum value in the dp table.\n    return max(dp.values()) if dp else 0\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n\n```\n\nThe key changes are:\n1. Initializing the `dp` dictionary with all values set to 0, which ensures that when we start filling the table, the values will be accurate.\n2. Using `dp[(i, j)]` instead of `dp[i, j]` in the condition check to access the current value in the dictionary. This is because in Python, dictionaries do not allow indexing with tuples directly; they use keys instead.",
+          "generation": {
+            "seconds": 12.764477,
+            "input_tokens": 557,
+            "output_tokens": 383,
+            "seed": 557500434,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3171715584,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "f3bdefa36cb0c0c0fe7c3da4494c024713147e137295ccf11b1d75be73f3dc13",
+          "run": {
+            "status": "passed",
+            "seconds": 1.660566,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 9,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.165327,
+              "max_rss_kib": 31044,
+              "output_limit": false,
+              "output": ".........\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed in 0.01s\n"
+            },
+            "output_bytes": 277,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 2,
+        "sha256": "f3bdefa36cb0c0c0fe7c3da4494c024713147e137295ccf11b1d75be73f3dc13",
+        "source": "# The provided code has a logical error that leads to incorrect results when there are no common characters between the two strings. Specifically, it does not initialize the `dp` dictionary correctly.\n\n# Here is the corrected version of the function:\n\ndef lcs_length(s, t):\n    from collections import Counter\n\n    # Initialize the dp dictionary to store lengths of longest common suffixes of substrings ending at each position.\n    dp = {(i, j): 0 for i in range(len(s)) for j in range(len(t))}\n    \n    # Fill the dp table.\n    for i in range(1, len(s) + 1):\n        for j in range(1, len(t) + 1):\n            if s[i-1] == t[j-1]:\n                dp[(i, j)] = dp[(i-1, j-1)] + 1\n\n    # The length of the longest common substring is the maximum value in the dp table.\n    return max(dp.values()) if dp else 0\n\n\"\"\"\nLongest Common Substring\nlongest-common-substring\n\nInput:\n    s: a string\n    t: a string\n\nOutput:\n    Length of the longest substring common to s and t\n\nExample:\n    >>> lcs_length('witch', 'sandwich')\n    2\n    >>> lcs_length('meow', 'homeowner')\n    4\n\"\"\"\n",
+        "patch": "--- a/python_programs/lcs_length.py\n+++ b/python_programs/lcs_length.py\n@@ -1,16 +1,21 @@\n+# The provided code has a logical error that leads to incorrect results when there are no common characters between the two strings. Specifically, it does not initialize the `dp` dictionary correctly.\n+\n+# Here is the corrected version of the function:\n+\n def lcs_length(s, t):\n     from collections import Counter\n \n-    dp = Counter()\n+    # Initialize the dp dictionary to store lengths of longest common suffixes of substrings ending at each position.\n+    dp = {(i, j): 0 for i in range(len(s)) for j in range(len(t))}\n+    \n+    # Fill the dp table.\n+    for i in range(1, len(s) + 1):\n+        for j in range(1, len(t) + 1):\n+            if s[i-1] == t[j-1]:\n+                dp[(i, j)] = dp[(i-1, j-1)] + 1\n \n-    for i in range(len(s)):\n-        for j in range(len(t)):\n-            if s[i] == t[j]:\n-                dp[i, j] = dp[i - 1, j] + 1\n-\n+    # The length of the longest common substring is the maximum value in the dp table.\n     return max(dp.values()) if dp else 0\n-\n-\n \n \"\"\"\n Longest Common Substring\n"
+      }
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.100406,
+  "context": [
+    {
+      "path": "python_testcases/test_lcs_length.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.lcs_length import lcs_length\nelse:\n    from python_programs.lcs_length import lcs_length\n\n\ntestdata = load_json_testcases(lcs_length.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_lcs_length(input_data, expected):\n    assert lcs_length(*input_data) == expected",
+      "sha256": "cffed4f08f0e887dfbbadfb0f6e19ac2bcfd9253f51241ec618f87173a3aaee4",
+      "score": 0.47786659002304077
+    },
+    {
+      "path": "json_testcases/lcs_length.json",
+      "start_line": 1,
+      "text": "[[\"witch\", \"sandwich\"], 2]\n[[\"meow\", \"homeowner\"], 4]\n[[\"fun\", \"\"], 0]\n[[\"fun\", \"function\"], 3]\n[[\"cyborg\", \"cyber\"], 3]\n[[\"physics\", \"physics\"], 7]\n[[\"space age\", \"pace a\"], 6]\n[[\"flippy\", \"floppy\"], 3]\n[[\"acbdegcedbg\", \"begcfeubk\"], 3]",
+      "sha256": "b5bae05321abee58b56c114fbb4fc4c986c0b443051dcb7c5c658c6efcf96882",
+      "score": 0.4656769037246704
+    },
+    {
+      "path": "python_testcases/load_testdata.py",
+      "start_line": 1,
+      "text": "import json\nfrom pathlib import Path\n\n\ndef load_json_testcases(algorithm):\n\n    quixbugs_root = Path(__file__).parent / \"..\"\n    testdata_path = quixbugs_root / f\"json_testcases/{algorithm}.json\"\n    with open(testdata_path) as data_file:\n        testdata = [json.loads(line) for line in data_file]\n\n    return testdata",
+      "sha256": "b0039e85059963ff349bd57237202b91d36beb59d57d0dd9b1dea79d6e5ee95a",
+      "score": 0.14151957631111145
+    }
+  ]
+}

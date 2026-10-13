@@ -1,0 +1,251 @@
+{
+  "task": "find_first_in_sorted",
+  "source_sha256": "59bdf7033f9b0f0f63aed032d18e89f30e333eee8689354b666d12ef4d7e3fda",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.671005,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.173412,
+      "max_rss_kib": 30944,
+      "output_limit": false,
+      "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+    },
+    "output_bytes": 275,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 3.712447,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 4,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.187828,
+      "max_rss_kib": 30720,
+      "output_limit": false,
+      "output": ".FF.F..\n=================================== FAILURES ===================================\n__________________ test_find_first_in_sorted[input_data1--1] ___________________\n\ninput_data = [[3, 4, 5, 5, 5, 5, ...], 7], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 4, 5, 5, 5, 5, ...], x = 7\n\n    def find_first_in_sorted(arr, x):\n        lo = 0\n        hi = len(arr)\n    \n        while lo <= hi:\n            mid = (lo + hi) // 2\n    \n>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n                    ^^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/find_first_in_sorted.py:8: IndexError\n__________________ test_find_first_in_sorted[input_data2--1] ___________________\n\ninput_data = [[3, 4, 5, 5, 5, 5, ...], 2], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 4, 5, 5, 5, 5, ...], x = 2\n\n    def find_first_in_sorted(arr, x):\n        lo = 0\n        hi = len(arr)\n    \n>       while lo <= hi:\n              ^^^^^^^^\nE       Failed: Timeout (>1.0s) from pytest-timeout.\n\npython_programs/find_first_in_sorted.py:5: Failed\n__________________ test_find_first_in_sorted[input_data4--1] ___________________\n\ninput_data = [[0, 1, 6, 8, 13, 14, ...], 80], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [0, 1, 6, 8, 13, 14, ...], x = 80\n\n    def find_first_in_sorted(arr, x):\n        lo = 0\n        hi = len(arr)\n    \n>       while lo <= hi:\n              ^^^^^^^^\nE       Failed: Timeout (>1.0s) from pytest-timeout.\n\npython_programs/find_first_in_sorted.py:5: Failed\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data1--1]\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data2--1]\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data4--1]\n3 failed, 4 passed in 2.02s\n"
+    },
+    "output_bytes": 3249,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "ef77d9ae2c294df514df5c54dfb0081656bf04ac59113fb7f611b7d042397903",
+          "run": {
+            "status": "failed",
+            "seconds": 3.719278,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 4,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 2.196713,
+              "max_rss_kib": 30736,
+              "output_limit": false,
+              "output": ".FF.F..\n=================================== FAILURES ===================================\n__________________ test_find_first_in_sorted[input_data1--1] ___________________\n\ninput_data = [[3, 4, 5, 5, 5, 5, ...], 7], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 4, 5, 5, 5, 5, ...], x = 7\n\n    def find_first_in_sorted(arr, x):\n        lo = 1\n        hi = len(arr)\n    \n        while lo <= hi:\n            mid = (lo + hi) // 2\n    \n>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n                    ^^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/find_first_in_sorted.py:8: IndexError\n__________________ test_find_first_in_sorted[input_data2--1] ___________________\n\ninput_data = [[3, 4, 5, 5, 5, 5, ...], 2], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [3, 4, 5, 5, 5, 5, ...], x = 2\n\n    def find_first_in_sorted(arr, x):\n        lo = 1\n        hi = len(arr)\n    \n>       while lo <= hi:\n              ^^^^^^^^\nE       Failed: Timeout (>1.0s) from pytest-timeout.\n\npython_programs/find_first_in_sorted.py:5: Failed\n__________________ test_find_first_in_sorted[input_data4--1] ___________________\n\ninput_data = [[0, 1, 6, 8, 13, 14, ...], 80], expected = -1\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_find_first_in_sorted(input_data, expected):\n>       assert find_first_in_sorted(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_find_first_in_sorted.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\narr = [0, 1, 6, 8, 13, 14, ...], x = 80\n\n    def find_first_in_sorted(arr, x):\n        lo = 1\n        hi = len(arr)\n    \n>       while lo <= hi:\n              ^^^^^^^^\nE       Failed: Timeout (>1.0s) from pytest-timeout.\n\npython_programs/find_first_in_sorted.py:5: Failed\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data1--1]\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data2--1]\nFAILED python_testcases/test_find_first_in_sorted.py::test_find_first_in_sorted[input_data4--1]\n3 failed, 4 passed in 2.03s\n"
+            },
+            "output_bytes": 3249,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": true,
+          "operation": "comparison",
+          "candidate_sha256": "a091742d8a007c6c6d13894cfea1e122df56019e17c040305c9f5c3c3521a5f3",
+          "run": {
+            "status": "passed",
+            "seconds": 1.693805,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 7,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.17329,
+              "max_rss_kib": 30528,
+              "output_limit": false,
+              "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+            },
+            "output_bytes": 274,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 2,
+        "sha256": "a091742d8a007c6c6d13894cfea1e122df56019e17c040305c9f5c3c3521a5f3",
+        "source": "def find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr)\n\n    while (lo < hi):\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n",
+        "patch": "--- a/python_programs/find_first_in_sorted.py\n+++ b/python_programs/find_first_in_sorted.py\n@@ -2,7 +2,7 @@\n     lo = 0\n     hi = len(arr)\n \n-    while lo <= hi:\n+    while (lo < hi):\n         mid = (lo + hi) // 2\n \n         if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n"
+      }
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef find_first_in_sorted(arr: List[int], x: int) -> int:\n    lo = 0\n    hi = len(arr) - 1\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid - 1\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.649824,
+            "input_tokens": 278,
+            "output_tokens": 209,
+            "seed": 373229325,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126173696,
+            "peak_gpu_reserved_bytes": 3483369472
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": true,
+          "response": "```python\ndef find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr) - 1\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid - 1\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 6.851204,
+            "input_tokens": 278,
+            "output_tokens": 196,
+            "seed": 373229326,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126173696,
+            "peak_gpu_reserved_bytes": 3483369472
+          },
+          "candidate_sha256": "0c6202390b47747788efe4874ff7cc316588cb53d1f75c4052db60f667298a24",
+          "run": {
+            "status": "passed",
+            "seconds": 1.724204,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 7,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.188081,
+              "max_rss_kib": 30772,
+              "output_limit": false,
+              "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+            },
+            "output_bytes": 275,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 2,
+        "sha256": "0c6202390b47747788efe4874ff7cc316588cb53d1f75c4052db60f667298a24",
+        "source": "def find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr) - 1\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid - 1\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n",
+        "patch": "--- a/python_programs/find_first_in_sorted.py\n+++ b/python_programs/find_first_in_sorted.py\n@@ -1,6 +1,6 @@\n def find_first_in_sorted(arr, x):\n     lo = 0\n-    hi = len(arr)\n+    hi = len(arr) - 1\n \n     while lo <= hi:\n         mid = (lo + hi) // 2\n@@ -9,7 +9,7 @@\n             return mid\n \n         elif x <= arr[mid]:\n-            hi = mid\n+            hi = mid - 1\n \n         else:\n             lo = mid + 1\n"
+      }
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr)\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 6.418974,
+            "input_tokens": 651,
+            "output_tokens": 189,
+            "seed": 373229325,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3191990272,
+            "peak_gpu_reserved_bytes": 3483369472
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 2,
+          "accepted": true,
+          "response": "```python\ndef find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr) - 1\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid - 1\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n\n```\nNote: The solution is slightly different from the original code, as it uses `hi` instead of `len(arr)` for the loop condition to ensure the search bounds are correctly managed.",
+          "generation": {
+            "seconds": 8.456605,
+            "input_tokens": 651,
+            "output_tokens": 234,
+            "seed": 373229326,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3191990272,
+            "peak_gpu_reserved_bytes": 3483369472
+          },
+          "candidate_sha256": "0c6202390b47747788efe4874ff7cc316588cb53d1f75c4052db60f667298a24",
+          "run": {
+            "status": "passed",
+            "seconds": 1.725505,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 7,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.189307,
+              "max_rss_kib": 30916,
+              "output_limit": false,
+              "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+            },
+            "output_bytes": 275,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 2,
+        "sha256": "0c6202390b47747788efe4874ff7cc316588cb53d1f75c4052db60f667298a24",
+        "source": "def find_first_in_sorted(arr, x):\n    lo = 0\n    hi = len(arr) - 1\n\n    while lo <= hi:\n        mid = (lo + hi) // 2\n\n        if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):\n            return mid\n\n        elif x <= arr[mid]:\n            hi = mid - 1\n\n        else:\n            lo = mid + 1\n\n    return -1\n\n\n\"\"\"\nFancy Binary Search\nfancy-binsearch\n\n\nInput:\n    arr: A sorted list of ints\n    x: A value to find\n\nOutput:\n    The lowest index i such that arr[i] == x, or -1 if x not in arr\n\nExample:\n    >>> find_first_in_sorted([3, 4, 5, 5, 5, 5, 6], 5)\n    2\n\"\"\"\n",
+        "patch": "--- a/python_programs/find_first_in_sorted.py\n+++ b/python_programs/find_first_in_sorted.py\n@@ -1,6 +1,6 @@\n def find_first_in_sorted(arr, x):\n     lo = 0\n-    hi = len(arr)\n+    hi = len(arr) - 1\n \n     while lo <= hi:\n         mid = (lo + hi) // 2\n@@ -9,7 +9,7 @@\n             return mid\n \n         elif x <= arr[mid]:\n-            hi = mid\n+            hi = mid - 1\n \n         else:\n             lo = mid + 1\n"
+      }
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.143184,
+  "context": [
+    {
+      "path": "json_testcases/find_first_in_sorted.json",
+      "start_line": 1,
+      "text": "[[[3, 4, 5, 5, 5, 5, 6], 5], 2]\n[[[3, 4, 5, 5, 5, 5, 6], 7], -1]\n[[[3, 4, 5, 5, 5, 5, 6], 2], -1]\n[[[3, 6, 7, 9, 9, 10, 14, 27], 14], 6]\n[[[0, 1, 6, 8, 13, 14, 67, 128], 80], -1]\n[[[0, 1, 6, 8, 13, 14, 67, 128], 67], 6]\n[[[0, 1, 6, 8, 13, 14, 67, 128], 128], 7]",
+      "sha256": "5a5bf2f82f615722513cac5f822ebe6aa5c2e3b39dd4d098318214eb587b40c5",
+      "score": 0.533225953578949
+    },
+    {
+      "path": "python_testcases/test_find_first_in_sorted.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.find_first_in_sorted import find_first_in_sorted\nelse:\n    from python_programs.find_first_in_sorted import find_first_in_sorted\n\n\ntestdata = load_json_testcases(find_first_in_sorted.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_find_first_in_sorted(input_data, expected):\n    assert find_first_in_sorted(*input_data) == expected",
+      "sha256": "8f1afd53f2003940e81bb536189e63ce4d9c04dfd49a9fe3b8e2e8f934764da5",
+      "score": 0.48171359300613403
+    },
+    {
+      "path": "python_programs/node.py",
+      "start_line": 17,
+      "text": "        return self.predecessors\n",
+      "sha256": "c87f4a6f3b983742309b291c2e0a1c38802262fb7cbd29563e5e9bba196f8f4b",
+      "score": 0.1918797641992569
+    }
+  ]
+}

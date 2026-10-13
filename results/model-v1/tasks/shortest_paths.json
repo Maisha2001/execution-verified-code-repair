@@ -1,0 +1,355 @@
+{
+  "task": "shortest_paths",
+  "source_sha256": "e99679a54634bc940a78c1f211e6126f5119a7654a089d1f56f264a1deaa0ce2",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.776883,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.165914,
+      "max_rss_kib": 30708,
+      "output_limit": false,
+      "output": "...\n--------------------- generated xml file: /tmp/results.xml ---------------------\n3 passed in 0.01s\n"
+    },
+    "output_bytes": 271,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.779276,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.187273,
+      "max_rss_kib": 31072,
+      "output_limit": false,
+      "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n        result = shortest_paths(\"A\", graph)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':... 'D': 10, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 4}\nE         {'D': inf} != {'D': 10}\nE         {'E': inf} != {'E': 5}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:27: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph2)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 9}\nE         {'D': inf} != {'D': 6}\nE         {'E': inf} != {'E': 5}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:45: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph3)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 9}\nE         {'D': inf} != {'D': 6}\nE         {'E': inf} != {'E': 5}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:64: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test2 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test3 - AssertionError: asser...\n3 failed in 0.02s\n"
+    },
+    "output_bytes": 3977,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "04852430156d8903f66ab992e43c2586a2d7954d3497f052ea6a44258458d488",
+          "run": {
+            "status": "failed",
+            "seconds": 1.794857,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.186417,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n        result = shortest_paths(\"A\", graph)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n>       assert result == expected\nE       AssertionError: assert {'A': 1, 'B':...'D': inf, ...} == {'A': 0, 'B':... 'D': 10, ...}\nE         \nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 4}\nE         {'B': inf} != {'B': 1}\nE         {'A': 1} != {'A': 0}\nE         {'D': inf} != {'D': 10}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:27: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph2)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 1, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 9}\nE         {'B': inf} != {'B': 1}\nE         {'A': 1} != {'A': 0}\nE         {'D': inf} != {'D': 6}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:45: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph3)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 1, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'C': inf} != {'C': 3}\nE         {'F': inf} != {'F': 9}\nE         {'B': inf} != {'B': 1}\nE         {'A': 1} != {'A': 0}\nE         {'D': inf} != {'D': 6}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:64: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test2 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test3 - AssertionError: asser...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3908,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "c7e528eb4ea6db17567982ffdccd38a22244febbc66c498da7f9b911ac4e8c62",
+          "run": {
+            "status": "failed",
+            "seconds": 1.72193,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.182719,
+              "max_rss_kib": 30896,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n        result = shortest_paths(\"A\", graph)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':... 'D': 10, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 10}\nE         {'C': inf} != {'C': 3}\nE         {'E': inf} != {'E': 5}\nE         {'F': inf} != {'F': 4}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:27: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph2)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'C': inf} != {'C': 3}\nE         {'E': inf} != {'E': 5}\nE         {'F': inf} != {'F': 9}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:45: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph3)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'C': inf} != {'C': 3}\nE         {'E': inf} != {'E': 5}\nE         {'F': inf} != {'F': 9}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:64: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test2 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test3 - AssertionError: asser...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3977,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "c9cf2aad3d495744f475df6a508a2f9ca7fb54325e7f468ff40109cd16c69d63",
+          "run": {
+            "status": "failed",
+            "seconds": 1.729963,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.196273,
+              "max_rss_kib": 30944,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n        result = shortest_paths(\"A\", graph)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':... 'D': 10, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 10}\nE         {'F': inf} != {'F': 4}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:27: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph2)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'F': inf} != {'F': 9}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:45: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph3)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'F': inf} != {'F': 9}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:64: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test2 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test3 - AssertionError: asser...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3977,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "70399eb38fd71010c131c7ef5dfa0080d20b4d96e377092a88fba531127bc711",
+          "run": {
+            "status": "failed",
+            "seconds": 1.70497,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.193812,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n        result = shortest_paths(\"A\", graph)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':... 'D': 10, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 10}\nE         {'F': inf} != {'F': 4}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:27: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph2)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'F': inf} != {'F': 9}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:45: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n        result = shortest_paths(\"A\", graph3)\n    \n        expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n>       assert result == expected\nE       AssertionError: assert {'A': 0, 'B':...'D': inf, ...} == {'A': 0, 'B':..., 'D': 6, ...}\nE         \nE         Omitting 1 identical items, use -vv to show\nE         Differing items:\nE         {'E': inf} != {'E': 5}\nE         {'B': inf} != {'B': 1}\nE         {'D': inf} != {'D': 6}\nE         {'F': inf} != {'F': 9}\nE         {'C': inf} != {'C': 3}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_paths.py:64: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test2 - AssertionError: asser...\nFAILED python_testcases/test_shortest_paths.py::test3 - AssertionError: asser...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3977,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple\n\ndef shortest_paths(source: str, weight_by_edge: Dict[Tuple[str, str], int]) -> Dict[str, int]:\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            weight_by_edge[u, v] = min(\n                weight_by_node[u] + weight,\n                weight_by_node[v]\n            )\n\n    return weight_by_node\n```",
+          "generation": {
+            "seconds": 4.037123,
+            "input_tokens": 451,
+            "output_tokens": 131,
+            "seed": 1149868151,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3153613824,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef shortest_paths(source, weight_by_edge):\n    # Initialize the distance dictionary with infinity for all nodes except the source node\n    distance = {node: float('inf') for node in set(weight_by_edge)}\n    distance[source] = 0\n\n    # Perform V-1 iterations where V is the number of nodes in the graph\n    for _ in range(len(distance) - 1):\n        for u, v, weight in weight_by_edge.items():\n            # Update the distance if a shorter path through the current node exists\n            if distance[u] != float('inf') and distance[u] + weight < distance[v]:\n                distance[v] = distance[u] + weight\n\n    # Check for negative-weight cycles using the Bellman-Ford algorithm\n    for u, v, weight in weight_by_edge.items():\n        if distance[u] != float('inf') and distance[u] + weight < distance[v]:\n            raise ValueError(\"The graph contains a negative-weight cycle\")\n\n    return distance\n```",
+          "generation": {
+            "seconds": 7.203113,
+            "input_tokens": 451,
+            "output_tokens": 209,
+            "seed": 1149868152,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3153613824,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "0cc6c08f682de61d35f6f8e7d55bfb19e6ea00eb8dc193f5795924a374da4971",
+          "run": {
+            "status": "failed",
+            "seconds": 1.682641,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.187108,
+              "max_rss_kib": 30804,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Graph with multiple paths\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n        \"\"\"\n    \n        graph = {\n            (\"A\", \"B\"): 3,\n            (\"A\", \"C\"): 3,\n            (\"A\", \"F\"): 5,\n            (\"C\", \"B\"): -2,\n            (\"C\", \"D\"): 7,\n            (\"C\", \"E\"): 4,\n            (\"D\", \"E\"): -5,\n            (\"E\", \"F\"): -1,\n        }\n>       result = shortest_paths(\"A\", graph)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_shortest_paths.py:24: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsource = 'A'\nweight_by_edge = {('A', 'B'): 3, ('A', 'C'): 3, ('A', 'F'): 5, ('C', 'B'): -2, ...}\n\n    def shortest_paths(source, weight_by_edge):\n        # Initialize the distance dictionary with infinity for all nodes except the source node\n        distance = {node: float('inf') for node in set(weight_by_edge)}\n        distance[source] = 0\n    \n        # Perform V-1 iterations where V is the number of nodes in the graph\n        for _ in range(len(distance) - 1):\n>           for u, v, weight in weight_by_edge.items():\n                ^^^^^^^^^^^^\nE           ValueError: not enough values to unpack (expected 3, got 2)\n\npython_programs/shortest_paths.py:8: ValueError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Graph with one path\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph2 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"F\"): 4,\n        }\n>       result = shortest_paths(\"A\", graph2)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_shortest_paths.py:42: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsource = 'A'\nweight_by_edge = {('A', 'B'): 1, ('B', 'C'): 2, ('C', 'D'): 3, ('D', 'E'): -1, ...}\n\n    def shortest_paths(source, weight_by_edge):\n        # Initialize the distance dictionary with infinity for all nodes except the source node\n        distance = {node: float('inf') for node in set(weight_by_edge)}\n        distance[source] = 0\n    \n        # Perform V-1 iterations where V is the number of nodes in the graph\n        for _ in range(len(distance) - 1):\n>           for u, v, weight in weight_by_edge.items():\n                ^^^^^^^^^^^^\nE           ValueError: not enough values to unpack (expected 3, got 2)\n\npython_programs/shortest_paths.py:8: ValueError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Graph with cycle\n        Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n        \"\"\"\n    \n        graph3 = {\n            (\"A\", \"B\"): 1,\n            (\"B\", \"C\"): 2,\n            (\"C\", \"D\"): 3,\n            (\"D\", \"E\"): -1,\n            (\"E\", \"D\"): 1,\n            (\"E\", \"F\"): 4,\n        }\n>       result = shortest_paths(\"A\", graph3)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_shortest_paths.py:61: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nsource = 'A'\nweight_by_edge = {('A', 'B'): 1, ('B', 'C'): 2, ('C', 'D'): 3, ('D', 'E'): -1, ...}\n\n    def shortest_paths(source, weight_by_edge):\n        # Initialize the distance dictionary with infinity for all nodes except the source node\n        distance = {node: float('inf') for node in set(weight_by_edge)}\n        distance[source] = 0\n    \n        # Perform V-1 iterations where V is the number of nodes in the graph\n        for _ in range(len(distance) - 1):\n>           for u, v, weight in weight_by_edge.items():\n                ^^^^^^^^^^^^\nE           ValueError: not enough values to unpack (expected 3, got 2)\n\npython_programs/shortest_paths.py:8: ValueError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_paths.py::test1 - ValueError: not enoug...\nFAILED python_testcases/test_shortest_paths.py::test2 - ValueError: not enoug...\nFAILED python_testcases/test_shortest_paths.py::test3 - ValueError: not enoug...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4832,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n# Shortest paths using Bellman-Ford algorithm\ndef bellman_ford(graph, source):\n    n = len(graph)\n    # Initialize distances to infinity, except the source which is set to 0\n    distances = [float(\"inf\")] * n\n    distances[source] = 0\n    \n    # Relax all edges |V| - 1 times\n    for _ in range(n - 1):\n        for u, v, weight in graph:\n            if distances[u] != float(\"inf\") and distances[u] + weight < distances[v]:\n                distances[v] = distances[u] + weight\n                \n    # Check for negative-weight cycles\n    for u, v, weight in graph:\n        if distances[u] != float(\"inf\") and distances[u] + weight < distances[v]:\n            raise ValueError(\"Graph contains a negative-weight cycle\")\n    \n    return distances\n\n# Example usage\ngraph = [\n    ('A', 'B', 3),\n    ('A', 'C', 3),\n    ('A', 'F', 5),\n    ('C', 'B', -2),\n    ('C', 'D', 7),\n    ('C', 'E', 4),\n    ('D', 'E', -5),\n    ('E', 'F', -1)\n]\n\nsource = 'A'\nprint(bellman_ford(graph, source))\n```",
+          "generation": {
+            "seconds": 10.277043,
+            "input_tokens": 451,
+            "output_tokens": 288,
+            "seed": 1149868153,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3153613824,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 4,
+          "accepted": true,
+          "response": "```python\nimport math\n\ndef shortest_paths(source, weight_by_edge):\n    # Initialize weight_by_node with infinity for all nodes except the source\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            # Update weight if the new path is shorter\n            weight_by_node[v] = min(weight_by_node[v], weight_by_node[u] + weight)\n\n    # Check for negative-weight cycles\n    for (u, v), weight in weight_by_edge.items():\n        if weight_by_node[u] != float('inf') and weight_by_node[u] + weight < weight_by_node[v]:\n            raise ValueError(\"Negative-weight cycle detected\")\n\n    return weight_by_node\n```",
+          "generation": {
+            "seconds": 6.679137,
+            "input_tokens": 451,
+            "output_tokens": 186,
+            "seed": 1149868154,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3153613824,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "c425224d9dbcda8d881cff120ba2a72d91543003af17576d1a29739b7b125628",
+          "run": {
+            "status": "passed",
+            "seconds": 1.666821,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 3,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.173352,
+              "max_rss_kib": 30936,
+              "output_limit": false,
+              "output": "...\n--------------------- generated xml file: /tmp/results.xml ---------------------\n3 passed in 0.01s\n"
+            },
+            "output_bytes": 271,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 4,
+        "sha256": "c425224d9dbcda8d881cff120ba2a72d91543003af17576d1a29739b7b125628",
+        "source": "import math\n\ndef shortest_paths(source, weight_by_edge):\n    # Initialize weight_by_node with infinity for all nodes except the source\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            # Update weight if the new path is shorter\n            weight_by_node[v] = min(weight_by_node[v], weight_by_node[u] + weight)\n\n    # Check for negative-weight cycles\n    for (u, v), weight in weight_by_edge.items():\n        if weight_by_node[u] != float('inf') and weight_by_node[u] + weight < weight_by_node[v]:\n            raise ValueError(\"Negative-weight cycle detected\")\n\n    return weight_by_node\n",
+        "patch": "--- a/python_programs/shortest_paths.py\n+++ b/python_programs/shortest_paths.py\n@@ -1,48 +1,18 @@\n+import math\n \n def shortest_paths(source, weight_by_edge):\n-    weight_by_node = {\n-        v: float('inf') for u, v in weight_by_edge\n-    }\n+    # Initialize weight_by_node with infinity for all nodes except the source\n+    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n     weight_by_node[source] = 0\n \n-    for i in range(len(weight_by_node) - 1):\n+    for _ in range(len(weight_by_node) - 1):\n         for (u, v), weight in weight_by_edge.items():\n-            weight_by_edge[u, v] = min(\n-                weight_by_node[u] + weight,\n-                weight_by_node[v]\n-            )\n+            # Update weight if the new path is shorter\n+            weight_by_node[v] = min(weight_by_node[v], weight_by_node[u] + weight)\n+\n+    # Check for negative-weight cycles\n+    for (u, v), weight in weight_by_edge.items():\n+        if weight_by_node[u] != float('inf') and weight_by_node[u] + weight < weight_by_node[v]:\n+            raise ValueError(\"Negative-weight cycle detected\")\n \n     return weight_by_node\n-\n-\n-\"\"\"\n-Minimum-Weight Paths\n-bellman-ford\n-\n-Bellman-Ford algorithm implementation\n-\n-Given a directed graph that may contain negative edges (as long as there are no negative-weight cycles), efficiently calculates the minimum path weights from a source node to every other node in the graph.\n-\n-Input:\n-    source: A node id\n-    weight_by_edge: A dict containing edge weights keyed by an ordered pair of node ids\n-\n-Precondition:\n-    The input graph contains no negative-weight cycles\n-\n-Output:\n-   A dict mapping each node id to the minimum weight of a path from the source node to that node\n-\n-Example:\n-    >>> shortest_paths('A', {\n-        ('A', 'B'): 3,\n-        ('A', 'C'): 3,\n-        ('A', 'F'): 5,\n-        ('C', 'B'): -2,\n-        ('C', 'D'): 7,\n-        ('C', 'E'): 4,\n-        ('D', 'E'): -5,\n-        ('E', 'F'): -1\n-    })\n-    {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n-\"\"\"\n"
+      }
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple\n\ndef shortest_paths(source: str, weight_by_edge: Dict[Tuple[str, str], int]) -> Dict[str, int]:\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            weight_by_edge[u, v] = min(\n                weight_by_node[u] + weight,\n                weight_by_node[v]\n            )\n\n    return weight_by_node\n```",
+          "generation": {
+            "seconds": 4.555162,
+            "input_tokens": 1005,
+            "output_tokens": 131,
+            "seed": 1149868151,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3279866880,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef shortest_paths(source, weight_by_edge):\n    weight_by_node = {\n        v: float('inf') for u, v in weight_by_edge\n    }\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            weight_by_edge[u, v] = min(\n                weight_by_node[u] + weight,\n                weight_by_node[v]\n            )\n\n    return weight_by_node\n\n\n\"\"\"\nMinimum-Weight Paths\nbellman-ford\n\nBellman-Ford algorithm implementation\n\nGiven a directed graph that may contain negative edges (as long as there are no negative-weight cycles), efficiently calculates the minimum path weights from a source node to every other node in the graph.\n\nInput:\n    source: A node id\n    weight_by_edge: A dict containing edge weights keyed by an ordered pair of node ids\n\nPrecondition:\n    The input graph contains no negative-weight cycles\n\nOutput:\n   A dict mapping each node id to the minimum weight of a path from the source node to that node\n\nExample:\n    >>> shortest_paths('A', {\n        ('A', 'B'): 3,\n        ('A', 'C'): 3,\n        ('A', 'F'): 5,\n        ('C', 'B'): -2,\n        ('C', 'D'): 7,\n        ('C', 'E'): 4,\n        ('D', 'E'): -5,\n        ('E', 'F'): -1\n    })\n    {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n\"\"\"\n\n\"\"\"\nMinimum-Weight Paths\nbellman-ford\n\nBellman-Ford algorithm implementation\n\nGiven a directed graph that may contain negative edges (as long as there are no negative-weight cycles), efficiently calculates the minimum path weights from a source node to every other node in the graph.\n\nInput:\n    source: A node id\n    weight_by_edge: A dict containing edge weights keyed by an ordered pair of node ids\n\nPrecondition:\n    The input graph contains no negative-weight cycles\n\nOutput:\n   A dict mapping each node id to the minimum weight of a path from the source node to that node\n\nExample:\n    >>> shortest_paths('A', {\n        ('A', 'B'): 3,\n        ('A', 'C'): 3,\n        ('A', 'F'): 5,\n        ('C', 'B'): -2,\n        ('C', 'D'): 7,\n        ('C', 'E'): 4,\n        ('D', 'E'): -5,\n        ('E', 'F'): -1\n    })\n    {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n\"\"\"\n\n\"\"\"\nMinimum-Weight Paths\nbellman-ford\n\nBellman-Ford algorithm implementation\n\nGiven a directed graph that may contain negative edges (as long as there are no negative-weight cycles), efficiently calculates the minimum path weights from a source node to every other node in the graph.\n\nInput:\n    source: A node id\n    weight_by_edge: A dict containing edge weights keyed by an ordered pair of node ids\n\nPrecondition:\n    The input graph contains no negative-weight cycles\n\nOutput:\n   A dict mapping each node id to the minimum weight of a path from the source node to that node\n\nExample:\n    >>> shortest_paths('A', {\n        ('A', 'B'): 3,\n        ('A', 'C'): 3,\n        ('A', '",
+          "generation": {
+            "seconds": 28.048816,
+            "input_tokens": 1005,
+            "output_tokens": 768,
+            "seed": 1149868152,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3279866880,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Expected exactly one fenced Python module"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple\n\ndef shortest_paths(source: str, weight_by_edge: Dict[Tuple[str, str], int]) -> Dict[str, int]:\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        for (u, v), weight in weight_by_edge.items():\n            weight_by_edge[u, v] = min(\n                weight_by_node[u] + weight,\n                weight_by_node[v]\n            )\n\n    return weight_by_node\n\n# Example usage:\ngraph = {\n    (\"A\", \"B\"): 3,\n    (\"A\", \"C\"): 3,\n    (\"A\", \"F\"): 5,\n    (\"C\", \"B\"): -2,\n    (\"C\", \"D\"): 7,\n    (\"C\", \"E\"): 4,\n    (\"D\", \"E\"): -5,\n    (\"E\", \"F\"): -1\n}\n\nresult = shortest_paths(\"A\", graph)\nprint(result)  # Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n```",
+          "generation": {
+            "seconds": 9.195526,
+            "input_tokens": 1005,
+            "output_tokens": 272,
+            "seed": 1149868153,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3279866880,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple\n\ndef shortest_paths(source: str, weight_by_edge: Dict[Tuple[str, str], int]) -> Dict[str, int]:\n    weight_by_node = {v: float('inf') for u, v in weight_by_edge.keys()}\n    weight_by_node[source] = 0\n\n    for _ in range(len(weight_by_node) - 1):\n        updated_weight_by_node = {}\n        for u, v, weight in weight_by_edge.items():\n            updated_weight_by_node[v] = min(updated_weight_by_node.get(v, float('inf')), weight_by_node[u] + weight)\n        weight_by_node.update(updated_weight_by_node)\n\n    return weight_by_node\n```",
+          "generation": {
+            "seconds": 5.243392,
+            "input_tokens": 1005,
+            "output_tokens": 148,
+            "seed": 1149868154,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3279866880,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.174691,
+  "context": [
+    {
+      "path": "python_testcases/test_shortest_paths.py",
+      "start_line": 33,
+      "text": "    \"\"\"\n\n    graph2 = {\n        (\"A\", \"B\"): 1,\n        (\"B\", \"C\"): 2,\n        (\"C\", \"D\"): 3,\n        (\"D\", \"E\"): -1,\n        (\"E\", \"F\"): 4,\n    }\n    result = shortest_paths(\"A\", graph2)\n\n    expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 6, \"F\": 9}\n    assert result == expected\n\n\ndef test3():\n    \"\"\"Case 3: Graph with cycle\n    Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n    \"\"\"\n",
+      "sha256": "db2a12d2268e50d967f28421cb9de435c56026f784bb7a77be17c47239296a43",
+      "score": 0.44968467950820923
+    },
+    {
+      "path": "python_testcases/test_shortest_paths.py",
+      "start_line": 17,
+      "text": "        (\"A\", \"F\"): 5,\n        (\"C\", \"B\"): -2,\n        (\"C\", \"D\"): 7,\n        (\"C\", \"E\"): 4,\n        (\"D\", \"E\"): -5,\n        (\"E\", \"F\"): -1,\n    }\n    result = shortest_paths(\"A\", graph)\n\n    expected = {\"A\": 0, \"C\": 3, \"B\": 1, \"E\": 5, \"D\": 10, \"F\": 4}\n    assert result == expected\n\n\ndef test2():\n    \"\"\"Case 2: Graph with one path\n    Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}\n    \"\"\"\n\n    graph2 = {\n        (\"A\", \"B\"): 1,",
+      "sha256": "48f7de827229ae029aa220374edadf951d0de45a415d45d70342b08427ae4ec4",
+      "score": 0.44070684909820557
+    },
+    {
+      "path": "python_testcases/test_shortest_paths.py",
+      "start_line": 1,
+      "text": "import pytest\n\nif pytest.use_correct:\n    from correct_python_programs.shortest_paths import shortest_paths\nelse:\n    from python_programs.shortest_paths import shortest_paths\n\n\ndef test1():\n    \"\"\"Case 1: Graph with multiple paths\n    Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 10, 'F': 4}\n    \"\"\"\n\n    graph = {\n        (\"A\", \"B\"): 3,\n        (\"A\", \"C\"): 3,\n        (\"A\", \"F\"): 5,\n        (\"C\", \"B\"): -2,\n        (\"C\", \"D\"): 7,\n        (\"C\", \"E\"): 4,",
+      "sha256": "382e172a34841821f30ff577034e09582dd0765ae1f7fa0ea265238d6766f787",
+      "score": 0.43218785524368286
+    }
+  ]
+}

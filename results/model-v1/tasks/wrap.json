@@ -1,0 +1,331 @@
+{
+  "task": "wrap",
+  "source_sha256": "eb76433536ae58fa2955fbe053a8f9e45e7deb7d3894048acb7cdab13f1f5282",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.701213,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.167994,
+      "max_rss_kib": 30928,
+      "output_limit": false,
+      "output": ".....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n5 passed in 0.01s\n"
+    },
+    "output_bytes": 273,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.707004,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 5,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.188303,
+      "max_rss_kib": 30816,
+      "output_limit": false,
+      "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...ound as', ...] == ['The leaves ...ound as', ...]\nE         \nE         Right contains one more item: ' dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...the sea', ...] == ['The leaves ...the sea', ...]\nE         \nE         Right contains one more item: ' existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...haps, a', ...] == ['The leaves ...haps, a', ...]\nE         \nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...es hid,', ...] == ['The leaves ...es hid,', ...]\nE         \nE         Right contains one more item: ' human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...rld when one'] == ['The leaves ...hen one', ...]\nE         \nE         Right contains one more item: ' reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+    },
+    "output_bytes": 5931,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "comparison",
+          "candidate_sha256": "bbc098e50f2557d7c36b8a4a434e9816f85150b880685008d484aed06ac9055e",
+          "run": {
+            "status": "failed",
+            "seconds": 1.680654,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.175748,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...ound as', ...] == ['The leaves ...ound as', ...]\nE         \nE         Right contains one more item: ' dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...the sea', ...] == ['The leaves ...the sea', ...]\nE         \nE         Right contains one more item: ' existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...haps, a', ...] == ['The leaves ...haps, a', ...]\nE         \nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...es hid,', ...] == ['The leaves ...es hid,', ...]\nE         \nE         Right contains one more item: ' human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...rld when one'] == ['The leaves ...hen one', ...]\nE         \nE         Right contains one more item: ' reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 5931,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "28be2e752587f61117935e1ff0140659dcba30adbc47d73ff0cb61b5865fdda8",
+          "run": {
+            "status": "failed",
+            "seconds": 1.697384,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.194026,
+              "max_rss_kib": 30800,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...ound as', ...] == ['The leaves ...ound as', ...]\nE         \nE         Right contains one more item: ' dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...the sea', ...] == ['The leaves ...the sea', ...]\nE         \nE         Right contains one more item: ' existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...haps, a', ...] == ['The leaves ...haps, a', ...]\nE         \nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...es hid,', ...] == ['The leaves ...es hid,', ...]\nE         \nE         Right contains one more item: ' human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...rld when one'] == ['The leaves ...hen one', ...]\nE         \nE         Right contains one more item: ' reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 5931,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "5fb481f4b3a7320cefb31330b27057fda4daae4eb725217354b89a8b46d3e0f6",
+          "run": {
+            "status": "failed",
+            "seconds": 1.71591,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.177307,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ... sounds', ...] == ['The leaves ...ound as', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees,' != 'The leaves did not stir on the trees, grasshoppers'\nE         Left contains one more item: ' forget our human dignity and the higher aims of'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...otonous', ...] == ['The leaves ...the sea', ...]\nE         \nE         At index 1 diff: ' stir on the' != ' stir on the trees,'\nE         Left contains 7 more items, first extra item: ' reflects:'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...es hid,', ...] == ['The leaves ...haps, a', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees, grasshoppers chirruped, and the' != 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous'\nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...each of', ...] == ['The leaves ...es hid,', ...]\nE         \nE         At index 1 diff: ' monotonous hollow sound of the sea rising up from below, spoke of the' != ' monotonous hollow sound of the sea rising up from below, spoke of the peace,'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...s world when'] == ['The leaves ...hen one', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of' != 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the'\nE         Right contains one more item: ' reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 6724,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "aa9f05c0b77f67388b3c253460ae9e773759562bef1822cb6447f323e576dff2",
+          "run": {
+            "status": "failed",
+            "seconds": 1.77499,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.185793,
+              "max_rss_kib": 30800,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...ds now,', ...] == ['The leaves ...ound as', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees,' != 'The leaves did not stir on the trees, grasshoppers'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...the sea', ...] == ['The leaves ...the sea', ...]\nE         \nE         At index 7 diff: ' below, spoke of' != ' below, spoke of the'\nE         Left contains one more item: ' the higher aims of'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...es hid,', ...] == ['The leaves ...haps, a', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees, grasshoppers chirruped, and the' != 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous'\nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...each of', ...] == ['The leaves ...es hid,', ...]\nE         \nE         At index 1 diff: ' monotonous hollow sound of the sea rising up from below, spoke of the' != ' monotonous hollow sound of the sea rising up from below, spoke of the peace,'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...s world when'] == ['The leaves ...hen one', ...]\nE         \nE         At index 2 diff: ' sound as indifferently and monotonously when we are all no more. And in this constancy, in this complete indifference to the life and' != ' sound as indifferently and monotonously when we are all no more. And in this constancy, in this complete indifference to the life and death'\nE         Right contains one more item: ' reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 6630,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef wrap(text: str, cols: int) -> List[str]:\n    lines = []\n    while len(text) > cols:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\"\nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.),Wrapping Text\r\n\"\"\"",
+          "generation": {
+            "seconds": 7.751925,
+            "input_tokens": 311,
+            "output_tokens": 236,
+            "seed": 1889700242,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131365888,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Expected exactly one fenced Python module"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef wrap(text: str, cols: int) -> List[str]:\n    lines = []\n    while len(text) > cols:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\nif __name__ == \"__main__\":\n    print(wrap(\"This is an example text to be wrapped\", 20))\n    # Output:\n    # ['This is an', 'example text', 'to be wrapped']\n```",
+          "generation": {
+            "seconds": 4.697682,
+            "input_tokens": 311,
+            "output_tokens": 131,
+            "seed": 1889700243,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131365888,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\ndef wrap(text, cols):\n    lines = []\n    current_line = \"\"\n\n    for char in text:\n        if len(current_line) + len(char) <= cols:\n            current_line += char\n        else:\n            lines.append(current_line)\n            current_line = char\n\n    if current_line:\n        lines.append(current_line)\n\n    return lines\n\n\n\"\"\"\nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  Wrapping Text\r\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.417625,
+            "input_tokens": 311,
+            "output_tokens": 202,
+            "seed": 1889700244,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131365888,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "candidate_sha256": "78a4ac6948c0f302ff0d37060f0913b85bbcbe0aab91ec0d20589d7b46c2aeb1",
+          "run": {
+            "status": "failed",
+            "seconds": 1.728906,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.1848,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "FFFFF\n=================================== FAILURES ===================================\n_______________________ test_wrap[input_data0-expected0] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 50]\nexpected = ['The leaves did not stir on the trees, grasshoppers', ' chirruped, and the monotonous hollow sound of the', ' sea ris...So it must have', ' sounded when there was no Yalta, no Oreanda here;', ' so it sounds now, and it will sound as', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...rently ', ...] == ['The leaves ...ound as', ...]\nE         \nE         At index 2 diff: ' sea rising up from below, spoke of the peace, of ' != ' sea rising up from below, spoke of the peace, of'\nE         Right contains one more item: ' dignity and the higher aims of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data1-expected1] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 20]\nexpected = ['The leaves did not', ' stir on the trees,', ' grasshoppers', ' chirruped, and the', ' monotonous hollow', ' sound of the sea', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...p from ', ...] == ['The leaves ...the sea', ...]\nE         \nE         At index 0 diff: 'The leaves did not s' != 'The leaves did not'\nE         Right contains 8 more items, first extra item: ' reflects:'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data2-expected2] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 80]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous', ' hollow sound of the sea rising ...his constancy, in this complete', ' indifference to the life and death of each of us, there lies hid, perhaps, a', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...eternal', ...] == ['The leaves ...haps, a', ...]\nE         \nE         At index 1 diff: ' hollow sound of the sea rising up from below, spoke of the peace, of the eterna' != ' hollow sound of the sea rising up from below, spoke of the peace, of the'\nE         Right contains one more item: ' of our existence.'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data3-expected3] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...thing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 77]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the', ' monotonous hollow sound of the sea rising ...e. And in this constancy, in this', ' complete indifference to the life and death of each of us, there lies hid,', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ..., a ple', ...] == ['The leaves ...es hid,', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees, grasshoppers chirruped, and the monoton' != 'The leaves did not stir on the trees, grasshoppers chirruped, and the'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n_______________________ test_wrap[input_data4-expected4] _______________________\n\ninput_data = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...hing except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.', 140]\nexpected = ['The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up f...a, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one', ...]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_wrap(input_data, expected):\n>       assert wrap(*input_data) == expected\nE       AssertionError: assert ['The leaves ...hing ex', ...] == ['The leaves ...hen one', ...]\nE         \nE         At index 0 diff: 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the ' != 'The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the'\nE         Use -v to get more diff\n\npython_testcases/test_wrap.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_wrap.py::test_wrap[input_data0-expected0] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data1-expected1] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data2-expected2] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data3-expected3] - Asse...\nFAILED python_testcases/test_wrap.py::test_wrap[input_data4-expected4] - Asse...\n5 failed in 0.02s\n"
+            },
+            "output_bytes": 6576,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import *\nfrom collections import *\n\nclass Solution:\n    def wrapText(self, text: str, cols: int) -> List[str]:\n        lines = []\n        while len(text) > cols:\n            end = text.rfind(' ', 0, cols + 1)\n            if end == -1:\n                end = cols\n            line, text = text[:end], text[end:]\n            lines.append(line)\n\n        return lines\n\n# Test cases\nsol = Solution()\nassert sol.wrapText(\"This is a very long text that needs to be wrapped\", 15) == [\"This is a\", \"very long\", \"text that\", \"needs to\", \"be wrapped\"]\nassert sol.wrapText(\"Shorter text\", 5) == [\"Shorter\", \"text\"]\nassert sol.wrapText(\"\", 3) == []\nassert sol.wrapText(\"One\", 4) == [\"One\"]\n```",
+          "generation": {
+            "seconds": 6.797057,
+            "input_tokens": 311,
+            "output_tokens": 190,
+            "seed": 1889700245,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131365888,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef wrap(text, cols):\n    lines = []\n    while len(text) > cols:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\"\nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.),Wrapping Text\r\n\"\"\"\n\n```\n",
+          "generation": {
+            "seconds": 8.124181,
+            "input_tokens": 776,
+            "output_tokens": 225,
+            "seed": 1889700242,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3219418112,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef wrap(text, cols):\n    lines = []\n    while len(text) > cols:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\"\nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.),Wrapping Text\r\n\"\"\"\n\n```\n",
+          "generation": {
+            "seconds": 8.10932,
+            "input_tokens": 776,
+            "output_tokens": 225,
+            "seed": 1889700243,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3219418112,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "Here is the corrected Python module:\n\n```python\ndef wrap(text, cols):\n    lines = []\n    while len(text) > cols:\n        end = text.rfind(' ', 0, cols + 1)\n        if end == -1:\n            end = cols\n        line, text = text[:end], text[end:]\n        lines.append(line)\n\n    return lines\n\n\"\"\"\nWrap Text\n\nGiven a long string and a column width, break the string on spaces into a list of lines such that each line is no longer than the column width.\n\nInput:\n    text: The starting text.\n    cols: The target column width, i.e. the maximum length of any single line after wrapping.\n\nPrecondition:\n    cols > 0.\n\nOutput:\n    An ordered list of strings, each no longer than the column width, such that the concatenation of the strings returns the original text,\nand such that no word in the original text is broken into two parts unless necessary.  The original amount of spaces are preserved (e.g. spaces\nat the start or end of each line aren't trimmed.). Wrapping Text\r\n\"\"\"\n\n# Visible repository context:\npython_testcases/test_wrap.py (line 1):\nimport pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.wrap import wrap\nelse:\n    from python_programs.wrap import wrap\n\n\ntestdata = load_json_testcases(wrap.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_wrap(input_data, expected):\n    assert wrap(*input_data) == expected\n\njson_testcases/wrap.json (line 1):\n[[\"The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the peace, of the eternal sleep awaiting us. So it must have sounded when there was no Yalta, no Oreanda here; so it sounds now, and it will sound as indifferently and monotonously when we are all no more. And in this constancy, in this complete indifference to the life and death of each of us, there lies hid, perhaps, a pledge of our eternal salvation, of the unceasing movement of life upon earth, of unceasing progress towards perfection. Sitting beside a young woman who in the dawn seemed so lovely, soothed and spellbound in these magical surroundings - the sea, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one reflects: everything except what we think or do ourselves when we forget our human dignity and the higheraims of our existence.\", 50], [\"The leaves did not stir on the trees, grasshoppers\", \" chirruped, and the monotonous hollow sound of the\", \" sea rising up from below, spoke of the peace, of\", \" the eternal sleep awaiting us. So it must have\", \" sounded when there was no Yal\n\njson_testcases/wrap.json (line 1):\nman who in the dawn seemed so lovely, soothed and spellbound in these magical\", \" surroundings - the sea, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one\", \" reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.\"]]\n```",
+          "generation": {
+            "seconds": 24.916403,
+            "input_tokens": 776,
+            "output_tokens": 704,
+            "seed": 1889700244,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3219418112,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch is not a parseable Python module"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import *\nfrom collections import *\n\nclass Solution:\n    def wrapText(self, text: str, cols: int) -> List[str]:\n        lines = []\n        while len(text) > cols:\n            end = text.rfind(' ', 0, cols + 1)\n            if end == -1:\n                end = cols\n            line, text = text[:end], text[end:]\n            lines.append(line)\n\n        return lines\n\n# Test cases\nsol = Solution()\nassert sol.wrapText(\"The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the peace, of the eternal sleep awaiting us. So it must have sounded when there was no Yalta, no Oreanda here; so it sounds now, and it will sound as indifferently and monotonously when we are all no more. And in this constancy, in this complete indifference to the life and death of each of us, there lies hid, perhaps, a pledge of our eternal salvation, of the unceasing movement of life upon earth, of unceasing progress towards perfection. Sitting beside a young woman who in the dawn seemed so lovely, soothed and spellbound in these magical surroundings - the sea, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.\", 50) == [\n    \"The leaves did not stir on the trees, grasshoppers\",\n    \"chirruped, and the monotonous hollow sound of the\",\n    \"sea rising up from below, spoke of the peace, of\",\n    \"the eternal sleep awaiting us. So it must have\",\n    \" sounded when there was no Yalta, no Oreanda here;\",\n    \"so it sounds now, and it will sound as indifferently\",\n    \"and monotonously when we are all no more.\",\n    \"And in this constancy, in this complete indifference\",\n    \"to the life and death of each of us, there lies hid,\",\n    \"perhaps, a pledge of our eternal salvation, of the\",\n    \"unceasing movement of life upon earth, of unceasing\",\n    \"progress towards perfection. Sitting beside a young\",\n    \"woman who in the dawn seemed so lovely, soothed and\",\n    \"spellbound in these magical surroundings - the sea,\",\n    \"mountains, clouds, the open sky - Gurov thought\",\n    \"how in reality everything is beautiful in this world\",\n    \"when one reflects: everything except what we think or\",\n    \"do ourselves when we forget our human dignity and the\",\n    \"higher aims of our existence.\"\n]\nassert sol.wrapText(\"This is a test case with no breaks.\", 20) == [\"This is a \", \"test case with no breaks.\"]\nassert sol.wrapText(\"One short line.\", 4) == [\"One short\", \"line.\"]\n```",
+          "generation": {
+            "seconds": 23.556704,
+            "input_tokens": 776,
+            "output_tokens": 641,
+            "seed": 1889700245,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3219418112,
+            "peak_gpu_reserved_bytes": 5100273664
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.353599,
+  "context": [
+    {
+      "path": "python_testcases/test_wrap.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.wrap import wrap\nelse:\n    from python_programs.wrap import wrap\n\n\ntestdata = load_json_testcases(wrap.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_wrap(input_data, expected):\n    assert wrap(*input_data) == expected",
+      "sha256": "3833a9d59a71a1b0475b30f64fcfb27e1bb0d0c442fbccd2aea2b44f0a0ee929",
+      "score": 0.38459810614585876
+    },
+    {
+      "path": "json_testcases/wrap.json",
+      "start_line": 1,
+      "text": "[[\"The leaves did not stir on the trees, grasshoppers chirruped, and the monotonous hollow sound of the sea rising up from below, spoke of the peace, of the eternal sleep awaiting us. So it must have sounded when there was no Yalta, no Oreanda here; so it sounds now, and it will sound as indifferently and monotonously when we are all no more. And in this constancy, in this complete indifference to the life and death of each of us, there lies hid, perhaps, a pledge of our eternal salvation, of the unceasing movement of life upon earth, of unceasing progress towards perfection. Sitting beside a young woman who in the dawn seemed so lovely, soothed and spellbound in these magical surroundings - the sea, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.\", 50], [\"The leaves did not stir on the trees, grasshoppers\", \" chirruped, and the monotonous hollow sound of the\", \" sea rising up from below, spoke of the peace, of\", \" the eternal sleep awaiting us. So it must have\", \" sounded when there was no Yal",
+      "sha256": "4476243befce2a9e14dc693a0064123d91d863458d6f591e57bc489568dea4ec",
+      "score": 0.21460768580436707
+    },
+    {
+      "path": "json_testcases/wrap.json",
+      "start_line": 1,
+      "text": "man who in the dawn seemed so lovely, soothed and spellbound in these magical\", \" surroundings - the sea, mountains, clouds, the open sky - Gurov thought how in reality everything is beautiful in this world when one\", \" reflects: everything except what we think or do ourselves when we forget our human dignity and the higher aims of our existence.\"]]",
+      "sha256": "f9fad7d22aa57b517e0966dc29ffbee40739b7176b0293481792e2de89cc7d0f",
+      "score": 0.20904472470283508
+    }
+  ]
+}

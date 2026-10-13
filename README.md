@@ -3,17 +3,17 @@
 A reproducible Python repair benchmark that proposes small patches, runs them in
 isolated containers, and records the test evidence behind each accepted patch.
 
-The current implementation is a **deterministic baseline**: bounded AST mutations,
-40 pinned QuixBugs tasks, reference-test auditing, and measured evaluation. It
-does not yet include a trained code model or a browser workbench. Passing the
-available tests is evidence of a repair, not proof of correctness.
+The implementation compares bounded AST mutations with a pinned local code model,
+with and without retrieved repository context, on 40 QuixBugs tasks. It records
+reference-test audits and measured results. Fine-tuning and a browser workbench
+are not yet included. Passing available tests is evidence, not proof of correctness.
 
 ## Run an example
 
 Requirements: Python 3.11 and a running local Linux Docker engine with memory,
 PID and seccomp controls. Docker Desktop's Linux engine works on Windows.
 Image construction and dataset download need internet; candidate execution has
-no network. No model weights, API keys or paid services are used.
+no network. This deterministic example needs no model weights or API keys.
 
 ```sh
 python -m venv .venv
@@ -32,6 +32,25 @@ On PowerShell, activate with `.venv\Scripts\Activate.ps1`; on bash, use
 `runs/gcd/tasks/gcd.json` for the original failure, attempted changes, accepted
 diff, test counts and resource evidence. The CLI is the current working demo.
 
+## Local code model
+
+[Model setup and reproduction](docs/INFERENCE.md) add a pinned Qwen code model,
+MiniLM context embeddings and an exact FAISS index. Inference runs locally;
+generated programs run only in the isolated Docker runtime.
+
+```sh
+# After installing the model dependencies and downloading pinned weights:
+repair-bench compare --tasks gcd breadth_first_search --budget 4 --output runs/model-example
+```
+
+The report compares mutations, generation without context, and generation with
+retrieved visible tests and helpers. It includes generated text, rejected outputs,
+accepted patches, original test evidence, latency and memory measurements.
+In the [full measured comparison](docs/MODEL_RESULTS.md), each model variant
+resolved **10 of 39 eligible tasks (25.64%)**, versus **4 of 39 (10.26%)** for
+mutations at the same four-attempt budget. Retrieval changed which tasks passed
+but did not improve the overall rate. Peak model allocation was 4.31 GiB.
+
 ## Evaluation
 
 ```sh
@@ -39,8 +58,8 @@ repair-bench evaluate --budget 12 --output runs/baseline
 ```
 
 The recorded run resolves **4 of 39 eligible tasks (10.26%)**, with one
-reference-timeout exclusion, at a maximum of 12 candidates per task. All 30
-unit, policy and actual container-isolation checks pass.
+reference-timeout exclusion, at a maximum of 12 candidates per task. That original
+measurement is preserved independently of the model comparison.
 
 The baseline changes one expression at a time: comparison boundaries, arithmetic
 operators, two-argument call order, or zero/one constants. Candidates follow a
@@ -74,6 +93,8 @@ python -m pytest -q
 
 Without that variable, Docker tests are explicitly skipped. CI builds the image,
 runs the full test suite, and evaluates two actual benchmark tasks.
+It also replays a published model-generated patch in the isolated runtime.
+GPU generation is measured locally; CI does not download the model weights.
 
 ## Repository
 

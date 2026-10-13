@@ -1,0 +1,70 @@
+{
+  "deterministic": {
+    "resolved_tasks": [
+      "find_first_in_sorted",
+      "gcd",
+      "quicksort",
+      "rpn_eval"
+    ],
+    "rejections": {},
+    "execution_outcomes": {
+      "failed": 105,
+      "passed": 4,
+      "output_limit": 9
+    },
+    "generation_output_tokens": 0
+  },
+  "unadapted": {
+    "resolved_tasks": [
+      "bitcount",
+      "depth_first_search",
+      "detect_cycle",
+      "find_first_in_sorted",
+      "is_valid_parenthesization",
+      "kheapsort",
+      "lcs_length",
+      "reverse_linked_list",
+      "shortest_paths",
+      "sieve"
+    ],
+    "rejections": {
+      "Patch changes a required function signature": 75,
+      "Patch is not a parseable Python module": 1,
+      "duplicate_candidate": 1,
+      "Patch does not change program behavior structurally": 14,
+      "Expected exactly one fenced Python module": 3
+    },
+    "execution_outcomes": {
+      "passed": 10,
+      "failed": 32,
+      "output_limit": 2
+    },
+    "generation_output_tokens": 30548
+  },
+  "retrieval": {
+    "resolved_tasks": [
+      "bitcount",
+      "bucketsort",
+      "depth_first_search",
+      "find_first_in_sorted",
+      "flatten",
+      "gcd",
+      "lcs_length",
+      "max_sublist_sum",
+      "reverse_linked_list",
+      "shunting_yard"
+    ],
+    "rejections": {
+      "Expected exactly one fenced Python module": 9,
+      "Patch does not change program behavior structurally": 17,
+      "Patch changes a required function signature": 50,
+      "Patch is not a parseable Python module": 13,
+      "duplicate_candidate": 2
+    },
+    "execution_outcomes": {
+      "passed": 10,
+      "failed": 33
+    },
+    "generation_output_tokens": 36691
+  }
+}

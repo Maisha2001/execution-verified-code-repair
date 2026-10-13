@@ -1,0 +1,165 @@
+{
+  "started_at_utc": "2026-10-13T21:18:02.381032+00:00",
+  "dataset_revision": "4257f44b0ff1181dedaedee6a447e133219fcebf",
+  "archive_sha256": "0926648bc8bb4a027428785c5fbb8e36acae4555e4beec181934859d53298c62",
+  "tasks": [
+    "bitcount",
+    "breadth_first_search",
+    "bucketsort",
+    "depth_first_search",
+    "detect_cycle",
+    "find_first_in_sorted",
+    "find_in_sorted",
+    "flatten",
+    "gcd",
+    "get_factors",
+    "hanoi",
+    "is_valid_parenthesization",
+    "kheapsort",
+    "knapsack",
+    "kth",
+    "lcs_length",
+    "levenshtein",
+    "lis",
+    "longest_common_subsequence",
+    "max_sublist_sum",
+    "mergesort",
+    "minimum_spanning_tree",
+    "next_palindrome",
+    "next_permutation",
+    "pascal",
+    "possible_change",
+    "powerset",
+    "quicksort",
+    "reverse_linked_list",
+    "rpn_eval",
+    "shortest_path_length",
+    "shortest_path_lengths",
+    "shortest_paths",
+    "shunting_yard",
+    "sieve",
+    "sqrt",
+    "subsequences",
+    "to_base",
+    "topological_ordering",
+    "wrap"
+  ],
+  "candidate_budget": 4,
+  "code_model": {
+    "id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+    "license": "Apache-2.0",
+    "files": [
+      "config.json",
+      "generation_config.json",
+      "merges.txt",
+      "model.safetensors",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json",
+      "LICENSE",
+      "README.md"
+    ],
+    "sha256": {
+      "config.json": "88f9a17863c05fb313515d2ff74b1098e0c35579f99068e32beda00618508ae0",
+      "generation_config.json": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "README.md": "a8504fd3e1247c90e4fe640d84df963237134bf29db02b0de7d502eed6c93c33"
+    }
+  },
+  "embedding_model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "license": "Apache-2.0",
+    "files": [
+      "config.json",
+      "config_sentence_transformers.json",
+      "model.safetensors",
+      "modules.json",
+      "sentence_bert_config.json",
+      "special_tokens_map.json",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.txt",
+      "1_Pooling/config.json",
+      "README.md"
+    ],
+    "sha256": {
+      "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+      "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+      "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+    }
+  },
+  "runtime": {
+    "server_version": "29.3.0",
+    "operating_system": "Docker Desktop",
+    "cpus": 16,
+    "memory_bytes": 16351686656,
+    "image_id": "sha256:d7bc482b4edc07a8483d29f2bdf183157bca86ddf79c0c78e98b17200a7df413",
+    "limits": {
+      "wall_seconds": 8,
+      "memory_mb": 256,
+      "pids": 32,
+      "output_bytes": 131072
+    }
+  },
+  "python": "3.11.15",
+  "host_platform": "Windows",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "sentence-transformers": "5.2.0",
+    "faiss-cpu": "1.13.2",
+    "numpy": "2.3.3"
+  },
+  "generation": {
+    "device": "cuda",
+    "max_new_tokens": 768,
+    "max_input_tokens": 4096,
+    "first_attempt": "greedy",
+    "later_attempts": {
+      "temperature": 0.7,
+      "top_p": 0.95
+    },
+    "seed": "SHA256(task name) first32bits plus attempt offset, modulo 2**31; same across model arms"
+  },
+  "retrieval": {
+    "top_k": 3,
+    "model_max_tokens": 256,
+    "index": "normalized embeddings, exact FAISS inner product",
+    "corpus": "Only current task's visible tests/fixtures and node/load helpers; no reference programs or other tasks"
+  },
+  "policy": "All arms use the same original tests and independently audited references. Invalid and duplicate model outputs consume attempt budget. Stop each arm at first passing candidate. No reference source or feedback sent to model.",
+  "implementation_sha256": {
+    "__init__.py": "45f8a1f9a5f9d28a45859d864855474e04bb1ebed18c104c3320146b9276f248",
+    "candidates.py": "a993231ed2aa7b48bd751cabe840162e63b591665e89b1460f4b19e894f543c9",
+    "cli.py": "b51668470209b831dced96404d814408d828f894293be1156d535a92aa450ffa",
+    "comparison.py": "ff760fe06939575c82b2bd8022b81b7bae5ceca2b5197a59a623f7f865fbdc6a",
+    "data.py": "dc29fd437b03b543084d8086258364c93a3440f9b49ffe05feeeafa243a04cf4",
+    "evaluate.py": "841d9154e05a9946bac9d3a7633fd3aacf797fe67c6f7aaed9ba30132abaa73c",
+    "inference.py": "07078fddd4f27590973abaea2c5607d3fb6c20785eb16a814e6f39771745881c",
+    "models.py": "8ba204f90fed1f2899ce57070d41ab700e8fc3bb97f21ee42f3e30cadf786868",
+    "patching.py": "6a964ec4ce25eb759fe1826f79a8ad01bceb623c4cf1b4b88c77dfa23d32819f",
+    "retrieval.py": "2defe52172ffc93b6f84f12bc11ca219135f744662780187e2dda0b16fa85520",
+    "sandbox.py": "da921d91ae1026924bde76644c2f7f3ebad24dce472dbc73997176dba9fcc073"
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpu_total_bytes": 12820480000,
+    "cuda": "12.8",
+    "cpu_threads": 4
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "task": "max_sublist_sum",
+  "source_sha256": "aab26d9f3984f177adcff110fe72de97e54c5f85ad476c38e49c949a873d85b5",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.713072,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.165537,
+      "max_rss_kib": 30796,
+      "output_limit": false,
+      "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+    },
+    "output_bytes": 274,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.772326,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 2,
+      "failed": 4,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.185435,
+      "max_rss_kib": 30896,
+      "output_limit": false,
+      "output": "FF.F.F\n=================================== FAILURES ===================================\n_____________________ test_max_sublist_sum[input_data0-5] ______________________\n\ninput_data = [[4, -5, 2, 1, -1, 3]], expected = 5\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 4 == 5\nE        +  where 4 = max_sublist_sum(*[[4, -5, 2, 1, -1, 3]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data1-4] ______________________\n\ninput_data = [[0, -1, 2, -1, 3, -1, ...]], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 3 == 4\nE        +  where 3 = max_sublist_sum(*[[0, -1, 2, -1, 3, -1, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data3-19] _____________________\n\ninput_data = [[4, -2, -8, 5, -2, 7, ...]], expected = 19\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 13 == 19\nE        +  where 13 = max_sublist_sum(*[[4, -2, -8, 5, -2, 7, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data5-6] ______________________\n\ninput_data = [[-2, 1, -3, 4, -1, 2, ...]], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 2 == 6\nE        +  where 2 = max_sublist_sum(*[[-2, 1, -3, 4, -1, 2, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data0-5]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data1-4]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data3-19]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data5-6]\n4 failed, 2 passed in 0.02s\n"
+    },
+    "output_bytes": 2681,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "836d0687fbfb98e5b1154d60d3c5cff9f0d1d345f50427df01327f83817da38f",
+          "run": {
+            "status": "failed",
+            "seconds": 1.682215,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 3,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.182517,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "..FF.F\n=================================== FAILURES ===================================\n_____________________ test_max_sublist_sum[input_data2-12] _____________________\n\ninput_data = [[3, 4, 5]], expected = 12\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 13 == 12\nE        +  where 13 = max_sublist_sum(*[[3, 4, 5]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data3-19] _____________________\n\ninput_data = [[4, -2, -8, 5, -2, 7, ...]], expected = 19\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 14 == 19\nE        +  where 14 = max_sublist_sum(*[[4, -2, -8, 5, -2, 7, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data5-6] ______________________\n\ninput_data = [[-2, 1, -3, 4, -1, 2, ...]], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 3 == 6\nE        +  where 3 = max_sublist_sum(*[[-2, 1, -3, 4, -1, 2, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data2-12]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data3-19]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data5-6]\n3 failed, 3 passed in 0.02s\n"
+            },
+            "output_bytes": 2104,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "366db375b71203228f99b46c2383f925dc4ec7e53bd7b1fd11a972b47ba6db0a",
+          "run": {
+            "status": "failed",
+            "seconds": 1.663068,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 1,
+              "failed": 5,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.179495,
+              "max_rss_kib": 30680,
+              "output_limit": false,
+              "output": "FF.FFF\n=================================== FAILURES ===================================\n_____________________ test_max_sublist_sum[input_data0-5] ______________________\n\ninput_data = [[4, -5, 2, 1, -1, 3]], expected = 5\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 4 == 5\nE        +  where 4 = max_sublist_sum(*[[4, -5, 2, 1, -1, 3]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data1-4] ______________________\n\ninput_data = [[0, -1, 2, -1, 3, -1, ...]], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 3 == 4\nE        +  where 3 = max_sublist_sum(*[[0, -1, 2, -1, 3, -1, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data3-19] _____________________\n\ninput_data = [[4, -2, -8, 5, -2, 7, ...]], expected = 19\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 13 == 19\nE        +  where 13 = max_sublist_sum(*[[4, -2, -8, 5, -2, 7, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data4-0] ______________________\n\ninput_data = [[-4, -4, -5]], expected = 0\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 1 == 0\nE        +  where 1 = max_sublist_sum(*[[-4, -4, -5]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data5-6] ______________________\n\ninput_data = [[-2, 1, -3, 4, -1, 2, ...]], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 2 == 6\nE        +  where 2 = max_sublist_sum(*[[-2, 1, -3, 4, -1, 2, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data0-5]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data1-4]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data3-19]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data4-0]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data5-6]\n5 failed, 1 passed in 0.02s\n"
+            },
+            "output_bytes": 3213,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "7259c88c3baddb456c12dbfc7dbe861bbf25d1e152c14b45f180ecc9110eb6d7",
+          "run": {
+            "status": "failed",
+            "seconds": 1.678712,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 6,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.180989,
+              "max_rss_kib": 30744,
+              "output_limit": false,
+              "output": "FFFFFF\n=================================== FAILURES ===================================\n_____________________ test_max_sublist_sum[input_data0-5] ______________________\n\ninput_data = [[4, -5, 2, 1, -1, 3]], expected = 5\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 1 == 5\nE        +  where 1 = max_sublist_sum(*[[4, -5, 2, 1, -1, 3]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data1-4] ______________________\n\ninput_data = [[0, -1, 2, -1, 3, -1, ...]], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 1 == 4\nE        +  where 1 = max_sublist_sum(*[[0, -1, 2, -1, 3, -1, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data2-12] _____________________\n\ninput_data = [[3, 4, 5]], expected = 12\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 0 == 12\nE        +  where 0 = max_sublist_sum(*[[3, 4, 5]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data3-19] _____________________\n\ninput_data = [[4, -2, -8, 5, -2, 7, ...]], expected = 19\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 6 == 19\nE        +  where 6 = max_sublist_sum(*[[4, -2, -8, 5, -2, 7, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data4-0] ______________________\n\ninput_data = [[-4, -4, -5]], expected = 0\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 13 == 0\nE        +  where 13 = max_sublist_sum(*[[-4, -4, -5]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data5-6] ______________________\n\ninput_data = [[-2, 1, -3, 4, -1, 2, ...]], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 4 == 6\nE        +  where 4 = max_sublist_sum(*[[-2, 1, -3, 4, -1, 2, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data0-5]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data1-4]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data2-12]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data3-19]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data4-0]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data5-6]\n6 failed in 0.02s\n"
+            },
+            "output_bytes": 3732,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "a6ff28f4673408e4ceec01872e568110003ea3ed18d8df3ea3d2103d37ba1186",
+          "run": {
+            "status": "failed",
+            "seconds": 1.687361,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 2,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.193814,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "FF.F.F\n=================================== FAILURES ===================================\n_____________________ test_max_sublist_sum[input_data0-5] ______________________\n\ninput_data = [[4, -5, 2, 1, -1, 3]], expected = 5\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 4 == 5\nE        +  where 4 = max_sublist_sum(*[[4, -5, 2, 1, -1, 3]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data1-4] ______________________\n\ninput_data = [[0, -1, 2, -1, 3, -1, ...]], expected = 4\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 3 == 4\nE        +  where 3 = max_sublist_sum(*[[0, -1, 2, -1, 3, -1, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data3-19] _____________________\n\ninput_data = [[4, -2, -8, 5, -2, 7, ...]], expected = 19\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 13 == 19\nE        +  where 13 = max_sublist_sum(*[[4, -2, -8, 5, -2, 7, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n_____________________ test_max_sublist_sum[input_data5-6] ______________________\n\ninput_data = [[-2, 1, -3, 4, -1, 2, ...]], expected = 6\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_max_sublist_sum(input_data, expected):\n>       assert max_sublist_sum(*input_data) == expected\nE       assert 2 == 6\nE        +  where 2 = max_sublist_sum(*[[-2, 1, -3, 4, -1, 2, ...]])\n\npython_testcases/test_max_sublist_sum.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data0-5]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data1-4]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data3-19]\nFAILED python_testcases/test_max_sublist_sum.py::test_max_sublist_sum[input_data5-6]\n4 failed, 2 passed in 0.02s\n"
+            },
+            "output_bytes": 2681,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef max_sublist_sum(arr: List[int]) -> int:\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n\n\n\"\"\"\nMax Sublist Sum\nmax-sublist-sum\n\nEfficient equivalent to max(sum(arr[i:j]) for 0 <= i <= j <= len(arr))\n\nAlgorithm source: WordAligned.org by Thomas Guest\n\n\nInput:\n    arr: A list of ints\n\nOutput:\n    The maximum sublist sum\n\nExample:\n    >>> max_sublist_sum([4, -5, 2, 1, -1, 3])\n    5\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.567491,
+            "input_tokens": 249,
+            "output_tokens": 174,
+            "seed": 1112298860,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123763712,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef max_sublist_sum(arr: List[int]) -> int:\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n\n\n\"\"\"\nMax Sublist Sum\nmax-sublist-sum\n\nEfficient equivalent to max(sum(arr[i:j]) for 0 <= i <= j <= len(arr))\n\nAlgorithm source: WordAligned.org by Thomas Guest\n\n\nInput:\n    arr: A list of ints\n\nOutput:\n    The maximum sublist sum\n\nExample:\n    >>> max_sublist_sum([4, -5, 2, 1, -1, 3])\n    5\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.590642,
+            "input_tokens": 249,
+            "output_tokens": 174,
+            "seed": 1112298861,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123763712,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n\nfrom typing import List\n\ndef max_sublist_sum(arr: List[int]) -> int:\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n\n\n\"\"\"\nMax Sublist Sum\nmax-sublist-sum\n\nEfficient equivalent to max(sum(arr[i:j]) for 0 <= i <= j <= len(arr))\n\nAlgorithm source: WordAligned.org by Thomas Guest\n\n\nInput:\n    arr: A list of ints\n\nOutput:\n    The maximum sublist sum\n\nExample:\n    >>> max_sublist_sum([4, -5, 2, 1, -1, 3])\n    5\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.912567,
+            "input_tokens": 249,
+            "output_tokens": 174,
+            "seed": 1112298862,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123763712,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef max_sublist_sum(arr: List[int]) -> int:\n    if not arr:\n        return 0\n\n    max_ending_here = arr[0]\n    max_so_far = arr[0]\n\n    for x in arr[1:]:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n```",
+          "generation": {
+            "seconds": 3.066436,
+            "input_tokens": 249,
+            "output_tokens": 97,
+            "seed": 1112298863,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3123763712,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef max_sublist_sum(arr: List[int]) -> int:\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n```",
+          "generation": {
+            "seconds": 2.616815,
+            "input_tokens": 630,
+            "output_tokens": 83,
+            "seed": 1112298860,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3187039232,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": true,
+          "response": "```python\ndef max_sublist_sum(arr):\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n\n\n\"\"\"\nMax Sublist Sum\nmax-sublist-sum\n\nEfficient equivalent to max(sum(arr[i:j]) for 0 <= i <= j <= len(arr))\n\nAlgorithm source: WordAligned.org by Thomas Guest\n\n\nInput:\n    arr: A list of ints\n\nOutput:\n    The maximum sublist sum\n\nExample:\n    >>> max_sublist_sum([4, -5, 2, 1, -1, 3])\n    5\n\"\"\"\n\n```\n\nThis solution fixes a minor issue where `max_ending_here` was being reset to zero after each iteration of the loop, which means it wouldn't keep track of the best sum found so far. It instead keeps adding the current element to `max_ending_here` if it's positive, otherwise it starts fresh with just that element. This ensures that `max_so_far` is always updated with the maximum sum found up to the current point in the array.",
+          "generation": {
+            "seconds": 8.323662,
+            "input_tokens": 630,
+            "output_tokens": 257,
+            "seed": 1112298861,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3187039232,
+            "peak_gpu_reserved_bytes": 3988783104
+          },
+          "candidate_sha256": "1741de353125788792ef8d2fbb21dea7357ad4f021f4319ae5ed6457fa0e4306",
+          "run": {
+            "status": "passed",
+            "seconds": 1.658171,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 6,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.167507,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+            },
+            "output_bytes": 274,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": {
+        "number": 2,
+        "sha256": "1741de353125788792ef8d2fbb21dea7357ad4f021f4319ae5ed6457fa0e4306",
+        "source": "def max_sublist_sum(arr):\n    max_ending_here = 0\n    max_so_far = 0\n\n    for x in arr:\n        max_ending_here = max(x, max_ending_here + x)\n        max_so_far = max(max_so_far, max_ending_here)\n\n    return max_so_far\n\n\n\"\"\"\nMax Sublist Sum\nmax-sublist-sum\n\nEfficient equivalent to max(sum(arr[i:j]) for 0 <= i <= j <= len(arr))\n\nAlgorithm source: WordAligned.org by Thomas Guest\n\n\nInput:\n    arr: A list of ints\n\nOutput:\n    The maximum sublist sum\n\nExample:\n    >>> max_sublist_sum([4, -5, 2, 1, -1, 3])\n    5\n\"\"\"\n",
+        "patch": "--- a/python_programs/max_sublist_sum.py\n+++ b/python_programs/max_sublist_sum.py\n@@ -1,10 +1,9 @@\n-\n def max_sublist_sum(arr):\n     max_ending_here = 0\n     max_so_far = 0\n \n     for x in arr:\n-        max_ending_here = max_ending_here + x\n+        max_ending_here = max(x, max_ending_here + x)\n         max_so_far = max(max_so_far, max_ending_here)\n \n     return max_so_far\n"
+      }
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.118731,
+  "context": [
+    {
+      "path": "json_testcases/max_sublist_sum.json",
+      "start_line": 1,
+      "text": "[[[4, -5, 2, 1, -1, 3]], 5]\n[[[0, -1, 2, -1, 3, -1, 0]], 4]\n[[[3, 4, 5]], 12]\n[[[4, -2, -8, 5, -2, 7, 7, 2, -6, 5]], 19]\n[[[-4, -4, -5]], 0]\n[[[-2, 1, -3, 4, -1, 2, 1, -5, 4]], 6]",
+      "sha256": "c66a18b857adff7ef36d7068db3de12a542a790ba696807e5764458b555843ff",
+      "score": 0.6531714200973511
+    },
+    {
+      "path": "python_testcases/test_max_sublist_sum.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.max_sublist_sum import max_sublist_sum\nelse:\n    from python_programs.max_sublist_sum import max_sublist_sum\n\n\ntestdata = load_json_testcases(max_sublist_sum.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_max_sublist_sum(input_data, expected):\n    assert max_sublist_sum(*input_data) == expected",
+      "sha256": "6eda986c9a5fd9150d590f67b05b1937e8d091fd290db16665dea95e01cdac47",
+      "score": 0.5426148176193237
+    },
+    {
+      "path": "python_programs/node.py",
+      "start_line": 1,
+      "text": "class Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def successor(self):\n        return self.successor\n\n    def successors(self):\n        return self.successors\n\n    def predecessors(self):\n        return self.predecessors\n",
+      "sha256": "853a9638b93eebb1ae61e6ed2ccd5587efc04b9b7c833b35e8a1b74c0bb5ed7a",
+      "score": 0.12035976350307465
+    }
+  ]
+}
