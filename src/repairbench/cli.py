@@ -41,6 +41,9 @@ def main():
             child.add_argument("--budget",type=int,default=4 if name == "compare" else 12)
             child.add_argument("--tasks",nargs="+")
         if name == "compare":
+            child.add_argument("--adapter",type=Path)
+            child.add_argument("--resume",action="store_true")
+            child.add_argument("--max-seconds",type=float)
             child.add_argument("--models",type=Path,default=Path("data/models"))
             child.add_argument("--device",choices=("cuda","cpu"),default="cuda")
             child.add_argument("--max-new-tokens",type=int,default=768)
@@ -72,8 +75,9 @@ def main():
             from .retrieval import ContextRetriever
             runner.preflight()
             retriever = ContextRetriever(args.models)
-            generator = CodeModel(args.models, args.device, args.max_new_tokens)
-            print(json.dumps(compare(args.data,args.output,runner,generator,retriever,args.budget,args.tasks),indent=2))
+            generator = CodeModel(args.models, args.device, args.max_new_tokens, adapter=args.adapter)
+            print(json.dumps(compare(args.data,args.output,runner,generator,retriever,args.budget,args.tasks,
+                                     resume=args.resume,max_seconds=args.max_seconds),indent=2))
 
 
 if __name__ == "__main__":

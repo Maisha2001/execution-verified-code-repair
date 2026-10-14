@@ -82,7 +82,9 @@ passed/skipped test counts as the reference. Reports include raw generated
 responses, rejections, test evidence, accepted diffs, token counts, generation
 time, GPU allocation peaks, model revisions and dependency versions. Evidence
 is checkpointed after each task; an unfinished run lacks `completed_at_utc`.
-Use a new output directory for each run; automatic resume is not implemented.
+Use a new output directory for each experiment. Explicit `--resume` verifies
+configuration and completed task checksums before continuing; `--max-seconds`
+stops at a task boundary. See [adapter comparison and recovery](ADAPTATION.md).
 
 This is a public, potentially memorized benchmark. Scores against its visible
 tests do not establish correctness, independent generalization, security against

@@ -1,0 +1,499 @@
+{
+  "task": "shortest_path_lengths",
+  "source_sha256": "bf989a11e41f482987d45a295c07b6c7659d6808b8628335fd6ba4599969796c",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.686908,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.192268,
+      "max_rss_kib": 30812,
+      "output_limit": false,
+      "output": "....\n--------------------- generated xml file: /tmp/results.xml ---------------------\n4 passed in 0.01s\n"
+    },
+    "output_bytes": 272,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.708491,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 4,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.196529,
+      "max_rss_kib": 30796,
+      "output_limit": false,
+      "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<..., (5, 4): -1}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(4, 0): 4} != {(4, 0): inf}\nE         {(4, 3): -5} != {(4, 3): inf}\nE         {(5, 4): -1} != {(5, 4): inf}\nE         {(0, 2): -1} != {(0, 2): 3}...\nE         \nE         ...Full output truncated (19 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (4, 3): 7}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(2, 4): inf} != {(2, 4): 5}\nE         {(0, 4): inf} != {(0, 4): 13}\nE         {(2, 1): 5} != {(2, 1): inf}\nE         {(4, 3): 7} != {(4, 3): inf}...\nE         \nE         ...Full output truncated (8 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       assert defaultdict(<...f, (3, 2): 5}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(1, 0): 3} != {(1, 0): inf}\nE         {(3, 2): 5} != {(3, 2): inf}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...3, (2, 1): 1}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 2 identical items, use -vv to show\nE         Differing items:\nE         {(1, 2): 3} != {(1, 2): 5}\nE         {(2, 1): 1} != {(2, 1): 2}\nE         {(0, 0): -2} != {(0, 0): 0}\nE         {(2, 0): -5} != {(2, 0): -1}...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - assert default...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - AssertionError...\n4 failed in 0.03s\n"
+    },
+    "output_bytes": 6894,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "e63f07bb8afd787986cd1f3180654d4fdac9ed6846ccc2fcb08785826b61d9be",
+          "run": {
+            "status": "failed",
+            "seconds": 1.69624,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.196185,
+              "max_rss_kib": 30900,
+              "output_limit": false,
+              "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (5, 4): 0}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 11 identical items, use -vv to show\nE         Differing items:\nE         {(4, 0): 4} != {(4, 0): inf}\nE         {(4, 3): -4} != {(4, 3): inf}\nE         {(5, 4): 0} != {(5, 4): inf}\nE         {(0, 2): -1} != {(0, 2): 3}...\nE         \nE         ...Full output truncated (22 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (4, 3): 8}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 10 identical items, use -vv to show\nE         Differing items:\nE         {(4, 4): 1} != {(4, 4): 0}\nE         {(2, 4): inf} != {(2, 4): 5}\nE         {(0, 4): inf} != {(0, 4): 13}\nE         {(2, 1): 6} != {(2, 1): inf}...\nE         \nE         ...Full output truncated (12 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (3, 2): 6}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 10 identical items, use -vv to show\nE         Differing items:\nE         {(0, 0): 1} != {(0, 0): 0}\nE         {(1, 1): 1} != {(1, 1): 0}\nE         {(3, 3): 1} != {(3, 3): 0}\nE         {(2, 2): 1} != {(2, 2): 0}...\nE         \nE         ...Full output truncated (3 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...2, (2, 1): 1}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 2 identical items, use -vv to show\nE         Differing items:\nE         {(1, 2): 3} != {(1, 2): 5}\nE         {(2, 1): 1} != {(2, 1): 2}\nE         {(1, 1): 1} != {(1, 1): 0}\nE         {(2, 0): -4} != {(2, 0): -1}...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - AssertionError...\n4 failed in 0.03s\n"
+            },
+            "output_bytes": 7031,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "5f785c475cdf64702c877b6390be2da8dc5f7e235f607ef1b4fb6cc0e34a69cd",
+          "run": {
+            "status": "failed",
+            "seconds": 1.700194,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.203632,
+              "max_rss_kib": 31028,
+              "output_limit": false,
+              "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<..., (5, 4): -1}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(4, 0): 4} != {(4, 0): inf}\nE         {(4, 3): -5} != {(4, 3): inf}\nE         {(5, 4): -1} != {(5, 4): inf}\nE         {(0, 2): -1} != {(0, 2): 3}...\nE         \nE         ...Full output truncated (19 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (4, 3): 7}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(2, 4): inf} != {(2, 4): 5}\nE         {(0, 4): inf} != {(0, 4): 13}\nE         {(2, 1): 5} != {(2, 1): inf}\nE         {(4, 3): 7} != {(4, 3): inf}...\nE         \nE         ...Full output truncated (8 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       assert defaultdict(<...f, (3, 2): 5}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(1, 0): 3} != {(1, 0): inf}\nE         {(3, 2): 5} != {(3, 2): inf}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...3, (2, 1): 1}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 2 identical items, use -vv to show\nE         Differing items:\nE         {(1, 2): 3} != {(1, 2): 5}\nE         {(2, 1): 1} != {(2, 1): 2}\nE         {(0, 0): -2} != {(0, 0): 0}\nE         {(2, 0): -5} != {(2, 0): -1}...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - assert default...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - AssertionError...\n4 failed in 0.03s\n"
+            },
+            "output_bytes": 6894,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "514fb363464c475fa292b1fd02da035d61d36e8e33c6712881656380340968fd",
+          "run": {
+            "status": "failed",
+            "seconds": 1.727725,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.198436,
+              "max_rss_kib": 30648,
+              "output_limit": false,
+              "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<... (5, 4): inf}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 21 identical items, use -vv to show\nE         Differing items:\nE         {(0, 1): -inf} != {(0, 1): 1}\nE         {(2, 4): -inf} != {(2, 4): 2}\nE         {(1, 2): 2} != {(1, 2): inf}\nE         {(0, 4): -inf} != {(0, 4): 5}...\nE         \nE         ...Full output truncated (12 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<... (4, 3): inf}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 15 identical items, use -vv to show\nE         Differing items:\nE         {(0, 1): -inf} != {(0, 1): 3}\nE         {(2, 4): -inf} != {(2, 4): 5}\nE         {(1, 2): -inf} != {(1, 2): 5}\nE         {(0, 4): -inf} != {(0, 4): 13}...\nE         \nE         ...Full output truncated (7 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<... (3, 2): inf}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 10 identical items, use -vv to show\nE         Differing items:\nE         {(0, 1): -inf} != {(0, 1): 3}\nE         {(1, 2): -inf} != {(1, 2): inf}\nE         {(0, 3): -inf} != {(0, 3): inf}\nE         {(2, 3): -inf} != {(2, 3): 5}...\nE         \nE         ...Full output truncated (3 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       assert defaultdict(<...(2, 1): -inf}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 6 identical items, use -vv to show\nE         Differing items:\nE         {(0, 1): -inf} != {(0, 1): 3}\nE         {(0, 2): 1} != {(0, 2): 8}\nE         {(2, 1): -inf} != {(2, 1): 2}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - assert default...\n4 failed in 0.03s\n"
+            },
+            "output_bytes": 6953,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 8.28422,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179791,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 8.424135,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179792,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n```",
+          "generation": {
+            "seconds": 8.711889,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179793,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 8.743129,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179794,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 8.731064,
+            "input_tokens": 894,
+            "output_tokens": 242,
+            "seed": 707179791,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3252716032,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\ndef test2():\n    \"\"\"Case 2: Linear graph input.\"\"\"\n\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    assert result == expected, f\"Expected {expected}, but got {result}\"\n```",
+          "generation": {
+            "seconds": 14.616459,
+            "input_tokens": 894,
+            "output_tokens": 426,
+            "seed": 707179792,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3252716032,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "candidate_sha256": "3aed9f19316703b955c3e4203b2548ffc45cd62f1a691e0bb60617e36455f5fc",
+          "run": {
+            "status": "failed",
+            "seconds": 1.851366,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.25202,
+              "max_rss_kib": 30900,
+              "output_limit": false,
+              "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<..., (5, 4): -1}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(4, 0): 4} != {(4, 0): inf}\nE         {(4, 3): -5} != {(4, 3): inf}\nE         {(5, 4): -1} != {(5, 4): inf}\nE         {(0, 2): -1} != {(0, 2): 3}...\nE         \nE         ...Full output truncated (19 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (4, 3): 7}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(2, 4): inf} != {(2, 4): 5}\nE         {(0, 4): inf} != {(0, 4): 13}\nE         {(2, 1): 5} != {(2, 1): inf}\nE         {(4, 3): 7} != {(4, 3): inf}...\nE         \nE         ...Full output truncated (8 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       assert defaultdict(<...f, (3, 2): 5}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(1, 0): 3} != {(1, 0): inf}\nE         {(3, 2): 5} != {(3, 2): inf}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...3, (2, 1): 1}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 2 identical items, use -vv to show\nE         Differing items:\nE         {(1, 2): 3} != {(1, 2): 5}\nE         {(2, 1): 1} != {(2, 1): 2}\nE         {(0, 0): -2} != {(0, 0): 0}\nE         {(2, 0): -5} != {(2, 0): -1}...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - assert default...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - AssertionError...\n4 failed in 0.03s\n"
+            },
+            "output_bytes": 6893,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\ndef test2():\n    \"\"\"Case 2: Linear graph input.\"\"\"\n\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n\n    assert result == expected, f\"Expected {expected}, but got {result}\"\n\ntest2()\n```",
+          "generation": {
+            "seconds": 14.605975,
+            "input_tokens": 894,
+            "output_tokens": 429,
+            "seed": 707179793,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3252716032,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "candidate_sha256": "50df95cfcd53af5442d9d9d182d5ce863febdb4561095207f24a43e905ecf43f",
+          "run": {
+            "status": "failed",
+            "seconds": 1.761851,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 2,
+              "passed": 0,
+              "failed": 0,
+              "errors": 1,
+              "skipped": 0,
+              "seconds": 0.238727,
+              "max_rss_kib": 37528,
+              "output_limit": false,
+              "output": "\n==================================== ERRORS ====================================\n_______ ERROR collecting python_testcases/test_shortest_path_lengths.py ________\npython_testcases/test_shortest_path_lengths.py:6: in <module>\n    from python_programs.shortest_path_lengths import shortest_path_lengths\npython_programs/shortest_path_lengths.py:65: in <module>\n    test2()\npython_programs/shortest_path_lengths.py:63: in test2\n    assert result == expected, f\"Expected {expected}, but got {result}\"\n           ^^^^^^^^^^^^^^^^^^\nE   AssertionError: Expected {(0, 0): 0, (1, 1): 0, (2, 2): 0, (3, 3): 0, (4, 4): 0, (0, 1): 3, (1, 2): 5, (2, 3): -2, (3, 4): 7}, but got defaultdict(<function shortest_path_lengths.<locals>.<lambda> at 0x7f0ed1aa5760>, {(0, 0): 0, (1, 1): 0, (2, 2): -4, (3, 3): 0, (4, 4): 0, (0, 1): 3, (1, 2): 5, (2, 3): -2, (3, 4): 7, (1, 0): 3, (0, 2): inf, (2, 0): inf, (0, 3): inf, (3, 0): inf, (0, 4): inf, (4, 0): inf, (1, 3): inf, (1, 4): inf, (2, 1): 5, (2, 4): inf, (3, 1): inf, (3, 2): -2, (4, 1): inf, (4, 2): inf, (4, 3): 7})\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nERROR python_testcases/test_shortest_path_lengths.py - AssertionError: Expect...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+            },
+            "output_bytes": 1575,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "Here is the Python module with the bug fixed:\n\n```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n# Test cases provided\ndef test1():\n    \"\"\"Case 1: Small graph input.\"\"\"\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (0, 2): 3,\n        (0, 5): 4,\n        (2, 1): -2,\n        (2, 3): 7,\n        (2, 4): 2,\n        (3, 4): -5,\n        (4, 5): -1,\n    }\n    assert result == expected, f\"Test failed for case 1: {result} != {expected}\"\n\ndef test2():\n    \"\"\"Case 2: Linear graph input.\"\"\"\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    assert result == expected, f\"Test failed for case 2: {result} != {expected}\"\n\ndef test3():\n    \"\"\"Case 3: Cycle-free graph input.\"\"\"\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n        (4, 0): 9,  # Add a cycle (node 0 to node 4)\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, ",
+          "generation": {
+            "seconds": 26.595758,
+            "input_tokens": 894,
+            "output_tokens": 768,
+            "seed": 707179794,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3252716032,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Expected exactly one fenced Python module"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n```",
+          "generation": {
+            "seconds": 5.168005,
+            "input_tokens": 332,
+            "output_tokens": 124,
+            "seed": 707179791,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "83d8fa8b6e51a78bf021aab07f2ec7e83a4f01a89164760bcaf2c3c38e6bdc96",
+          "run": {
+            "status": "failed",
+            "seconds": 1.688065,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 4,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.195321,
+              "max_rss_kib": 30832,
+              "output_limit": false,
+              "output": "FFFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Basic graph input.\"\"\"\n    \n        graph = {\n            (0, 2): 3,\n            (0, 5): 5,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 4,\n            (3, 4): -5,\n            (4, 5): -1,\n        }\n        result = shortest_path_lengths(6, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (5, 5): 0,\n            (0, 2): 3,\n            (0, 5): 4,\n            (2, 1): -2,\n            (2, 3): 7,\n            (2, 4): 2,\n            (3, 4): -5,\n            (4, 5): -1,\n            (0, 1): 1,\n            (0, 3): 10,\n            (0, 4): 5,\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (1, 4): float(\"inf\"),\n            (1, 5): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 5): 1,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (3, 5): -6,\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n            (5, 0): float(\"inf\"),\n            (5, 1): float(\"inf\"),\n            (5, 2): float(\"inf\"),\n            (5, 3): float(\"inf\"),\n            (5, 4): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<..., (5, 4): -1}) == {(0, 0): 0, (..., 3): 10, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(4, 0): 4} != {(4, 0): inf}\nE         {(4, 3): -5} != {(4, 3): inf}\nE         {(5, 4): -1} != {(5, 4): inf}\nE         {(0, 2): -1} != {(0, 2): 3}...\nE         \nE         ...Full output truncated (19 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:62: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Linear graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n        }\n        result = shortest_path_lengths(5, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (4, 4): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 3): -2,\n            (3, 4): 7,\n            (0, 2): 8,\n            (0, 3): 6,\n            (0, 4): 13,\n            (1, 0): float(\"inf\"),\n            (1, 3): 3,\n            (1, 4): 10,\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (2, 4): 5,\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n            (4, 0): float(\"inf\"),\n            (4, 1): float(\"inf\"),\n            (4, 2): float(\"inf\"),\n            (4, 3): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...f, (4, 3): 7}) == {(0, 0): 0, (...0, 3): 6, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(2, 4): inf} != {(2, 4): 5}\nE         {(0, 4): inf} != {(0, 4): 13}\nE         {(2, 1): 5} != {(2, 1): inf}\nE         {(4, 3): 7} != {(4, 3): inf}...\nE         \nE         ...Full output truncated (8 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:104: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Disconnected graphs input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (2, 3): 5,\n        }\n        result = shortest_path_lengths(4, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (3, 3): 0,\n            (0, 1): 3,\n            (2, 3): 5,\n            (0, 2): float(\"inf\"),\n            (0, 3): float(\"inf\"),\n            (1, 0): float(\"inf\"),\n            (1, 2): float(\"inf\"),\n            (1, 3): float(\"inf\"),\n            (2, 0): float(\"inf\"),\n            (2, 1): float(\"inf\"),\n            (3, 0): float(\"inf\"),\n            (3, 1): float(\"inf\"),\n            (3, 2): float(\"inf\"),\n        }\n    \n>       assert result == expected\nE       assert defaultdict(<...f, (3, 2): 5}) == {(0, 0): 0, (... 3): inf, ...}\nE         \nE         Omitting 14 identical items, use -vv to show\nE         Differing items:\nE         {(1, 0): 3} != {(1, 0): inf}\nE         {(3, 2): 5} != {(3, 2): inf}\nE         Use -v to get more diff\n\npython_testcases/test_shortest_path_lengths.py:135: AssertionError\n____________________________________ test4 _____________________________________\n\n    def test4():\n        \"\"\"Case 4: Strongly connected graph input.\"\"\"\n    \n        graph = {\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n        }\n        result = shortest_path_lengths(3, graph)\n    \n        expected = {\n            (0, 0): 0,\n            (1, 1): 0,\n            (2, 2): 0,\n            (0, 1): 3,\n            (1, 2): 5,\n            (2, 0): -1,\n            (0, 2): 8,\n            (1, 0): 4,\n            (2, 1): 2,\n        }\n    \n>       assert result == expected\nE       AssertionError: assert defaultdict(<...3, (2, 1): 1}) == {(0, 0): 0, (...1, 0): 4, ...}\nE         \nE         Omitting 2 identical items, use -vv to show\nE         Differing items:\nE         {(1, 2): 3} != {(1, 2): 5}\nE         {(2, 1): 1} != {(2, 1): 2}\nE         {(0, 0): -2} != {(0, 0): 0}\nE         {(2, 0): -5} != {(2, 0): -1}...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_shortest_path_lengths.py:160: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_shortest_path_lengths.py::test1 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test2 - AssertionError...\nFAILED python_testcases/test_shortest_path_lengths.py::test3 - assert default...\nFAILED python_testcases/test_shortest_path_lengths.py::test4 - AssertionError...\n4 failed in 0.03s\n"
+            },
+            "output_bytes": 6894,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 10.704271,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179792,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({i, i}: 0 for i in range(n))\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n```",
+          "generation": {
+            "seconds": 5.300038,
+            "input_tokens": 332,
+            "output_tokens": 123,
+            "seed": 707179793,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch is not a parseable Python module"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 10.563931,
+            "input_tokens": 332,
+            "output_tokens": 242,
+            "seed": 707179794,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3137990656,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted_retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 10.257711,
+            "input_tokens": 894,
+            "output_tokens": 242,
+            "seed": 707179791,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3253731328,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 11.044438,
+            "input_tokens": 894,
+            "output_tokens": 242,
+            "seed": 707179792,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3253731328,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 10.196286,
+            "input_tokens": 894,
+            "output_tokens": 242,
+            "seed": 707179793,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3253731328,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef shortest_path_lengths(n, length_by_edge):\n    length_by_path = defaultdict(lambda: float('inf'))\n    length_by_path.update({(i, i): 0 for i in range(n)})\n    length_by_path.update(length_by_edge)\n\n    for k in range(n):\n        for i in range(n):\n            for j in range(n):\n                length_by_path[i, j] = min(\n                    length_by_path[i, j],\n                    length_by_path[i, k] + length_by_path[j, k]\n                )\n\n    return length_by_path\n\n\n\"\"\"\nAll Shortest Paths\nfloyd-warshall\n\nFloyd-Warshall algorithm implementation.\n\nCalculates the length of the shortest path connecting every ordered pair of nodes in a directed graph.\n\n\n\nInput:\n    n: The number of nodes in the graph. The nodes are assumed to have ids 0..n-1\n    length_by_edge: A dict containing edge length keyed by an ordered pair of node ids\n\nPrecondition:\n    There are no negative-length cycles in the input graph\n\nOutput:\n    A dict containing shortest path length keyed by an ordered pair of node ids\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 11.139944,
+            "input_tokens": 894,
+            "output_tokens": 242,
+            "seed": 707179794,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3253731328,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.355258,
+  "context": [
+    {
+      "path": "python_testcases/test_shortest_path_lengths.py",
+      "start_line": 17,
+      "text": "        (2, 4): 4,\n        (3, 4): -5,\n        (4, 5): -1,\n    }\n    result = shortest_path_lengths(6, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (5, 5): 0,\n        (0, 2): 3,\n        (0, 5): 4,\n        (2, 1): -2,\n        (2, 3): 7,\n        (2, 4): 2,\n        (3, 4): -5,\n        (4, 5): -1,",
+      "sha256": "04c236167dce909ce3223eb126b4752eb20d85a18994c74cbe4299ded1903179",
+      "score": 0.6465311050415039
+    },
+    {
+      "path": "python_testcases/test_shortest_path_lengths.py",
+      "start_line": 113,
+      "text": "    }\n    result = shortest_path_lengths(4, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (0, 1): 3,\n        (2, 3): 5,\n        (0, 2): float(\"inf\"),\n        (0, 3): float(\"inf\"),\n        (1, 0): float(\"inf\"),\n        (1, 2): float(\"inf\"),\n        (1, 3): float(\"inf\"),\n        (2, 0): float(\"inf\"),\n        (2, 1): float(\"inf\"),\n        (3, 0): float(\"inf\"),\n        (3, 1): float(\"inf\"),\n        (3, 2): float(\"inf\"),",
+      "sha256": "a49385104a2e5e451687808fc24d19a71906b44a37149ec86ddd1859e5b97f1c",
+      "score": 0.6408159136772156
+    },
+    {
+      "path": "python_testcases/test_shortest_path_lengths.py",
+      "start_line": 65,
+      "text": "def test2():\n    \"\"\"Case 2: Linear graph input.\"\"\"\n\n    graph = {\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,\n        (3, 4): 7,\n    }\n    result = shortest_path_lengths(5, graph)\n\n    expected = {\n        (0, 0): 0,\n        (1, 1): 0,\n        (2, 2): 0,\n        (3, 3): 0,\n        (4, 4): 0,\n        (0, 1): 3,\n        (1, 2): 5,\n        (2, 3): -2,",
+      "sha256": "6463e27ba4974dc9c20e165aab41cf75f3eb33793a6a325a85aa63ff2bf169fe",
+      "score": 0.6185131669044495
+    }
+  ],
+  "comparison_seconds": 189.873668
+}

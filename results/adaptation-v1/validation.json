@@ -1,0 +1,44 @@
+{
+  "tests": 57,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 49.216,
+  "pip_check": "passed",
+  "wheel": {
+    "name": "execution_verified_code_repair-0.1.0-py3-none-any.whl",
+    "bytes": 39679,
+    "sha256": "b473e3db8e5357a9d0daf73199a81c64f0e0f12749382be1740581e0251458f2"
+  },
+  "actual_cuda_docker_smoke": {
+    "tasks": [
+      "gcd",
+      "find_in_sorted"
+    ],
+    "candidate_budget": 1,
+    "arms": [
+      "deterministic",
+      "unadapted",
+      "retrieval",
+      "adapted",
+      "adapted_retrieval"
+    ],
+    "seconds": 60.543768
+  },
+  "actual_resume": {
+    "completed_tasks_reused": 2,
+    "task_evidence_bytes_unchanged": true,
+    "invocation_seconds": 0.107963
+  },
+  "full_run_checksums_verified": 40,
+  "summary_recomputed_from_tasks": true,
+  "implementation_hashes_verified": true,
+  "mbpp_test_tasks_used": false,
+  "checks": [
+    "Real tiny Qwen/LoRA generation preserves disabled-adapter base outputs",
+    "Checkpoint identity and tampering rejection",
+    "Equal budgets and seeds across all five arms",
+    "Task-boundary stop and checked resume",
+    "Existing real container isolation probes"
+  ]
+}

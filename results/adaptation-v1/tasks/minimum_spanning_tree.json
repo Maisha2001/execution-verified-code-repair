@@ -1,0 +1,577 @@
+{
+  "task": "minimum_spanning_tree",
+  "source_sha256": "116d2b6f60ab516973d6a254e4f0dfd31e9c5e2966eaf9158c336d62dd2da5fc",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.687429,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.172942,
+      "max_rss_kib": 30916,
+      "output_limit": false,
+      "output": "...\n--------------------- generated xml file: /tmp/results.xml ---------------------\n3 passed in 0.01s\n"
+    },
+    "output_bytes": 271,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.74503,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.186688,
+      "max_rss_kib": 30900,
+      "output_limit": false,
+      "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:11: RuntimeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:11: RuntimeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:11: RuntimeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - RuntimeError: ...\n3 failed in 0.02s\n"
+    },
+    "output_bytes": 4363,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "comparison",
+          "candidate_sha256": "567f2e67f83d418e309d792d041483bf9461ba999a77ff7bfa78a814e2b1a680",
+          "run": {
+            "status": "failed",
+            "seconds": 1.717509,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.193317,
+              "max_rss_kib": 31028,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n    \n>       assert result == {(1, 2), (3, 4), (1, 4)}\nE       assert set() == {(1, 2), (1, 4), (3, 4)}\nE         \nE         Extra items in the right set:\nE         (1, 2)\nE         (3, 4)\nE         (1, 4)\nE         Use -v to get more diff\n\npython_testcases/test_minimum_spanning_tree.py:23: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n    \n>       assert result == {(2, 5), (1, 3), (2, 3), (4, 6), (3, 6)}\nE       assert set() == {(1, 3), (2, ...3, 6), (4, 6)}\nE         \nE         Extra items in the right set:\nE         (2, 3)\nE         (2, 5)\nE         (3, 6)\nE         (4, 6)\nE         (1, 3)\nE         Use -v to get more diff\n\npython_testcases/test_minimum_spanning_tree.py:46: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n    \n>       assert result == {(1, 2), (1, 3), (2, 4)}\nE       assert set() == {(1, 2), (1, 3), (2, 4)}\nE         \nE         Extra items in the right set:\nE         (2, 4)\nE         (1, 2)\nE         (1, 3)\nE         Use -v to get more diff\n\npython_testcases/test_minimum_spanning_tree.py:62: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - assert set() =...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - assert set() =...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - assert set() =...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3067,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "dc55823739ab3eeac31bbc4455f057864597a3075b59494799c169019641a4cd",
+          "run": {
+            "status": "failed",
+            "seconds": 1.655567,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.190921,
+              "max_rss_kib": 30824,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault({u}, u) != group_by_node.setdefault(v, {v}):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault({u}, u) != group_by_node.setdefault(v, {v}):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault({u}, u) != group_by_node.setdefault(v, {v}):\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - TypeError: unh...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - TypeError: unh...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - TypeError: unh...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4015,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "swap_arguments",
+          "candidate_sha256": "0871f7a1ac9da45ef0c83067095b98de4d841b9aa0ccefe7d09cea302ca70d1c",
+          "run": {
+            "status": "failed",
+            "seconds": 1.68578,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.189504,
+              "max_rss_kib": 31024,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault(u, {u}) != group_by_node.setdefault({v}, v):\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault(u, {u}) != group_by_node.setdefault({v}, v):\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):\n            u, v = edge\n>           if group_by_node.setdefault(u, {u}) != group_by_node.setdefault({v}, v):\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: unhashable type: 'set'\n\npython_programs/minimum_spanning_tree.py:8: TypeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - TypeError: unh...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - TypeError: unh...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - TypeError: unh...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4123,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Set, Tuple\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 4.655735,
+            "input_tokens": 371,
+            "output_tokens": 146,
+            "seed": 216353071,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple, Set\n\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node: Dict[int, Set[int]] = {}\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, set()) != group_by_node.setdefault(v, set()):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n\n```\nThis solution uses a dictionary to keep track of each node's connected components and sorts the edges by their weights before processing them. It ensures that only edges connecting disjoint sets are added to the MST, thereby maintaining its connectivity and minimising the total weight.",
+          "generation": {
+            "seconds": 7.07269,
+            "input_tokens": 371,
+            "output_tokens": 194,
+            "seed": 216353072,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Set\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, set()) != group_by_node.setdefault(v, set()):\n            mst_edges.add(edge)\n            group_by_node[u] |= group_by_node[v]\n            for node in group_by_node[v]:\n                group_by_node[node] |= group_by_node[u]\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 4.63751,
+            "input_tokens": 371,
+            "output_tokens": 141,
+            "seed": 216353073,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, set()) != group_by_node.setdefault(v, set()):\n            mst_edges.add(edge)\n            group_by_node[u] |= group_by_node[v]\n            group_by_node[v] |= group_by_node[u]\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 4.36609,
+            "input_tokens": 371,
+            "output_tokens": 132,
+            "seed": 216353074,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Set\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 4.783263,
+            "input_tokens": 884,
+            "output_tokens": 144,
+            "seed": 216353071,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Tuple, Set\n\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node: Dict[int, Set[int]] = {}\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, set()) != group_by_node.setdefault(v, set()):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n\n# Test cases\ntest_cases = [\n    ((1, 2): 10, (2, 3): 15, (3, 4): 10, (1, 4): 10),\n    ((2, 3): 15, (3, 4): 10, (1, 4): 10),\n    ((2, 3): 15, (3, 4): 10, (1, 4): 10)\n]\n\nfor weights in test_cases:\n    expected_output = {(2, 5), (1, 3), (2, 3), (4, 6), (3, 6)}\n    assert minimum_spanning_tree(weights) == expected_output, f\"Test case failed for weights: {weights}\"\n```",
+          "generation": {
+            "seconds": 10.745157,
+            "input_tokens": 884,
+            "output_tokens": 318,
+            "seed": 216353072,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch is not a parseable Python module"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nfrom collections import defaultdict\n\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = defaultdict(set)\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if u not in group_by_node[v] and v not in group_by_node[u]:\n            mst_edges.add(edge)\n            group_by_node[u].add(v)\n            group_by_node[v].add(u)\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 3.429891,
+            "input_tokens": 884,
+            "output_tokens": 109,
+            "seed": 216353073,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "candidate_sha256": "7fca09af73d4889fb157dfb7c3f5bc9e4cb943345b15eb0a0ecddb891c667288",
+          "run": {
+            "status": "failed",
+            "seconds": 1.761239,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.186368,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n    \n>       assert result == {(1, 2), (3, 4), (1, 4)}\nE       AssertionError: assert {((1, 2), 10)... ((3, 4), 10)} == {(1, 2), (1, 4), (3, 4)}\nE         \nE         Extra items in the left set:\nE         ((1, 4), 10)\nE         ((1, 2), 10)\nE         ((2, 3), 15)\nE         ((3, 4), 10)\nE         Extra items in the right set:...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\npython_testcases/test_minimum_spanning_tree.py:23: AssertionError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n    \n>       assert result == {(2, 5), (1, 3), (2, 3), (4, 6), (3, 6)}\nE       AssertionError: assert {((1, 2), 6),..., 4), 5), ...} == {(1, 3), (2, ...3, 6), (4, 6)}\nE         \nE         Extra items in the left set:\nE         ((3, 6), 4)\nE         ((4, 6), 2)\nE         ((1, 4), 5)\nE         ((5, 6), 6)\nE         ((1, 2), 6)...\nE         \nE         ...Full output truncated (12 lines hidden), use '-vv' to show\n\npython_testcases/test_minimum_spanning_tree.py:46: AssertionError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n        result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n    \n>       assert result == {(1, 2), (1, 3), (2, 4)}\nE       AssertionError: assert {((1, 2), 6),..., ((2, 4), 2)} == {(1, 2), (1, 3), (2, 4)}\nE         \nE         Extra items in the left set:\nE         ((1, 2), 6)\nE         ((2, 4), 2)\nE         ((1, 3), 1)\nE         Extra items in the right set:\nE         (2, 4)...\nE         \nE         ...Full output truncated (3 lines hidden), use '-vv' to show\n\npython_testcases/test_minimum_spanning_tree.py:62: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - AssertionError...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - AssertionError...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - AssertionError...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3526,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import Dict, Set\n\ndef minimum_spanning_tree(weight_by_edge: Dict[Tuple[int, int], int]) -> Set[Tuple[int, int]]:\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n\n# Test cases\nassert minimum_spanning_tree({(1, 2): 10, (2, 3): 15, (3, 4): 10, (1, 4): 10}) == {(1, 2), (3, 4), (1, 4)}\nassert minimum_spanning_tree({(2, 3): 15, (3, 4): 10, (1, 4): 10}) == {(1, 2), (3, 4), (1, 4)}\nassert minimum_spanning_tree({(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, (2, 5): 3, (3, 4): 5, (3, 5): 6, (3, 6): 4, (4, 6): 2, (5, 6): 6}) == {(2, 5), (1, 3), (2, 3), (4, 6), (3, 6)}\n```",
+          "generation": {
+            "seconds": 13.599273,
+            "input_tokens": 884,
+            "output_tokens": 395,
+            "seed": 216353074,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x:x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.133419,
+            "input_tokens": 371,
+            "output_tokens": 119,
+            "seed": 216353071,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e4144d35cc21f6252139fbaf5801f045c508ad27105fc3741750b8adda900fb2",
+          "run": {
+            "status": "failed",
+            "seconds": 1.74608,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.186768,
+              "max_rss_kib": 30896,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x:x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x:x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x:x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - RuntimeError: ...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4348,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x:x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.38871,
+            "input_tokens": 371,
+            "output_tokens": 119,
+            "seed": 216353072,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e4144d35cc21f6252139fbaf5801f045c508ad27105fc3741750b8adda900fb2",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n\n\n\n\"\"\"\nMinimum Spanning Tree\n\n\nKruskal's algorithm implementation.\n\nInput:\n    weight_by_edge: A dict of the form {(u, v): weight} for every undirected graph edge {u, v}\n\nPrecondition:\n    The input graph is connected\n\nOutput:\n    A set of edges that connects all the vertices of the input graph and has the least possible total weight.\n\nExample:\n    >>> minimum_spanning_tree({\n    ...     (1, 2): 10,\n    ...     (2, 3): 15,\n    ...     (3, 4): 10,\n    ...     (1, 4): 10\n    ... })\n    {(1, 2), (3, 4), (1, 4)}\n\"\"\"\n```",
+          "generation": {
+            "seconds": 11.75394,
+            "input_tokens": 371,
+            "output_tokens": 281,
+            "seed": 216353073,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e108fd128b91dbcd3163c2779720ab3f425a551220477b993da9c1079d874b56",
+          "run": {
+            "status": "failed",
+            "seconds": 1.723651,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.191267,
+              "max_rss_kib": 30872,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge.items(), key=lambda x: x[1]):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - RuntimeError: ...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4351,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.493376,
+            "input_tokens": 371,
+            "output_tokens": 119,
+            "seed": 216353074,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3145940480,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "8daeb5970bd56322f5708bcdd1e6f469349abf7c28d01fb6bd92d149d4d06e61",
+          "run": {
+            "status": "failed",
+            "seconds": 1.69366,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.190724,
+              "max_rss_kib": 31068,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                                                     ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                                                     ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x: x[2]):\n                                                     ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - IndexError: tu...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - IndexError: tu...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - IndexError: tu...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3993,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted_retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.01416,
+            "input_tokens": 884,
+            "output_tokens": 118,
+            "seed": 216353071,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "5740ef17c06dc17fe306c62c6d57c277f40cf963470b28e5a4828a793ba12585",
+          "run": {
+            "status": "failed",
+            "seconds": 1.724651,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.185622,
+              "max_rss_kib": 30884,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - RuntimeError: ...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4339,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n\n\n\n\"\"\"\nMinimum Spanning Tree\n\n\nKruskal's algorithm implementation.\n\nInput:\n    weight_by_edge: A dict of the form {(u, v): weight} for every undirected graph edge {u, v}\n\nPrecondition:\n    The input graph is connected\n\nOutput:\n    A set of edges that connects all the vertices of the input graph and has the least possible total weight.\n\nExample:\n    >>> minimum_spanning_tree({\n    ...     (1, 2): 10,\n    ...     (2, 3): 15,\n    ...     (3, 4): 10,\n    ...     (1, 4): 10\n    ... })\n    {(1, 2), (3, 4), (1, 4)}\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 12.486582,
+            "input_tokens": 884,
+            "output_tokens": 279,
+            "seed": 216353072,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "9309ec5e94821b54746ca2e5365965e050ccaafc59a95476842c6c5624e3fddc",
+          "run": {
+            "status": "failed",
+            "seconds": 1.771417,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.194224,
+              "max_rss_kib": 30804,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 10, (1, 4): 10, (2, 3): 15, (3, 4): 10}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (1, 4): 5, (2, 3): 5, ...}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nweight_by_edge = {(1, 2): 6, (1, 3): 1, (2, 4): 2}\n\n    def minimum_spanning_tree(weight_by_edge):\n        group_by_node = {}\n        mst_edges = set()\n    \n        for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n            u, v = edge\n            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n                mst_edges.add(edge)\n                group_by_node[u].update(group_by_node[v])\n>               for node in group_by_node[v]:\nE               RuntimeError: Set changed size during iteration\n\npython_programs/minimum_spanning_tree.py:10: RuntimeError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - RuntimeError: ...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - RuntimeError: ...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 4339,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.087517,
+            "input_tokens": 884,
+            "output_tokens": 118,
+            "seed": 216353073,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "bd3d921378f7eb54db343db2ea6bff6c4c30c78ca9e6bff1131a0be7f145ee8e",
+          "run": {
+            "status": "failed",
+            "seconds": 1.749378,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 3,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.197242,
+              "max_rss_kib": 30904,
+              "output_limit": false,
+              "output": "FFF\n=================================== FAILURES ===================================\n____________________________________ test1 _____________________________________\n\n    def test1():\n        \"\"\"Case 1: Simple tree input.\n        Output: (1, 2) (3, 4) (1, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 10,\n                (2, 3): 15,\n                (3, 4): 10,\n                (1, 4): 10,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:14: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                                                    ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n____________________________________ test2 _____________________________________\n\n    def test2():\n        \"\"\"Case 2: Strongly connected tree input.\n        Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (1, 4): 5,\n                (2, 3): 5,\n                (2, 5): 3,\n                (3, 4): 5,\n                (3, 5): 6,\n                (3, 6): 4,\n                (4, 6): 2,\n                (5, 6): 6,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                                                    ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n____________________________________ test3 _____________________________________\n\n    def test3():\n        \"\"\"Case 3: Minimum spanning tree input.\n        Output: (1, 2) (1, 3) (2, 4)\n        \"\"\"\n    \n>       result = minimum_spanning_tree(\n            {\n                (1, 2): 6,\n                (1, 3): 1,\n                (2, 4): 2,\n            }\n        )\n\npython_testcases/test_minimum_spanning_tree.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npython_programs/minimum_spanning_tree.py:5: in minimum_spanning_tree\n    for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nx = (1, 2)\n\n>   for edge in sorted(weight_by_edge, key=lambda x:x[2]):\n                                                    ^^^^\nE   IndexError: tuple index out of range\n\npython_programs/minimum_spanning_tree.py:5: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_minimum_spanning_tree.py::test1 - IndexError: tu...\nFAILED python_testcases/test_minimum_spanning_tree.py::test2 - IndexError: tu...\nFAILED python_testcases/test_minimum_spanning_tree.py::test3 - IndexError: tu...\n3 failed in 0.02s\n"
+            },
+            "output_bytes": 3981,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\ndef minimum_spanning_tree(weight_by_edge):\n    group_by_node = {}\n    mst_edges = set()\n\n    for edge in sorted(weight_by_edge, key=weight_by_edge.get):\n        u, v = edge\n        if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):\n            mst_edges.add(edge)\n            group_by_node[u].update(group_by_node[v])\n            for node in group_by_node[v]:\n                group_by_node[node].update(group_by_node[u])\n\n    return mst_edges\n```",
+          "generation": {
+            "seconds": 5.221433,
+            "input_tokens": 884,
+            "output_tokens": 118,
+            "seed": 216353074,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3250043392,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "5740ef17c06dc17fe306c62c6d57c277f40cf963470b28e5a4828a793ba12585",
+          "rejection": "duplicate_candidate"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.150783,
+  "context": [
+    {
+      "path": "python_testcases/test_minimum_spanning_tree.py",
+      "start_line": 1,
+      "text": "import pytest\n\nif pytest.use_correct:\n    from correct_python_programs.minimum_spanning_tree import minimum_spanning_tree\nelse:\n    from python_programs.minimum_spanning_tree import minimum_spanning_tree\n\n\ndef test1():\n    \"\"\"Case 1: Simple tree input.\n    Output: (1, 2) (3, 4) (1, 4)\n    \"\"\"\n\n    result = minimum_spanning_tree(\n        {\n            (1, 2): 10,\n            (2, 3): 15,\n            (3, 4): 10,\n            (1, 4): 10,\n        }",
+      "sha256": "0dec77d39f051a8aefd2fb200af2b9862526d468e3696da6e154ef320d833595",
+      "score": 0.5804517269134521
+    },
+    {
+      "path": "python_testcases/test_minimum_spanning_tree.py",
+      "start_line": 33,
+      "text": "            (1, 2): 6,\n            (1, 3): 1,\n            (1, 4): 5,\n            (2, 3): 5,\n            (2, 5): 3,\n            (3, 4): 5,\n            (3, 5): 6,\n            (3, 6): 4,\n            (4, 6): 2,\n            (5, 6): 6,\n        }\n    )\n\n    assert result == {(2, 5), (1, 3), (2, 3), (4, 6), (3, 6)}\n\n\ndef test3():\n    \"\"\"Case 3: Minimum spanning tree input.\n    Output: (1, 2) (1, 3) (2, 4)\n    \"\"\"",
+      "sha256": "07849f4ea55ef7b9c0a62a5684b2af2ecb3b2eff6c38c40a0717719f143a8776",
+      "score": 0.5712761878967285
+    },
+    {
+      "path": "python_testcases/test_minimum_spanning_tree.py",
+      "start_line": 17,
+      "text": "            (2, 3): 15,\n            (3, 4): 10,\n            (1, 4): 10,\n        }\n    )\n\n    assert result == {(1, 2), (3, 4), (1, 4)}\n\n\ndef test2():\n    \"\"\"Case 2: Strongly connected tree input.\n    Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)\n    \"\"\"\n\n    result = minimum_spanning_tree(\n        {\n            (1, 2): 6,\n            (1, 3): 1,\n            (1, 4): 5,\n            (2, 3): 5,",
+      "sha256": "e09f5872305cd03baa0c61128f7d505062d0570df4ff0127ddcef861aa1ff42c",
+      "score": 0.5646166801452637
+    }
+  ],
+  "comparison_seconds": 133.527154
+}

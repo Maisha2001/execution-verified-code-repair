@@ -1,0 +1,549 @@
+{
+  "task": "next_permutation",
+  "source_sha256": "14ffc36c80bf3bba8db91b7e0fa6be14a8011130ddeaccf33ed62638eac1b25b",
+  "reference": {
+    "status": "passed",
+    "seconds": 1.691811,
+    "container_exit_code": 0,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 0,
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.177013,
+      "max_rss_kib": 30924,
+      "output_limit": false,
+      "output": "........\n--------------------- generated xml file: /tmp/results.xml ---------------------\n8 passed in 0.01s\n"
+    },
+    "output_bytes": 276,
+    "container_removed": true
+  },
+  "buggy": {
+    "status": "failed",
+    "seconds": 1.684618,
+    "container_exit_code": 1,
+    "evidence": {
+      "protocol": 1,
+      "exit_code": 1,
+      "passed": 0,
+      "failed": 8,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.187967,
+      "max_rss_kib": 31068,
+      "output_limit": false,
+      "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+    },
+    "output_bytes": 5264,
+    "container_removed": true
+  },
+  "arms": {
+    "deterministic": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "operation": "arithmetic",
+          "candidate_sha256": "2ba24d45df7a8fbfcc2b35449185ec013709de3961a0a7bb4540851ecc417861",
+          "run": {
+            "status": "failed",
+            "seconds": 1.680868,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.184978,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 2, 4, 1]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 5, 6, 2, 1]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 5, 6, 2]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [4, 5, 1, 7, 9]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [4, 5, 8, 7, 1]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [9, 5, 2, 6, 1]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [44, 5, 1, 7, 9]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 4, 5]\n\n    def next_permutation(perm):\n        for i in range((len(perm) + 2), -1, -1):\n>           if perm[i] < perm[i + 1]:\n               ^^^^^^^\nE           IndexError: list index out of range\n\npython_programs/next_permutation.py:4: IndexError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 7391,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "141828fd3f72a06579dbe9d69ab7398f8bab4cd4a4fde5750235129955fb9ebf",
+          "run": {
+            "status": "failed",
+            "seconds": 1.712999,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.179804,
+              "max_rss_kib": 30840,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [4, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[4, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 5234,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "operation": "boundary_constant",
+          "candidate_sha256": "80f6c09fe3dc23c7aa8e002e3d9983da51fdc7740388d769b96f0f30f7ae879e",
+          "run": {
+            "status": "failed",
+            "seconds": 1.755146,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.2117,
+              "max_rss_kib": 30776,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 2, 4, 1]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 5, 6, 2, 1]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 5, 6, 2]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [4, 5, 1, 7, 9]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [4, 5, 8, 7, 1]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [9, 5, 2, 6, 1]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [44, 5, 1, 7, 9]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\npython_testcases/test_next_permutation.py:15: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nperm = [3, 4, 5]\n\n    def next_permutation(perm):\n>       for i in range(len(perm) - 2, -1, -0):\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       ValueError: range() arg 3 must not be zero\n\npython_programs/next_permutation.py:3: ValueError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.03s\n"
+            },
+            "output_bytes": 7269,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "operation": "comparison",
+          "candidate_sha256": "1bdaf1100662eab4f9499fd06eb7350a505469bdbcf4bd2dc99b286c71e9e535",
+          "run": {
+            "status": "failed",
+            "seconds": 1.715161,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.180395,
+              "max_rss_kib": 30944,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 5264,
+            "container_removed": true
+          }
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "unadapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef next_permutation(perm: List[int]) -> List[int]:\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n    return perm[::-1]\n\n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.55884,
+            "input_tokens": 285,
+            "output_tokens": 214,
+            "seed": 537162326,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n\n\n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 6.499026,
+            "input_tokens": 285,
+            "output_tokens": 196,
+            "seed": 537162327,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch does not change program behavior structurally"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n\nfrom typing import *\nfrom collections import *\n\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n    return None\n\n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 7.336693,
+            "input_tokens": 285,
+            "output_tokens": 208,
+            "seed": 537162328,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "candidate_sha256": "ad3ea3090a46937fe3bd03c6b3b38450b4ec043c8048636e415d10253cff31d6",
+          "run": {
+            "status": "failed",
+            "seconds": 1.727439,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.188646,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 5264,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\n\ndef next_permutation(perm: List[int]) -> List[int]:\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n\n\n\"\"\"\nNext Permutation\nnext-perm\n\n\nInput:\n    perm: A list of unique ints\n\nPrecondition:\n    perm is not sorted in reverse order\n\nOutput:\n    The lexicographically next permutation of the elements of perm\n\nExample:\n    >>> next_permutation([3, 2, 4, 1])\n    [3, 4, 1, 2]\n\"\"\"\n\n\n```\nIn this solution, I've removed the `test` function from the problem description, which is not necessary to solve the problem. I've also made some minor improvements to improve readability and maintainability.",
+          "generation": {
+            "seconds": 8.468303,
+            "input_tokens": 285,
+            "output_tokens": 249,
+            "seed": 537162329,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\nfrom typing import List\n\ndef next_permutation(perm: List[int]) -> List[int]:\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n    return perm[::-1]\n\n# Test cases\nassert next_permutation([3, 2, 4, 1]) == [3, 4, 1, 2]\nassert next_permutation([3, 5, 6, 2, 1]) == [3, 6, 1, 2, 5]\nassert next_permutation([3, 5, 6, 2]) == [3, 6, 2, 5]\nassert next_permutation([4, 5, 1, 7, 9]) == [4, 5, 1, 9, 7]\nassert next_permutation([4, 5, 8, 7, 1]) == [4, 7, 1, 5, 8]\nassert next_permutation([9, 5, 2, 6, 1]) == [9, 5, 6, 1, 2]\nassert next_permutation([44, 5, 1, 7, 9]) == [44, 5, 1, 9, 7]\nassert next_permutation([3, 4, 5]) == [3, 5, 4]\n```",
+          "generation": {
+            "seconds": 13.547022,
+            "input_tokens": 744,
+            "output_tokens": 396,
+            "seed": 537162326,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n    return None\n```",
+          "generation": {
+            "seconds": 3.935431,
+            "input_tokens": 744,
+            "output_tokens": 120,
+            "seed": 537162327,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "candidate_sha256": "7082290cbaaa3f6b5908d0ec8b3e9d55b4970409d688993a2ca8f599ddb869a5",
+          "run": {
+            "status": "failed",
+            "seconds": 1.721001,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.192919,
+              "max_rss_kib": 31196,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 5264,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\nimport pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.next_permutation import next_permutation\nelse:\n    from python_programs.next_permutation import next_permutation\n\n\ntestdata = load_json_testcases(next_permutation.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_next_permutation(input_data, expected):\n    assert next_permutation(*input_data) == expected\n\npython_programs/node.py (line 1):\nclass Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def successor(self):\n        return self.successor\n\n    def successors(self):\n        return self.successors\n\n    def predecessors(self):\n        return self.predecessors\n```",
+          "generation": {
+            "seconds": 7.329182,
+            "input_tokens": 744,
+            "output_tokens": 215,
+            "seed": 537162328,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch is not a parseable Python module"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\nfrom typing import List, Any\n\ndef next_permutation(perm: List[Any]) -> List[Any]:\n    \"\"\"\n    Find the lexicographically next permutation of the input list.\n    \n    Parameters:\n        perm (List[Any]): The list to find the next permutation of.\n        \n    Returns:\n        List[Any]: The next permutation of the input list.\n    \"\"\"\n    # Find the rightmost element that is smaller than its successor\n    i = len(perm) - 2\n    while i >= 0 and perm[i] >= perm[i + 1]:\n        i -= 1\n    \n    # If no such element exists, the list is sorted in descending order, return None\n    if i == -1:\n        return None\n    \n    # Find the smallest element greater than perm[i] to the right of i\n    j = len(perm) - 1\n    while perm[j] <= perm[i]:\n        j -= 1\n    \n    # Swap perm[i] and perm[j]\n    perm[i], perm[j] = perm[j], perm[i]\n    \n    # Reverse the sublist from i+1 to the end\n    perm[i + 1:] = perm[i + 1:][::-1]\n    \n    return perm\n```",
+          "generation": {
+            "seconds": 8.863659,
+            "input_tokens": 744,
+            "output_tokens": 260,
+            "seed": 537162329,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": false
+          },
+          "rejection": "Patch changes a required function signature"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 4.740667,
+            "input_tokens": 285,
+            "output_tokens": 116,
+            "seed": 537162326,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "run": {
+            "status": "failed",
+            "seconds": 1.851249,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.247047,
+              "max_rss_kib": 30680,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.02s\n"
+            },
+            "output_bytes": 5264,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 5.331283,
+            "input_tokens": 285,
+            "output_tokens": 116,
+            "seed": 537162327,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\n\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 4.85657,
+            "input_tokens": 285,
+            "output_tokens": 116,
+            "seed": 537162328,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 4.811679,
+            "input_tokens": 285,
+            "output_tokens": 116,
+            "seed": 537162329,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3131133440,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        }
+      ],
+      "accepted_candidate": null
+    },
+    "adapted_retrieval": {
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 5.115502,
+            "input_tokens": 744,
+            "output_tokens": 116,
+            "seed": 537162326,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "run": {
+            "status": "failed",
+            "seconds": 1.719626,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 1,
+              "passed": 0,
+              "failed": 8,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.199911,
+              "max_rss_kib": 31020,
+              "output_limit": false,
+              "output": "FFFFFFFF\n=================================== FAILURES ===================================\n_________________ test_next_permutation[input_data0-expected0] _________________\n\ninput_data = [[3, 2, 4, 1]], expected = [3, 4, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 2, 4] == [3, 4, 1, 2]\nE         \nE         At index 1 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data1-expected1] _________________\n\ninput_data = [[3, 5, 6, 2, 1]], expected = [3, 6, 1, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 1, 5, 2, 6] == [3, 6, 1, 2, 5]\nE         \nE         At index 1 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data2-expected2] _________________\n\ninput_data = [[3, 5, 6, 2]], expected = [3, 6, 2, 5]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [3, 2, 5, 6] == [3, 6, 2, 5]\nE         \nE         At index 1 diff: 2 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data3-expected3] _________________\n\ninput_data = [[4, 5, 1, 7, 9]], expected = [4, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [1, 9, 7, 4, 5] == [4, 5, 1, 9, 7]\nE         \nE         At index 0 diff: 1 != 4\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data4-expected4] _________________\n\ninput_data = [[4, 5, 8, 7, 1]], expected = [4, 7, 1, 5, 8]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [4, 1, 5, 7, 8] == [4, 7, 1, 5, 8]\nE         \nE         At index 1 diff: 1 != 7\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data5-expected5] _________________\n\ninput_data = [[9, 5, 2, 6, 1]], expected = [9, 5, 6, 1, 2]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert [9, 5, 1, 2, 6] == [9, 5, 6, 1, 2]\nE         \nE         At index 2 diff: 1 != 6\nE         Use -v to get more diff\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data6-expected6] _________________\n\ninput_data = [[44, 5, 1, 7, 9]], expected = [44, 5, 1, 9, 7]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [44, 5, 1, 9, 7]\nE        +  where None = next_permutation(*[[44, 5, 1, 7, 9]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n_________________ test_next_permutation[input_data7-expected7] _________________\n\ninput_data = [[3, 4, 5]], expected = [3, 5, 4]\n\n    @pytest.mark.parametrize(\"input_data,expected\", testdata)\n    def test_next_permutation(input_data, expected):\n>       assert next_permutation(*input_data) == expected\nE       assert None == [3, 5, 4]\nE        +  where None = next_permutation(*[[3, 4, 5]])\n\npython_testcases/test_next_permutation.py:15: AssertionError\n--------------------- generated xml file: /tmp/results.xml ---------------------\n=========================== short test summary info ============================\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data0-expected0]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data1-expected1]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data2-expected2]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data3-expected3]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data4-expected4]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data5-expected5]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data6-expected6]\nFAILED python_testcases/test_next_permutation.py::test_next_permutation[input_data7-expected7]\n8 failed in 0.03s\n"
+            },
+            "output_bytes": 5264,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 5.316199,
+            "input_tokens": 744,
+            "output_tokens": 116,
+            "seed": 537162327,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 3,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 4.828661,
+            "input_tokens": 744,
+            "output_tokens": 116,
+            "seed": 537162328,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 4,
+          "accepted": false,
+          "response": "```python\ndef next_permutation(perm):\n    for i in range(len(perm) - 2, -1, -1):\n        if perm[i] < perm[i + 1]:\n            for j in range(len(perm) - 1, i, -1):\n                if perm[j] < perm[i]:\n                    next_perm = list(perm)\n                    next_perm[i], next_perm[j] = perm[j], perm[i]\n                    next_perm[i + 1:] = reversed(next_perm[i + 1:])\n                    return next_perm\n```",
+          "generation": {
+            "seconds": 4.726488,
+            "input_tokens": 744,
+            "output_tokens": 116,
+            "seed": 537162329,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3215308800,
+            "peak_gpu_reserved_bytes": 3984588800,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f71cd948efa3a64c3a819e82cb5ec3481d69a6b2a94fb0b3da7167fe1a0afaed",
+          "rejection": "duplicate_candidate"
+        }
+      ],
+      "accepted_candidate": null
+    }
+  },
+  "eligibility": "eligible",
+  "retrieval_seconds": 0.138115,
+  "context": [
+    {
+      "path": "json_testcases/next_permutation.json",
+      "start_line": 1,
+      "text": "[[[3, 2, 4, 1]], [3, 4, 1, 2]]\n[[[3, 5, 6, 2, 1]], [3, 6, 1, 2, 5]]\n[[[3, 5, 6, 2]], [3, 6, 2, 5]]\n[[[4, 5, 1, 7, 9]], [4, 5, 1, 9, 7]]\n[[[4, 5, 8, 7, 1]], [4, 7, 1, 5, 8]]\n[[[9, 5, 2, 6, 1]], [9, 5, 6, 1, 2]]\n[[[44, 5, 1, 7, 9]], [44, 5, 1, 9, 7]]\n[[[3, 4, 5]], [3, 5, 4]]",
+      "sha256": "e3082cfaa7fb90edc1a1c3af62342a38d19454bdf7fc501eb28c307552758c10",
+      "score": 0.5630139112472534
+    },
+    {
+      "path": "python_testcases/test_next_permutation.py",
+      "start_line": 1,
+      "text": "import pytest\nfrom load_testdata import load_json_testcases\n\nif pytest.use_correct:\n    from correct_python_programs.next_permutation import next_permutation\nelse:\n    from python_programs.next_permutation import next_permutation\n\n\ntestdata = load_json_testcases(next_permutation.__name__)\n\n\n@pytest.mark.parametrize(\"input_data,expected\", testdata)\ndef test_next_permutation(input_data, expected):\n    assert next_permutation(*input_data) == expected",
+      "sha256": "43bd238fda0e5f16d6efd782fe85d356b9257378504f798f1c5242d9b20ea52f",
+      "score": 0.556704044342041
+    },
+    {
+      "path": "python_programs/node.py",
+      "start_line": 1,
+      "text": "class Node:\n    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):\n        self.value = value\n        self.successor = successor\n        self.successors = successors\n        self.predecessors = predecessors\n        self.incoming_nodes = incoming_nodes\n        self.outgoing_nodes = outgoing_nodes\n\n    def successor(self):\n        return self.successor\n\n    def successors(self):\n        return self.successors\n\n    def predecessors(self):\n        return self.predecessors\n",
+      "sha256": "853a9638b93eebb1ae61e6ed2ccd5587efc04b9b7c833b35e8a1b74c0bb5ed7a",
+      "score": 0.21625880897045135
+    }
+  ],
+  "comparison_seconds": 123.898355
+}

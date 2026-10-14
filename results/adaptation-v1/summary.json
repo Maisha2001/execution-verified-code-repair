@@ -1,0 +1,415 @@
+{
+  "tasks": 40,
+  "eligible_tasks": 39,
+  "excluded": {
+    "levenshtein": "reference_not_passing"
+  },
+  "candidate_budget": 4,
+  "arms": {
+    "deterministic": {
+      "resolved": 4,
+      "eligible": 39,
+      "resolution_rate": 0.10256410256410256,
+      "resolved_first_k": {
+        "1": 1,
+        "4": 4
+      },
+      "attempts": 118,
+      "executed_candidates": 118,
+      "rejected_before_execution": 0,
+      "generation_seconds": 0,
+      "peak_gpu_allocated_bytes": 0,
+      "patch_changed_lines": [
+        2,
+        2,
+        2,
+        7
+      ]
+    },
+    "unadapted": {
+      "resolved": 10,
+      "eligible": 39,
+      "resolution_rate": 0.2564102564102564,
+      "resolved_first_k": {
+        "1": 3,
+        "4": 10
+      },
+      "attempts": 138,
+      "executed_candidates": 44,
+      "rejected_before_execution": 94,
+      "generation_seconds": 1058.627113,
+      "peak_gpu_allocated_bytes": 3162753536,
+      "patch_changed_lines": [
+        4,
+        28,
+        29,
+        4,
+        4,
+        40,
+        7,
+        49,
+        52,
+        12
+      ]
+    },
+    "retrieval": {
+      "resolved": 10,
+      "eligible": 39,
+      "resolution_rate": 0.2564102564102564,
+      "resolved_first_k": {
+        "1": 4,
+        "4": 10
+      },
+      "attempts": 134,
+      "executed_candidates": 43,
+      "rejected_before_execution": 91,
+      "generation_seconds": 1267.599348,
+      "peak_gpu_allocated_bytes": 4636073984,
+      "patch_changed_lines": [
+        3,
+        3,
+        27,
+        4,
+        35,
+        2,
+        21,
+        3,
+        1,
+        12
+      ]
+    },
+    "adapted": {
+      "resolved": 21,
+      "eligible": 39,
+      "resolution_rate": 0.5384615384615384,
+      "resolved_first_k": {
+        "1": 15,
+        "4": 21
+      },
+      "attempts": 102,
+      "executed_candidates": 67,
+      "rejected_before_execution": 35,
+      "generation_seconds": 627.008523,
+      "peak_gpu_allocated_bytes": 3162753536,
+      "patch_changed_lines": [
+        3,
+        4,
+        19,
+        17,
+        4,
+        24,
+        23,
+        3,
+        3,
+        2,
+        24,
+        20,
+        3,
+        13,
+        20,
+        23,
+        7,
+        28,
+        13,
+        26,
+        25
+      ]
+    },
+    "adapted_retrieval": {
+      "resolved": 17,
+      "eligible": 39,
+      "resolution_rate": 0.4358974358974359,
+      "resolved_first_k": {
+        "1": 9,
+        "4": 17
+      },
+      "attempts": 119,
+      "executed_candidates": 70,
+      "rejected_before_execution": 49,
+      "generation_seconds": 586.689609,
+      "peak_gpu_allocated_bytes": 4636073984,
+      "patch_changed_lines": [
+        22,
+        4,
+        19,
+        22,
+        20,
+        24,
+        23,
+        22,
+        22,
+        24,
+        20,
+        28,
+        20,
+        23,
+        40,
+        28,
+        25
+      ]
+    }
+  },
+  "paired": {
+    "retrieval_versus_unadapted": {
+      "wins": [
+        "bucketsort",
+        "flatten",
+        "gcd",
+        "max_sublist_sum",
+        "shunting_yard"
+      ],
+      "losses": [
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "kheapsort",
+        "shortest_paths",
+        "sieve"
+      ],
+      "both": [
+        "bitcount",
+        "depth_first_search",
+        "find_first_in_sorted",
+        "lcs_length",
+        "reverse_linked_list"
+      ],
+      "neither": [
+        "breadth_first_search",
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "knapsack",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_palindrome",
+        "next_permutation",
+        "pascal",
+        "possible_change",
+        "powerset",
+        "quicksort",
+        "rpn_eval",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "sqrt",
+        "subsequences",
+        "to_base",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 0,
+      "resolution_rate_difference": 0.0
+    },
+    "adapted_versus_unadapted": {
+      "wins": [
+        "breadth_first_search",
+        "bucketsort",
+        "flatten",
+        "gcd",
+        "knapsack",
+        "max_sublist_sum",
+        "next_palindrome",
+        "pascal",
+        "quicksort",
+        "rpn_eval",
+        "shunting_yard",
+        "sqrt",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search",
+        "kheapsort"
+      ],
+      "both": [
+        "bitcount",
+        "detect_cycle",
+        "find_first_in_sorted",
+        "is_valid_parenthesization",
+        "lcs_length",
+        "reverse_linked_list",
+        "shortest_paths",
+        "sieve"
+      ],
+      "neither": [
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 11,
+      "resolution_rate_difference": 0.28205128205128205
+    },
+    "adapted_versus_retrieval": {
+      "wins": [
+        "breadth_first_search",
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "knapsack",
+        "next_palindrome",
+        "pascal",
+        "quicksort",
+        "rpn_eval",
+        "shortest_paths",
+        "sieve",
+        "sqrt",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search"
+      ],
+      "both": [
+        "bitcount",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "lcs_length",
+        "max_sublist_sum",
+        "reverse_linked_list",
+        "shunting_yard"
+      ],
+      "neither": [
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 11,
+      "resolution_rate_difference": 0.28205128205128205
+    },
+    "adapted_retrieval_versus_retrieval": {
+      "wins": [
+        "breadth_first_search",
+        "find_in_sorted",
+        "knapsack",
+        "next_palindrome",
+        "pascal",
+        "rpn_eval",
+        "shortest_paths",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search"
+      ],
+      "both": [
+        "bitcount",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "lcs_length",
+        "max_sublist_sum",
+        "reverse_linked_list",
+        "shunting_yard"
+      ],
+      "neither": [
+        "detect_cycle",
+        "get_factors",
+        "hanoi",
+        "is_valid_parenthesization",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "quicksort",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "sieve",
+        "sqrt",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 7,
+      "resolution_rate_difference": 0.1794871794871795
+    },
+    "adapted_retrieval_versus_adapted": {
+      "wins": [
+        "find_in_sorted"
+      ],
+      "losses": [
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "quicksort",
+        "sieve",
+        "sqrt"
+      ],
+      "both": [
+        "bitcount",
+        "breadth_first_search",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "knapsack",
+        "lcs_length",
+        "max_sublist_sum",
+        "next_palindrome",
+        "pascal",
+        "reverse_linked_list",
+        "rpn_eval",
+        "shortest_paths",
+        "shunting_yard",
+        "to_base"
+      ],
+      "neither": [
+        "depth_first_search",
+        "get_factors",
+        "hanoi",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": -4,
+      "resolution_rate_difference": -0.10256410256410256
+    }
+  },
+  "seconds": 4530.031779,
+  "scope": "Visible-test diagnostic comparison on public QuixBugs; potential pretraining contamination. First-k success is not an unbiased pass@k estimate. No test-feedback loop; no independent generalization claim.",
+  "completed": true,
+  "selected_tasks": 40,
+  "current_invocation_seconds": 4530.439903,
+  "completed_at_utc": "2026-10-14T00:30:40.217837+00:00"
+}

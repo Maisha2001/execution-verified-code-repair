@@ -1,0 +1,343 @@
+{
+  "failure_counts": {
+    "deterministic": {
+      "rejections": {},
+      "execution_status": {
+        "failed": 105,
+        "passed": 4,
+        "output_limit": 9
+      },
+      "median_execution_seconds": 1.717363,
+      "median_accepted_patch_changed_lines": 2.0
+    },
+    "unadapted": {
+      "rejections": {
+        "Patch changes a required function signature": 75,
+        "Patch is not a parseable Python module": 1,
+        "duplicate_candidate": 1,
+        "Patch does not change program behavior structurally": 14,
+        "Expected exactly one fenced Python module": 3
+      },
+      "execution_status": {
+        "passed": 10,
+        "failed": 32,
+        "output_limit": 2
+      },
+      "median_execution_seconds": 1.712243,
+      "median_accepted_patch_changed_lines": 20.0
+    },
+    "retrieval": {
+      "rejections": {
+        "Expected exactly one fenced Python module": 9,
+        "Patch does not change program behavior structurally": 17,
+        "Patch changes a required function signature": 50,
+        "Patch is not a parseable Python module": 13,
+        "duplicate_candidate": 2
+      },
+      "execution_status": {
+        "passed": 10,
+        "failed": 33
+      },
+      "median_execution_seconds": 1.734538,
+      "median_accepted_patch_changed_lines": 3.5
+    },
+    "adapted": {
+      "rejections": {
+        "duplicate_candidate": 21,
+        "Expected exactly one fenced Python module": 5,
+        "Patch does not change program behavior structurally": 8,
+        "Patch is not a parseable Python module": 1
+      },
+      "execution_status": {
+        "passed": 21,
+        "failed": 44,
+        "output_limit": 2
+      },
+      "median_execution_seconds": 1.711717,
+      "median_accepted_patch_changed_lines": 17
+    },
+    "adapted_retrieval": {
+      "rejections": {
+        "duplicate_candidate": 40,
+        "Patch does not change program behavior structurally": 9
+      },
+      "execution_status": {
+        "passed": 17,
+        "failed": 51,
+        "output_limit": 2
+      },
+      "median_execution_seconds": 1.70769,
+      "median_accepted_patch_changed_lines": 22
+    }
+  },
+  "paired": {
+    "retrieval_versus_unadapted": {
+      "wins": [
+        "bucketsort",
+        "flatten",
+        "gcd",
+        "max_sublist_sum",
+        "shunting_yard"
+      ],
+      "losses": [
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "kheapsort",
+        "shortest_paths",
+        "sieve"
+      ],
+      "both": [
+        "bitcount",
+        "depth_first_search",
+        "find_first_in_sorted",
+        "lcs_length",
+        "reverse_linked_list"
+      ],
+      "neither": [
+        "breadth_first_search",
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "knapsack",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_palindrome",
+        "next_permutation",
+        "pascal",
+        "possible_change",
+        "powerset",
+        "quicksort",
+        "rpn_eval",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "sqrt",
+        "subsequences",
+        "to_base",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 0,
+      "resolution_rate_difference": 0.0
+    },
+    "adapted_versus_unadapted": {
+      "wins": [
+        "breadth_first_search",
+        "bucketsort",
+        "flatten",
+        "gcd",
+        "knapsack",
+        "max_sublist_sum",
+        "next_palindrome",
+        "pascal",
+        "quicksort",
+        "rpn_eval",
+        "shunting_yard",
+        "sqrt",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search",
+        "kheapsort"
+      ],
+      "both": [
+        "bitcount",
+        "detect_cycle",
+        "find_first_in_sorted",
+        "is_valid_parenthesization",
+        "lcs_length",
+        "reverse_linked_list",
+        "shortest_paths",
+        "sieve"
+      ],
+      "neither": [
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 11,
+      "resolution_rate_difference": 0.28205128205128205
+    },
+    "adapted_versus_retrieval": {
+      "wins": [
+        "breadth_first_search",
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "knapsack",
+        "next_palindrome",
+        "pascal",
+        "quicksort",
+        "rpn_eval",
+        "shortest_paths",
+        "sieve",
+        "sqrt",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search"
+      ],
+      "both": [
+        "bitcount",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "lcs_length",
+        "max_sublist_sum",
+        "reverse_linked_list",
+        "shunting_yard"
+      ],
+      "neither": [
+        "find_in_sorted",
+        "get_factors",
+        "hanoi",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 11,
+      "resolution_rate_difference": 0.28205128205128205
+    },
+    "adapted_retrieval_versus_retrieval": {
+      "wins": [
+        "breadth_first_search",
+        "find_in_sorted",
+        "knapsack",
+        "next_palindrome",
+        "pascal",
+        "rpn_eval",
+        "shortest_paths",
+        "to_base"
+      ],
+      "losses": [
+        "depth_first_search"
+      ],
+      "both": [
+        "bitcount",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "lcs_length",
+        "max_sublist_sum",
+        "reverse_linked_list",
+        "shunting_yard"
+      ],
+      "neither": [
+        "detect_cycle",
+        "get_factors",
+        "hanoi",
+        "is_valid_parenthesization",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "quicksort",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "sieve",
+        "sqrt",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": 7,
+      "resolution_rate_difference": 0.1794871794871795
+    },
+    "adapted_retrieval_versus_adapted": {
+      "wins": [
+        "find_in_sorted"
+      ],
+      "losses": [
+        "detect_cycle",
+        "is_valid_parenthesization",
+        "quicksort",
+        "sieve",
+        "sqrt"
+      ],
+      "both": [
+        "bitcount",
+        "breadth_first_search",
+        "bucketsort",
+        "find_first_in_sorted",
+        "flatten",
+        "gcd",
+        "knapsack",
+        "lcs_length",
+        "max_sublist_sum",
+        "next_palindrome",
+        "pascal",
+        "reverse_linked_list",
+        "rpn_eval",
+        "shortest_paths",
+        "shunting_yard",
+        "to_base"
+      ],
+      "neither": [
+        "depth_first_search",
+        "get_factors",
+        "hanoi",
+        "kheapsort",
+        "kth",
+        "lis",
+        "longest_common_subsequence",
+        "mergesort",
+        "minimum_spanning_tree",
+        "next_permutation",
+        "possible_change",
+        "powerset",
+        "shortest_path_length",
+        "shortest_path_lengths",
+        "subsequences",
+        "topological_ordering",
+        "wrap"
+      ],
+      "net_resolved": -4,
+      "resolution_rate_difference": -0.10256410256410256
+    }
+  },
+  "previous_comparison_check": {
+    "source": "../model-v1/tasks",
+    "tasks_checked": 40,
+    "arms": [
+      "deterministic",
+      "unadapted",
+      "retrieval"
+    ],
+    "all_equal": true,
+    "fields": "Eligibility, accepted source/patch/hash/attempt, and every attempt field except generation statistics and execution runtime records. Includes raw responses, candidate hashes, rejection and acceptance decisions."
+  },
+  "patch_size_caveat": "Raw added/deleted lines include removed comments and docstrings; these counts do not measure semantic edit minimality.",
+  "scope": "Visible-test diagnostic comparison on public QuixBugs; potential pretraining contamination. First-k success is not an unbiased pass@k estimate. No test-feedback loop; no independent generalization claim."
+}

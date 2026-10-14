@@ -5,8 +5,8 @@ isolated containers, and records the test evidence behind each accepted patch.
 
 The implementation compares bounded AST mutations with a pinned local code model,
 with and without retrieved repository context, on 40 QuixBugs tasks. It records
-reference-test audits and measured results. A separate LoRA training path uses
-verified MBPP repair pairs and resumable checkpoints. The browser workbench is
+reference-test audits and measured results, including a validation-selected LoRA
+adapter trained on verified MBPP repair pairs with resumable checkpoints. The browser workbench is
 not yet included. Passing available tests is evidence, not proof of correctness.
 
 ## Run an example
@@ -61,6 +61,13 @@ are updated. Official test tasks remain outside training and validation.
 The training evidence is separate from the earlier, unadapted repair comparison;
 a lower validation loss alone does not establish better repairs. The [measured run](docs/TRAINING.md#measured-run) completed 117 updates in 129.5 seconds with 4.27 GiB peak GPU allocation, including a checkpoint restart.
 
+In the subsequent [five-arm repair comparison](docs/ADAPTATION.md#measured-results),
+the adapted model resolved **21 of 39 eligible tasks (53.85%)** at four attempts,
+versus **10 of 39** for each unadapted variant. Adding retrieval to the adapted
+model resolved **17 of 39 (43.59%)**. The run took 75.5 minutes with 4.32 GiB peak
+GPU allocation. Paired failures, exclusions and raw responses are retained;
+these public development results do not establish independent generalization.
+
 ## Evaluation
 
 ```sh
@@ -106,7 +113,8 @@ runs the full test suite, and evaluates two actual benchmark tasks.
 It also replays a published model-generated patch in the isolated runtime.
 GPU generation is measured locally; CI does not download the model weights.
 A separate CPU job checks training splits, loss masking and exact LoRA checkpoint
-recovery with a tiny randomly initialized model.
+recovery with a tiny randomly initialized model. It also checks adapter/base
+generation separation, equal comparison budgets and verified partial-run resume.
 
 ## Repository
 
