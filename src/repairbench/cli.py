@@ -31,22 +31,24 @@ def main():
     training.add_argument("--max-seconds", type=float, default=7200)
     training.add_argument("--epochs", type=int, default=3)
     training.add_argument("--max-tokens", type=int, default=1024)
-    for name in ("doctor","evaluate","compare"):
+    for name in ("doctor","evaluate","compare","repair"):
         child = sub.add_parser(name)
         child.add_argument("--image-file",type=Path,default=Path("runs/image.id"))
         child.add_argument("--wall-seconds",type=float,default=8)
-        if name in {"evaluate", "compare"}:
+        if name in {"evaluate", "compare", "repair"}:
             child.add_argument("--data",type=Path,default=Path("data/quixbugs"))
             child.add_argument("--output",type=Path,required=True)
-            child.add_argument("--budget",type=int,default=4 if name == "compare" else 12)
+            child.add_argument("--budget",type=int,default=12 if name == "evaluate" else 4)
             child.add_argument("--tasks",nargs="+")
-        if name == "compare":
+        if name in {"compare", "repair"}:
             child.add_argument("--adapter",type=Path)
             child.add_argument("--resume",action="store_true")
             child.add_argument("--max-seconds",type=float)
             child.add_argument("--models",type=Path,default=Path("data/models"))
             child.add_argument("--device",choices=("cuda","cpu"),default="cuda")
             child.add_argument("--max-new-tokens",type=int,default=768)
+        if name == "repair":
+            child.add_argument("--task-seconds",type=float,default=600)
     args = parser.parse_args()
     if args.command == "data":
         value = prepare(args.output,args.archive)
@@ -74,10 +76,16 @@ def main():
             from .inference import CodeModel
             from .retrieval import ContextRetriever
             runner.preflight()
-            retriever = ContextRetriever(args.models)
             generator = CodeModel(args.models, args.device, args.max_new_tokens, adapter=args.adapter)
-            print(json.dumps(compare(args.data,args.output,runner,generator,retriever,args.budget,args.tasks,
-                                     resume=args.resume,max_seconds=args.max_seconds),indent=2))
+            if args.command == 'repair':
+                from .feedback_evaluation import evaluate_feedback
+                print(json.dumps(evaluate_feedback(args.data,args.output,runner,generator,args.budget,args.tasks,
+                    resume=args.resume,max_seconds=args.max_seconds if args.max_seconds is not None else 3600,
+                    task_seconds=args.task_seconds),indent=2))
+            else:
+                retriever = ContextRetriever(args.models)
+                print(json.dumps(compare(args.data,args.output,runner,generator,retriever,args.budget,args.tasks,
+                                         resume=args.resume,max_seconds=args.max_seconds),indent=2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,476 @@
+{
+  "task": "sqrt",
+  "arms": {
+    "independent": {
+      "task": "sqrt",
+      "source_sha256": "e3623a160e6ada452b36ce0bd2370fc031943e2c1ae93aae5f0c82865e083ebf",
+      "attempts": [
+        {
+          "number": 1,
+          "seed": 2116104619,
+          "feedback": null,
+          "visible_passed": false,
+          "response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 2.054281,
+            "input_tokens": 231,
+            "output_tokens": 48,
+            "seed": 2116104619,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126833664,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e602b42187b078bab0421824ffa7b7c4366910b39a6247ac44f7d1642e4f5298",
+          "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n",
+          "edit_size": {
+            "token_edits": 1,
+            "changed_lines": 24
+          },
+          "run": {
+            "status": "failed",
+            "seconds": 6.302877,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": -9,
+              "passed": 0,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 5.002582,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "F.FFF"
+            },
+            "output_bytes": 171,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "seed": 2116104620,
+          "feedback": null,
+          "visible_passed": true,
+          "response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx*approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 2.133202,
+            "input_tokens": 231,
+            "output_tokens": 50,
+            "seed": 2116104620,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126833664,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "f1a3798b8c39439d5a87dd39fc96ee5fee38eecedf1b967b5b0b0b02a128c1e6",
+          "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx*approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n",
+          "edit_size": {
+            "token_edits": 3,
+            "changed_lines": 26
+          },
+          "run": {
+            "status": "passed",
+            "seconds": 1.656765,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 7,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.17687,
+              "max_rss_kib": 30720,
+              "output_limit": false,
+              "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+            },
+            "output_bytes": 274,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 3,
+          "seed": 2116104621,
+          "feedback": null,
+          "visible_passed": false,
+          "response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 2.066106,
+            "input_tokens": 231,
+            "output_tokens": 48,
+            "seed": 2116104621,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126833664,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e602b42187b078bab0421824ffa7b7c4366910b39a6247ac44f7d1642e4f5298",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 4,
+          "seed": 2116104622,
+          "feedback": null,
+          "visible_passed": true,
+          "response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx**2) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n\n\"\"\"\nSquare Root\n\nNewton-Raphson method implementation.\n\n\nInput:\n    x: A float\n    epsilon: A float\n\nPrecondition:\n    x >= 1 and epsilon > 0\n\nOutput:\n    A float in the interval [sqrt(x) - epsilon, sqrt(x) + epsilon]\n\nExample:\n    >>> sqrt(2, 0.01)\n    1.4166666666666665\n\"\"\"\n\n```",
+          "generation": {
+            "seconds": 5.90058,
+            "input_tokens": 231,
+            "output_tokens": 146,
+            "seed": 2116104622,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126833664,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "4eeefd7a840a39baffea20e0c1c07754c9894a61a16b20a19555845c3c3c00c6",
+          "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx**2) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n\n\"\"\"\nSquare Root\n\nNewton-Raphson method implementation.\n\n\nInput:\n    x: A float\n    epsilon: A float\n\nPrecondition:\n    x >= 1 and epsilon > 0\n\nOutput:\n    A float in the interval [sqrt(x) - epsilon, sqrt(x) + epsilon]\n\nExample:\n    >>> sqrt(2, 0.01)\n    1.4166666666666665\n\"\"\"\n",
+          "edit_size": {
+            "token_edits": 2,
+            "changed_lines": 5
+          },
+          "run": {
+            "status": "passed",
+            "seconds": 1.646242,
+            "container_exit_code": 0,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": 0,
+              "passed": 7,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 0.171097,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+            },
+            "output_bytes": 275,
+            "container_removed": true
+          }
+        }
+      ],
+      "ranked_attempts": [
+        4,
+        2,
+        1
+      ],
+      "selected_candidate": {
+        "number": 4,
+        "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx**2) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n\n\"\"\"\nSquare Root\n\nNewton-Raphson method implementation.\n\n\nInput:\n    x: A float\n    epsilon: A float\n\nPrecondition:\n    x >= 1 and epsilon > 0\n\nOutput:\n    A float in the interval [sqrt(x) - epsilon, sqrt(x) + epsilon]\n\nExample:\n    >>> sqrt(2, 0.01)\n    1.4166666666666665\n\"\"\"\n",
+        "candidate_sha256": "4eeefd7a840a39baffea20e0c1c07754c9894a61a16b20a19555845c3c3c00c6",
+        "edit_size": {
+          "token_edits": 2,
+          "changed_lines": 5
+        },
+        "patch": "--- a/python_programs/sqrt.py\n+++ b/python_programs/sqrt.py\n@@ -1,8 +1,7 @@\n-\n def sqrt(x, epsilon):\n     approx = x / 2\n-    while abs(x - approx) > epsilon:\n-        approx = 0.5 * (approx + x / approx)\n+    while abs(x - approx**2) > epsilon:\n+        approx = 0.5 * (approx + x/approx)\n     return approx\n \n \"\"\"\n"
+      },
+      "accepted_candidate": {
+        "number": 4,
+        "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx**2) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n\n\"\"\"\nSquare Root\n\nNewton-Raphson method implementation.\n\n\nInput:\n    x: A float\n    epsilon: A float\n\nPrecondition:\n    x >= 1 and epsilon > 0\n\nOutput:\n    A float in the interval [sqrt(x) - epsilon, sqrt(x) + epsilon]\n\nExample:\n    >>> sqrt(2, 0.01)\n    1.4166666666666665\n\"\"\"\n",
+        "candidate_sha256": "4eeefd7a840a39baffea20e0c1c07754c9894a61a16b20a19555845c3c3c00c6",
+        "edit_size": {
+          "token_edits": 2,
+          "changed_lines": 5
+        },
+        "patch": "--- a/python_programs/sqrt.py\n+++ b/python_programs/sqrt.py\n@@ -1,8 +1,7 @@\n-\n def sqrt(x, epsilon):\n     approx = x / 2\n-    while abs(x - approx) > epsilon:\n-        approx = 0.5 * (approx + x / approx)\n+    while abs(x - approx**2) > epsilon:\n+        approx = 0.5 * (approx + x/approx)\n     return approx\n \n \"\"\"\n"
+      },
+      "feedback_enabled": false,
+      "candidate_budget": 4,
+      "reference": {
+        "status": "passed",
+        "seconds": 1.660496,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.178523,
+          "max_rss_kib": 30844,
+          "output_limit": false,
+          "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+        },
+        "output_bytes": 275,
+        "container_removed": true
+      },
+      "buggy": {
+        "status": "failed",
+        "seconds": 6.30697,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": -9,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 5.003075,
+          "max_rss_kib": 30940,
+          "output_limit": false,
+          "output": "F.FFF"
+        },
+        "output_bytes": 171,
+        "container_removed": true
+      },
+      "eligibility": "eligible",
+      "regression_reference": {
+        "status": "passed",
+        "seconds": 1.708165,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.167554,
+          "max_rss_kib": 30948,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.673522,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.179612,
+          "max_rss_kib": 31100,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      },
+      "decision": "accepted_with_regressions"
+    },
+    "feedback": {
+      "task": "sqrt",
+      "source_sha256": "e3623a160e6ada452b36ce0bd2370fc031943e2c1ae93aae5f0c82865e083ebf",
+      "attempts": [
+        {
+          "number": 1,
+          "seed": 2116104619,
+          "feedback": null,
+          "visible_passed": false,
+          "response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 2.313092,
+            "input_tokens": 231,
+            "output_tokens": 48,
+            "seed": 2116104619,
+            "sampled": false,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3126833664,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e602b42187b078bab0421824ffa7b7c4366910b39a6247ac44f7d1642e4f5298",
+          "source": "def sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n",
+          "edit_size": {
+            "token_edits": 1,
+            "changed_lines": 24
+          },
+          "run": {
+            "status": "failed",
+            "seconds": 6.229002,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": -9,
+              "passed": 0,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 5.00124,
+              "max_rss_kib": 30812,
+              "output_limit": false,
+              "output": "F.FFF"
+            },
+            "output_bytes": 170,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 2,
+          "seed": 2116104620,
+          "feedback": {
+            "previous_response": "```python\n\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+            "response_truncated": false,
+            "rejection": null,
+            "status": "failed",
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "output_tail": "F.FFF"
+          },
+          "visible_passed": false,
+          "response": "```python\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 2.126825,
+            "input_tokens": 385,
+            "output_tokens": 48,
+            "seed": 2116104620,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3147784192,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e602b42187b078bab0421824ffa7b7c4366910b39a6247ac44f7d1642e4f5298",
+          "rejection": "duplicate_candidate"
+        },
+        {
+          "number": 3,
+          "seed": 2116104621,
+          "feedback": {
+            "previous_response": "```python\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+            "response_truncated": false,
+            "rejection": "duplicate_candidate",
+            "status": null,
+            "passed": null,
+            "failed": null,
+            "errors": null,
+            "skipped": null,
+            "output_tail": ""
+          },
+          "visible_passed": false,
+          "response": "```python\ndef sqrt(x, epsilon):\n    approx = x/2\n    while abs(x-approx)>epsilon:\n        approx=0.5*(approx+x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 1.76616,
+            "input_tokens": 378,
+            "output_tokens": 43,
+            "seed": 2116104621,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3146855424,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "c003ab5e92bcf09eff36bf30138decbae57a49434ef3281bd48fb6a7882dd1b1",
+          "source": "def sqrt(x, epsilon):\n    approx = x/2\n    while abs(x-approx)>epsilon:\n        approx=0.5*(approx+x/approx)\n    return approx\n",
+          "edit_size": {
+            "token_edits": 1,
+            "changed_lines": 28
+          },
+          "run": {
+            "status": "failed",
+            "seconds": 6.312777,
+            "container_exit_code": 1,
+            "evidence": {
+              "protocol": 1,
+              "exit_code": -9,
+              "passed": 0,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "seconds": 5.000508,
+              "max_rss_kib": 30940,
+              "output_limit": false,
+              "output": "F.FFF"
+            },
+            "output_bytes": 171,
+            "container_removed": true
+          }
+        },
+        {
+          "number": 4,
+          "seed": 2116104622,
+          "feedback": {
+            "previous_response": "```python\ndef sqrt(x, epsilon):\n    approx = x/2\n    while abs(x-approx)>epsilon:\n        approx=0.5*(approx+x/approx)\n    return approx\n```",
+            "response_truncated": false,
+            "rejection": null,
+            "status": "failed",
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "output_tail": "F.FFF"
+          },
+          "visible_passed": false,
+          "response": "```python\ndef sqrt(x, epsilon):\n    approx = x / 2\n    while abs(x - approx) > epsilon:\n        approx = 0.5 * (approx + x/approx)\n    return approx\n```",
+          "generation": {
+            "seconds": 1.978148,
+            "input_tokens": 379,
+            "output_tokens": 48,
+            "seed": 2116104622,
+            "sampled": true,
+            "max_new_tokens": 768,
+            "peak_gpu_allocated_bytes": 3146987520,
+            "peak_gpu_reserved_bytes": 3720347648,
+            "adapter_enabled": true
+          },
+          "candidate_sha256": "e602b42187b078bab0421824ffa7b7c4366910b39a6247ac44f7d1642e4f5298",
+          "rejection": "duplicate_candidate"
+        }
+      ],
+      "ranked_attempts": [
+        1,
+        3
+      ],
+      "selected_candidate": null,
+      "accepted_candidate": null,
+      "feedback_enabled": true,
+      "candidate_budget": 4,
+      "reference": {
+        "status": "passed",
+        "seconds": 1.662071,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.177102,
+          "max_rss_kib": 30596,
+          "output_limit": false,
+          "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+        },
+        "output_bytes": 275,
+        "container_removed": true
+      },
+      "buggy": {
+        "status": "failed",
+        "seconds": 6.341603,
+        "container_exit_code": 1,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": -9,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 5.000828,
+          "max_rss_kib": 31068,
+          "output_limit": false,
+          "output": "F.FFF"
+        },
+        "output_bytes": 171,
+        "container_removed": true
+      },
+      "eligibility": "eligible",
+      "decision": "no_visible_pass"
+    }
+  },
+  "seconds": 65.437
+}

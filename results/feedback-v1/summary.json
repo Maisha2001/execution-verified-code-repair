@@ -1,0 +1,67 @@
+{
+  "tasks": 8,
+  "candidate_budget": 4,
+  "arms": {
+    "independent": {
+      "eligible": 8,
+      "selected_visible_pass": 6,
+      "accepted_with_regressions": 6,
+      "accepted_visible_only": 0,
+      "regression_rejected": 0,
+      "decisions": {
+        "no_visible_pass": 2,
+        "accepted_with_regressions": 6
+      },
+      "attempts": 32,
+      "executed": 19,
+      "rejections": {
+        "duplicate_candidate": 9,
+        "Expected exactly one fenced Python module": 4
+      },
+      "generation_seconds": 169.880409,
+      "peak_gpu_allocated_bytes": 3151566336
+    },
+    "feedback": {
+      "eligible": 8,
+      "selected_visible_pass": 5,
+      "accepted_with_regressions": 5,
+      "accepted_visible_only": 0,
+      "regression_rejected": 0,
+      "decisions": {
+        "no_visible_pass": 3,
+        "accepted_with_regressions": 5
+      },
+      "attempts": 32,
+      "executed": 17,
+      "rejections": {
+        "duplicate_candidate": 14,
+        "Expected exactly one fenced Python module": 1
+      },
+      "generation_seconds": 122.524979,
+      "peak_gpu_allocated_bytes": 3312473600
+    }
+  },
+  "feedback_versus_independent": {
+    "wins": [],
+    "losses": [
+      "sqrt"
+    ],
+    "both": [
+      "flatten",
+      "gcd",
+      "knapsack",
+      "quicksort",
+      "shunting_yard"
+    ],
+    "neither": [
+      "find_in_sorted",
+      "kheapsort"
+    ]
+  },
+  "seconds": 498.689,
+  "scope": "Selected previously inspected public development tasks. Post-selection authored regression gate is never model feedback or a ranking signal. No independent generalization claim.",
+  "completed": true,
+  "selected_tasks": 8,
+  "current_invocation_seconds": 0.016,
+  "completed_at_utc": "2026-10-15T01:23:21.666039+00:00"
+}

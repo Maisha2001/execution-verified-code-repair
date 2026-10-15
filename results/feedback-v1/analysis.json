@@ -1,0 +1,182 @@
+{
+  "tasks": [
+    {
+      "task": "find_in_sorted",
+      "independent": {
+        "decision": "no_visible_pass",
+        "selected_attempt": null,
+        "edit_size": null,
+        "regression_status": null
+      },
+      "feedback": {
+        "decision": "no_visible_pass",
+        "selected_attempt": null,
+        "edit_size": null,
+        "regression_status": null
+      }
+    },
+    {
+      "task": "flatten",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 4,
+          "changed_lines": 24
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 4,
+          "changed_lines": 24
+        },
+        "regression_status": "passed"
+      }
+    },
+    {
+      "task": "gcd",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 5,
+          "changed_lines": 23
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 5,
+          "changed_lines": 23
+        },
+        "regression_status": "passed"
+      }
+    },
+    {
+      "task": "kheapsort",
+      "independent": {
+        "decision": "no_visible_pass",
+        "selected_attempt": null,
+        "edit_size": null,
+        "regression_status": null
+      },
+      "feedback": {
+        "decision": "no_visible_pass",
+        "selected_attempt": null,
+        "edit_size": null,
+        "regression_status": null
+      }
+    },
+    {
+      "task": "knapsack",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 2,
+          "changed_lines": 3
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 2,
+          "changed_lines": 3
+        },
+        "regression_status": "passed"
+      }
+    },
+    {
+      "task": "quicksort",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 3,
+          "changed_lines": 13
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 1,
+        "edit_size": {
+          "token_edits": 3,
+          "changed_lines": 13
+        },
+        "regression_status": "passed"
+      }
+    },
+    {
+      "task": "shunting_yard",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 3,
+        "edit_size": {
+          "token_edits": 7,
+          "changed_lines": 28
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 2,
+        "edit_size": {
+          "token_edits": 7,
+          "changed_lines": 28
+        },
+        "regression_status": "passed"
+      }
+    },
+    {
+      "task": "sqrt",
+      "independent": {
+        "decision": "accepted_with_regressions",
+        "selected_attempt": 4,
+        "edit_size": {
+          "token_edits": 2,
+          "changed_lines": 5
+        },
+        "regression_status": "passed"
+      },
+      "feedback": {
+        "decision": "no_visible_pass",
+        "selected_attempt": null,
+        "edit_size": null,
+        "regression_status": null
+      }
+    }
+  ],
+  "feedback_versus_independent": {
+    "wins": [],
+    "losses": [
+      "sqrt"
+    ],
+    "both": [
+      "flatten",
+      "gcd",
+      "knapsack",
+      "quicksort",
+      "shunting_yard"
+    ],
+    "neither": [
+      "find_in_sorted",
+      "kheapsort"
+    ]
+  },
+  "limitations": [
+    "Eight selected, previously inspected public development tasks; no generalization estimate.",
+    "Post-selection tests were authored from contracts and development failures; incomplete coverage.",
+    "Both arms spend all four attempts and rank patches; not comparable to stop-at-first-pass results.",
+    "Model and adapter may have seen public tasks during pretraining.",
+    "Token edit size is a deterministic heuristic, not semantic minimality."
+  ],
+  "protocol_revision": "A private initial diagnostic was stopped after review found a missing stop check after regression execution. The corrected implementation was tested and rerun from scratch without changing tasks, model, regression suites, prompts or ranking."
+}

@@ -68,6 +68,29 @@ model resolved **17 of 39 (43.59%)**. The run took 75.5 minutes with 4.32 GiB pe
 GPU allocation. Paired failures, exclusions and raw responses are retained;
 these public development results do not establish independent generalization.
 
+## Repair with feedback
+
+The [bounded repair workflow](docs/FEEDBACK.md) compares independent proposals
+with test-feedback retries, ranks patches by visible-test results and edit size,
+then applies a separate authored regression gate to the selected patch. Both
+methods spend the same attempt budget. Regression results never guide generation
+or patch selection, and a failed gate cannot trigger another attempt.
+
+```sh
+python -m pip install -r requirements/workflow.txt
+repair-bench repair --adapter runs/adapter-v2/checkpoint-000117 --tasks gcd --budget 4 --output runs/repair-example
+```
+
+Reports include the original failure, each attempted patch, feedback, rankings
+and final decision. The local LangGraph workflow disables remote tracing. All
+generated programs still run only in the isolated Docker runtime.
+
+In the [measured eight-task development comparison](docs/FEEDBACK.md#measured-comparison),
+independent proposals passed both test stages on **6/8 tasks**, versus **5/8**
+with feedback. Feedback gained no task and lost `sqrt`; it did not improve
+repair success in this sample. The run took 8.31 minutes with 3.09 GiB peak GPU
+allocation. Raw failures, rankings and regression decisions are published.
+
 ## Evaluation
 
 ```sh

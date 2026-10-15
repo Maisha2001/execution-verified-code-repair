@@ -1,0 +1,37 @@
+{
+  "tests": 79,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 79.688,
+  "pip_check": "passed",
+  "wheel": {
+    "name": "execution_verified_code_repair-0.1.0-py3-none-any.whl",
+    "bytes": 46713,
+    "sha256": "9307e2be0d0b63487af1e38099b6c68b0f41dfdfc5a71a3f93f70f2c6fd17304"
+  },
+  "full_run_checksums_verified": 8,
+  "summary_recomputed_from_tasks": true,
+  "implementation_hashes_verified": true,
+  "same_first_response_across_arms": true,
+  "ranking_and_feedback_recomputed": true,
+  "actual_resume": {
+    "checked_at_utc": "2026-10-15T01:23:22.134139+00:00",
+    "tasks_unchanged": 8,
+    "all_evidence_unchanged": true,
+    "task_checksum_config_files_verified": 17,
+    "summary_recomputed_without_generation": true,
+    "process_seconds": 10.172,
+    "invocation_seconds": 0.016,
+    "original_completed_at_utc": "2026-10-15T01:22:21.900941+00:00"
+  },
+  "mbpp_test_tasks_used": false,
+  "checks": [
+    "All eight authored regression suites pass isolated reference audits",
+    "A real visible-test-overfitting patch is rejected by the separate regression gate",
+    "Cancellation and deadlines during reference or candidate regression checks prevent acceptance",
+    "Invalid and duplicate proposals consume attempts; regression failures cannot trigger fallback or retries",
+    "Inherited tracing is disabled and graph tests reject network access",
+    "Existing container isolation and tiny-model training checks pass"
+  ]
+}
