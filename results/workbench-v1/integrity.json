@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-15T22:03:33.199480+00:00",
+  "original_commit": "db231c8eafc145a45bde1bb87ddf47a8558d6863",
+  "original_manifest_rejected": true,
+  "measured_evidence_matches_original_commit_bytes": true,
+  "model_runs_repeated": false,
+  "new_integrity_tests_passed": 6,
+  "package": {
+    "wheel": "execution_verified_code_repair-0.1.0-py3-none-any.whl",
+    "sha256": "34646c5ef6ca368577a8fd85c5e2d6a51bd8d283c9b820ecf0505dab97d20c57",
+    "exact_committed_package_files": 23,
+    "source_commit": "db231c8eafc145a45bde1bb87ddf47a8558d6863",
+    "source_unchanged": true
+  },
+  "prior_package_diagnostic": {
+    "wheel_sha256": "c9f103b957f3f1e636a39d86f18e782e141d453b264d273c295ccb9be9a54d16",
+    "difference_from_commit": "repairbench/quixbugs.json used local CRLF; all JSON values match. Other 22 package files already match committed bytes."
+  },
+  "verification": "Checksums are SHA256 of exact Git blobs. Integrity tests reject the original Git normalization error, tampering, missing or unlisted JSON and CRLF. CI checks committed and checkout bytes."
+}

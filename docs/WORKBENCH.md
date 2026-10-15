@@ -99,6 +99,13 @@ Requests from another browser origin or an unexpected Host are rejected.
 
 ## Verification
 
+The evidence JSON uses LF line endings. Its checksum manifest covers exact file
+bytes, including the retained failure diagnostics. Check a checkout with
+`python scripts/verify_evidence.py`, staged changes with `--staged`, or a commit
+with `--revision HEAD`. CI checks both the commit and checkout. The initial
+workbench manifest incorrectly hashed local CRLF bytes before Git normalized
+them; the corrected hashes preserve every recorded value and model outcome.
+
 The service tests exercise validation, origin/token/body limits, overlap rejection,
 cancellation races, shutdown, failures, capacity, process locking and restart
 recovery. A real Docker integration replays one previously published model
