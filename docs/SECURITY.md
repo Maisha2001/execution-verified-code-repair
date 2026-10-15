@@ -38,7 +38,7 @@ fallback. Image IDs must be immutable and the expected runtime label must exist.
 Use only the image built from this repository; the label is not a signature.
 
 The image installs only the pinned test dependencies in `requirements/runtime.txt`.
-Host development dependencies include that file and the local workflow packages;
+Host development dependencies include that file and local workflow/service packages;
 model and graph packages are not installed in the candidate execution image.
 
 The actual Docker test suite checks ordinary success/failure, empty test suites,
@@ -51,3 +51,9 @@ If the host process or Docker itself is forcibly terminated, normal cleanup may
 not complete. Inspect containers and volumes carrying `repairbench.ephemeral=1`
 before removing anything; do not remove an active run's resources. Run one
 benchmark at a time while using the cleanup integration test.
+
+The browser service adds one worker, strict task/request limits, an evidence
+directory lock, same-origin mutation tokens and Host/Origin checks. It binds to
+127.0.0.1 only. Cancellation waits for the bounded active operation; model
+generation is token-bounded rather than forcibly interrupted. Do not expose this
+research service through a public proxy. See [workbench limits](WORKBENCH.md).

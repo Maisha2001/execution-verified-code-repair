@@ -6,8 +6,29 @@ isolated containers, and records the test evidence behind each accepted patch.
 The implementation compares bounded AST mutations with a pinned local code model,
 with and without retrieved repository context, on 40 QuixBugs tasks. It records
 reference-test audits and measured results, including a validation-selected LoRA
-adapter trained on verified MBPP repair pairs with resumable checkpoints. The browser workbench is
-not yet included. Passing available tests is evidence, not proof of correctness.
+adapter trained on verified MBPP repair pairs with resumable checkpoints. A local
+browser workbench shows each proposal and its test evidence. Passing available
+tests is evidence, not proof of correctness.
+
+## Local workbench
+
+After the [model and runtime setup](docs/WORKBENCH.md), launch the local service:
+
+```sh
+python -m repairbench.service --adapter runs/adapter-v2/checkpoint-000117 --output runs/workbench
+```
+
+Open **http://127.0.0.1:8018** on the computer running the service. This is a
+localhost address, not a public hosted demo. Choose one of eight curated Python
+examples, run up to four attempts, cancel an active repair, and inspect the
+original failure, candidate modules, rejected responses, ranked patches and final
+regression checks. Full evidence can be downloaded as JSON. The service uses
+local model weights and executes candidate programs only in the isolated runner.
+See [setup, limits and measured integration checks](docs/WORKBENCH.md).
+
+![Actual local repair workbench](docs/images/workbench-overview.jpg)
+
+A measured GCD repair with original failures and post-selection test evidence.
 
 ## Run an example
 
@@ -31,7 +52,7 @@ repair-bench evaluate --tasks gcd --budget 12 --output runs/gcd
 On PowerShell, activate with `.venv\Scripts\Activate.ps1`; on bash, use
 `source .venv/bin/activate`. Each run requires a new output directory. Inspect
 `runs/gcd/tasks/gcd.json` for the original failure, attempted changes, accepted
-diff, test counts and resource evidence. The CLI is the current working demo.
+diff, test counts and resource evidence. This CLI example works without the browser service.
 
 ## Local code model
 

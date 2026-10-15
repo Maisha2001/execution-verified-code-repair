@@ -1,0 +1,65 @@
+{
+  "checked_at_utc": "2026-10-15T01:58:56.720986+00:00",
+  "python_tests": 95,
+  "python_failures": 0,
+  "python_skipped": 0,
+  "python_test_seconds": 90.938,
+  "browser_tests": 3,
+  "browser_test_seconds": 5.74876,
+  "strict_typescript_build": "passed",
+  "pip_check": "passed",
+  "wheel": {
+    "name": "execution_verified_code_repair-0.1.0-py3-none-any.whl",
+    "sha256": "c9f103b957f3f1e636a39d86f18e782e141d453b264d273c295ccb9be9a54d16",
+    "contents_match_source_and_built_assets": true,
+    "clean_build_exact_package_inventory": true
+  },
+  "prior_evidence_unchanged": true,
+  "held_out_mbpp_test_tasks_used": false,
+  "real_model": {
+    "fresh_task": "gcd",
+    "budget": 2,
+    "seconds": 12.953,
+    "decision": "accepted_with_regressions",
+    "cancelled_task": "quicksort",
+    "cancel_settle_seconds": 2.938,
+    "overlap_http_status": 429,
+    "peak_gpu_allocated_bytes": 3144140288
+  },
+  "diagnostics": [
+    {
+      "suite": "service-tests-v1",
+      "tests": 94,
+      "passed": 94,
+      "note": "Before history ordering correction and additional test."
+    },
+    {
+      "suite": "service-tests-v2",
+      "tests": 95,
+      "passed": 94,
+      "failed": 1,
+      "failure": "sqrt reference regression classified timeout despite passing output and exit code zero during simultaneous service probe. Exact cause not established; concurrency suspected."
+    },
+    {
+      "probe": "workbench-integration-v2",
+      "assertion": "Original GCD status was timeout rather than failed, despite expected five failing tests in output. Fresh patch still passed both stages; cancellation and overlap controls passed. Entire evidence preserved in concurrent-diagnostic.json."
+    },
+    {
+      "suite": "service-tests-v3",
+      "tests": 95,
+      "passed": 95,
+      "note": "Sequential rerun without code or limit changes."
+    },
+    {
+      "probe": "workbench-integration-v3",
+      "passed": true,
+      "note": "Sequential, identical code and limits. Published integration.json."
+    }
+  ],
+  "limitations": [
+    "Small development integration probe, not a repair-success evaluation.",
+    "Cancellation is cooperative at operation boundaries; token-bounded generation is not forcibly interrupted.",
+    "Observed runtime deadline classification under simultaneous verification remains in final repeated-run reliability review.",
+    "Prior feedback-runtime-v1 unexplained first verifier assertion remains unresolved."
+  ]
+}

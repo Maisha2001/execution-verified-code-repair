@@ -16,7 +16,7 @@ repair-bench = "repairbench.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-repairbench = ["quixbugs.json"]
+repairbench = ["quixbugs.json", "web/*", "web/assets/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
