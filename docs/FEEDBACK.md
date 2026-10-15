@@ -130,3 +130,9 @@ including isolation, cancellation during regression execution, duplicate-budget
 handling and reference audits. A completed-run resume verified all eight task
 records unchanged and recomputed the summary without generating new candidates.
 The 253 reserved MBPP test tasks remain unused.
+
+The runner's test requirements are separate from host graph dependencies.
+A [clean-build validation](../results/feedback-runtime-v1/validation.json)
+checks the rebuilt image, identical installed test packages and runner code,
+all 79 tests, and replays all 11 accepted method/task patches against both test
+stages. Original model outputs and evaluation records remain unchanged.

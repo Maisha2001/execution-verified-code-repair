@@ -1,0 +1,768 @@
+{
+  "reason": "The clean CI build exposed a host workflow include in runner dependencies. Split the unchanged pinned test environment into runtime.txt; graph/model packages stay on the host.",
+  "tests": 79,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "test_seconds": 80.432,
+  "clean_build": true,
+  "original_runtime": {
+    "server_version": "29.3.0",
+    "operating_system": "Docker Desktop",
+    "cpus": 16,
+    "memory_bytes": 16351690752,
+    "image_id": "sha256:d7bc482b4edc07a8483d29f2bdf183157bca86ddf79c0c78e98b17200a7df413",
+    "limits": {
+      "wall_seconds": 8.0,
+      "memory_mb": 256,
+      "pids": 32,
+      "output_bytes": 131072
+    }
+  },
+  "rebuilt_runtime": {
+    "server_version": "29.3.0",
+    "operating_system": "Docker Desktop",
+    "cpus": 16,
+    "memory_bytes": 16351690752,
+    "image_id": "sha256:910b8935309f6ead4dbf2d68891a003de4d271ae639c6750bacbe51539f518dd",
+    "limits": {
+      "wall_seconds": 8.0,
+      "memory_mb": 256,
+      "pids": 32,
+      "output_bytes": 131072
+    }
+  },
+  "installed_packages_and_runner_identical": true,
+  "metadata": {
+    "packages": {
+      "iniconfig": "2.3.1",
+      "packaging": "26.3",
+      "pip": "24.0",
+      "pluggy": "1.6.0",
+      "pygments": "2.21.0",
+      "pytest": "8.4.2",
+      "pytest-timeout": "2.4.0",
+      "setuptools": "79.0.1",
+      "wheel": "0.45.1"
+    },
+    "runner_sha256": "229a7f0d4201aadb0b87636a3706ec8a2fd980a9f451b36dbb6fbaed0f1abf13"
+  },
+  "implementation_hashes_unchanged": true,
+  "model_evidence_unchanged": true,
+  "selected_patches_replayed": 11,
+  "reference_tasks_audited": 6,
+  "replay_seconds": 70.625,
+  "replays": [
+    {
+      "task": "flatten",
+      "arm": "independent",
+      "candidate_sha256": "f507d06b61c7d54bfa3735cd54c24f54e9395086db21286a4bcb0c3fe12e4397",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.772726,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.17797,
+          "max_rss_kib": 30812,
+          "output_limit": false,
+          "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.714956,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.182388,
+          "max_rss_kib": 31100,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "flatten",
+      "arm": "feedback",
+      "candidate_sha256": "f507d06b61c7d54bfa3735cd54c24f54e9395086db21286a4bcb0c3fe12e4397",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.697929,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.191447,
+          "max_rss_kib": 30936,
+          "output_limit": false,
+          "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+        },
+        "output_bytes": 275,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.690265,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.184697,
+          "max_rss_kib": 30772,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "gcd",
+      "arm": "independent",
+      "candidate_sha256": "9a45858443cc13994e58ae5f7c3be5b9a2ab309823c6440cab48c03596e74bbd",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.692295,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.171383,
+          "max_rss_kib": 30780,
+          "output_limit": false,
+          "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.670414,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.175555,
+          "max_rss_kib": 30900,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "gcd",
+      "arm": "feedback",
+      "candidate_sha256": "9a45858443cc13994e58ae5f7c3be5b9a2ab309823c6440cab48c03596e74bbd",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.698708,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.181353,
+          "max_rss_kib": 30812,
+          "output_limit": false,
+          "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.685683,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.178254,
+          "max_rss_kib": 30776,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "knapsack",
+      "arm": "independent",
+      "candidate_sha256": "312134771540d76b2ff9c353da6448951f0865d81e9c4754b1ca138f2bf0e99e",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.779772,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 1,
+          "seconds": 0.192823,
+          "max_rss_kib": 31880,
+          "output_limit": false,
+          "output": ".........s\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed, 1 skipped in 0.02s\n"
+        },
+        "output_bytes": 289,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.72274,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.178351,
+          "max_rss_kib": 30704,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "knapsack",
+      "arm": "feedback",
+      "candidate_sha256": "312134771540d76b2ff9c353da6448951f0865d81e9c4754b1ca138f2bf0e99e",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.740322,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 1,
+          "seconds": 0.183481,
+          "max_rss_kib": 31784,
+          "output_limit": false,
+          "output": ".........s\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed, 1 skipped in 0.02s\n"
+        },
+        "output_bytes": 289,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.662615,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.178479,
+          "max_rss_kib": 30856,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "quicksort",
+      "arm": "independent",
+      "candidate_sha256": "25fc2cc30eae5c23549cf833c273d33edd4c749bdf700754d10c55ecdf2b79ab",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.66618,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 13,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.187217,
+          "max_rss_kib": 30880,
+          "output_limit": false,
+          "output": ".............\n--------------------- generated xml file: /tmp/results.xml ---------------------\n13 passed in 0.01s\n"
+        },
+        "output_bytes": 283,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.673219,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.171208,
+          "max_rss_kib": 30948,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "quicksort",
+      "arm": "feedback",
+      "candidate_sha256": "25fc2cc30eae5c23549cf833c273d33edd4c749bdf700754d10c55ecdf2b79ab",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.693832,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 13,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.183055,
+          "max_rss_kib": 31060,
+          "output_limit": false,
+          "output": ".............\n--------------------- generated xml file: /tmp/results.xml ---------------------\n13 passed in 0.01s\n"
+        },
+        "output_bytes": 283,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.667166,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.176746,
+          "max_rss_kib": 30896,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "shunting_yard",
+      "arm": "independent",
+      "candidate_sha256": "7d5cbc9d553c11ee05711990083503fd9efc1a9de1a3b99d945f01f3cd75fe75",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.665129,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.177607,
+          "max_rss_kib": 30804,
+          "output_limit": false,
+          "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.657922,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.174572,
+          "max_rss_kib": 30864,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "shunting_yard",
+      "arm": "feedback",
+      "candidate_sha256": "7d5cbc9d553c11ee05711990083503fd9efc1a9de1a3b99d945f01f3cd75fe75",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.674368,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.193223,
+          "max_rss_kib": 30804,
+          "output_limit": false,
+          "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+        },
+        "output_bytes": 274,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.712795,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.180226,
+          "max_rss_kib": 30880,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    },
+    {
+      "task": "sqrt",
+      "arm": "independent",
+      "candidate_sha256": "4eeefd7a840a39baffea20e0c1c07754c9894a61a16b20a19555845c3c3c00c6",
+      "visible": {
+        "status": "passed",
+        "seconds": 1.710927,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.195947,
+          "max_rss_kib": 30812,
+          "output_limit": false,
+          "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+        },
+        "output_bytes": 275,
+        "container_removed": true
+      },
+      "regression": {
+        "status": "passed",
+        "seconds": 1.666286,
+        "container_exit_code": 0,
+        "evidence": {
+          "protocol": 1,
+          "exit_code": 0,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "seconds": 0.179022,
+          "max_rss_kib": 30880,
+          "output_limit": false,
+          "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+        },
+        "output_bytes": 269,
+        "container_removed": true
+      }
+    }
+  ],
+  "original_reference_audits": {
+    "flatten": {
+      "status": "passed",
+      "seconds": 1.780726,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 7,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.184394,
+        "max_rss_kib": 30940,
+        "output_limit": false,
+        "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+      },
+      "output_bytes": 275,
+      "container_removed": true
+    },
+    "gcd": {
+      "status": "passed",
+      "seconds": 1.682248,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 6,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.179661,
+        "max_rss_kib": 30848,
+        "output_limit": false,
+        "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+      },
+      "output_bytes": 274,
+      "container_removed": true
+    },
+    "knapsack": {
+      "status": "passed",
+      "seconds": 1.703903,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 9,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 1,
+        "seconds": 0.192861,
+        "max_rss_kib": 31576,
+        "output_limit": false,
+        "output": ".........s\n--------------------- generated xml file: /tmp/results.xml ---------------------\n9 passed, 1 skipped in 0.02s\n"
+      },
+      "output_bytes": 289,
+      "container_removed": true
+    },
+    "quicksort": {
+      "status": "passed",
+      "seconds": 1.669853,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 13,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.184068,
+        "max_rss_kib": 30940,
+        "output_limit": false,
+        "output": ".............\n--------------------- generated xml file: /tmp/results.xml ---------------------\n13 passed in 0.01s\n"
+      },
+      "output_bytes": 283,
+      "container_removed": true
+    },
+    "shunting_yard": {
+      "status": "passed",
+      "seconds": 1.686486,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 6,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.184669,
+        "max_rss_kib": 30920,
+        "output_limit": false,
+        "output": "......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n6 passed in 0.01s\n"
+      },
+      "output_bytes": 274,
+      "container_removed": true
+    },
+    "sqrt": {
+      "status": "passed",
+      "seconds": 1.685733,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 7,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.190964,
+        "max_rss_kib": 30928,
+        "output_limit": false,
+        "output": ".......\n--------------------- generated xml file: /tmp/results.xml ---------------------\n7 passed in 0.01s\n"
+      },
+      "output_bytes": 275,
+      "container_removed": true
+    }
+  },
+  "authored_reference_audits": {
+    "flatten": {
+      "status": "passed",
+      "seconds": 1.770375,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.177999,
+        "max_rss_kib": 30940,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    },
+    "gcd": {
+      "status": "passed",
+      "seconds": 1.703836,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.172572,
+        "max_rss_kib": 30704,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    },
+    "knapsack": {
+      "status": "passed",
+      "seconds": 1.709144,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.186633,
+        "max_rss_kib": 30848,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    },
+    "quicksort": {
+      "status": "passed",
+      "seconds": 1.720777,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.203775,
+        "max_rss_kib": 30812,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    },
+    "shunting_yard": {
+      "status": "passed",
+      "seconds": 1.658562,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.173957,
+        "max_rss_kib": 30816,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    },
+    "sqrt": {
+      "status": "passed",
+      "seconds": 1.690482,
+      "container_exit_code": 0,
+      "evidence": {
+        "protocol": 1,
+        "exit_code": 0,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.182336,
+        "max_rss_kib": 30948,
+        "output_limit": false,
+        "output": ".\n--------------------- generated xml file: /tmp/results.xml ---------------------\n1 passed in 0.01s\n"
+      },
+      "output_bytes": 269,
+      "container_removed": true
+    }
+  },
+  "scope": "Replays fixed already-published patches; no model calls, tuning, new evaluation tasks or new repair-success estimate.",
+  "replay_diagnostic_history": {
+    "initial_attempt": "Acceptance assertion failed before per-item diagnostics were persisted. Exact task and cause are unknown; this was not a model-generation run.",
+    "logged_followup": "All11 fixed accepted patches pass original and authored tests with6 independently audited references; full per-item records retained. No source/model/task changes between replay attempts.",
+    "release_followup": "Retain this non-reproduced discrepancy for the final repeated-run reliability review."
+  }
+}

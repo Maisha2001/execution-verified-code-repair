@@ -37,6 +37,10 @@ outcomes. A setup failure raises an error; there is no direct-host execution
 fallback. Image IDs must be immutable and the expected runtime label must exist.
 Use only the image built from this repository; the label is not a signature.
 
+The image installs only the pinned test dependencies in `requirements/runtime.txt`.
+Host development dependencies include that file and the local workflow packages;
+model and graph packages are not installed in the candidate execution image.
+
 The actual Docker test suite checks ordinary success/failure, empty test suites,
 read-only paths, non-root/capability/seccomp settings, denied external networking,
 collection/test hangs, memory/output floods, file/PID limits, and descendant

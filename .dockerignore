@@ -1,6 +1,6 @@
 **
 !requirements
-!requirements/dev.txt
+!requirements/runtime.txt
 !docker
 !docker/runner.py
 !docker/Dockerfile
